@@ -1,23 +1,31 @@
 {
   "files": {
-    "main.css": "/inspector/static/css/main.d1b05096.chunk.css",
-    "main.js": "/inspector/static/js/main.0f6d38b1.chunk.js",
-    "main.js.map": "/inspector/static/js/main.0f6d38b1.chunk.js.map",
-    "runtime-main.js": "/inspector/static/js/runtime-main.a1e02e25.js",
-    "runtime-main.js.map": "/inspector/static/js/runtime-main.a1e02e25.js.map",
-    "static/js/2.eb788a5e.chunk.js": "/inspector/static/js/2.eb788a5e.chunk.js",
-    "static/js/2.eb788a5e.chunk.js.map": "/inspector/static/js/2.eb788a5e.chunk.js.map",
+    "main.js": "/inspector/static/js/main.72a6a468.chunk.js",
+    "main.js.map": "/inspector/static/js/main.72a6a468.chunk.js.map",
+    "runtime-main.js": "/inspector/static/js/runtime-main.ab41d329.js",
+    "runtime-main.js.map": "/inspector/static/js/runtime-main.ab41d329.js.map",
+    "static/js/2.49fbc1de.chunk.js": "/inspector/static/js/2.49fbc1de.chunk.js",
+    "static/js/2.49fbc1de.chunk.js.map": "/inspector/static/js/2.49fbc1de.chunk.js.map",
     "index.html": "/inspector/index.html",
-    "precache-manifest.84439c00df9b828cf2ee4c8d7ee03c00.js": "/inspector/precache-manifest.84439c00df9b828cf2ee4c8d7ee03c00.js",
+    "precache-manifest.4672d0a4c80bdccbe5f106b415645cf4.js": "/inspector/precache-manifest.4672d0a4c80bdccbe5f106b415645cf4.js",
     "service-worker.js": "/inspector/service-worker.js",
-    "static/css/main.d1b05096.chunk.css.map": "/inspector/static/css/main.d1b05096.chunk.css.map",
-    "static/js/2.eb788a5e.chunk.js.LICENSE.txt": "/inspector/static/js/2.eb788a5e.chunk.js.LICENSE.txt",
-    "static/media/logo.svg": "/inspector/static/media/logo.5d5d9eef.svg"
+    "static/js/2.49fbc1de.chunk.js.LICENSE.txt": "/inspector/static/js/2.49fbc1de.chunk.js.LICENSE.txt",
+    "static/media/bmd-camera-raw.png": "/inspector/static/media/bmd-camera-raw.37652355.png",
+    "static/media/clip.png": "/inspector/static/media/clip.1dc9f654.png",
+    "static/media/color-curves.png": "/inspector/static/media/color-curves.86be3fee.png",
+    "static/media/color-sliders.png": "/inspector/static/media/color-sliders.7ff7f313.png",
+    "static/media/face-refinement.png": "/inspector/static/media/face-refinement.c5ff3546.png",
+    "static/media/gamma-controls.png": "/inspector/static/media/gamma-controls.02f23ecb.png",
+    "static/media/info.png": "/inspector/static/media/info.fb6d8853.png",
+    "static/media/primaries-curves.png": "/inspector/static/media/primaries-curves.12897a86.png",
+    "static/media/primaries-wheels.png": "/inspector/static/media/primaries-wheels.dbdc2431.png",
+    "static/media/skin-mask.png": "/inspector/static/media/skin-mask.7b130979.png",
+    "static/media/texture.png": "/inspector/static/media/texture.db2e4704.png",
+    "static/media/white-balance.png": "/inspector/static/media/white-balance.cb038f73.png"
   },
   "entrypoints": [
-    "static/js/runtime-main.a1e02e25.js",
-    "static/js/2.eb788a5e.chunk.js",
-    "static/css/main.d1b05096.chunk.css",
-    "static/js/main.0f6d38b1.chunk.js"
+    "static/js/runtime-main.ab41d329.js",
+    "static/js/2.49fbc1de.chunk.js",
+    "static/js/main.72a6a468.chunk.js"
   ]
 }
