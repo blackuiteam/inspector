@@ -2,13 +2,26 @@
 import styled, { createGlobalStyle } from 'styled-components';
 import { size, position, bgimage } from './mixins';
 
-// NAVIGATION IMAGES
+
+// NAVIGATION INSPECTOR
 import AudioImg 	from '../../img/nav/audio.png';
 import ColorImg 	from '../../img/nav/color.png';
 import EffectsImg 	from '../../img/nav/effects.png';
 import FileImg 		from '../../img/nav/file.png';
 import SizingImg 	from '../../img/nav/sizing.png';
 import VideoImg 	from '../../img/nav/video.png';
+
+// NAVIGATION TEXT TEMPLATE
+import TextImg 				from '../../img/nav/text/text.png';
+import TextActiveImg		from '../../img/nav/text/text-active.png';
+import FrameImg 			from '../../img/nav/text/frame.png';
+import FrameActiveImg		from '../../img/nav/text/frame-active.png';
+import StyleImg 			from '../../img/nav/text/style.png';
+import StyleActiveImg		from '../../img/nav/text/style-active.png';
+import SettingsImg 			from '../../img/nav/text/settings.png';
+import SettingsActiveImg	from '../../img/nav/text/settings-active.png';
+import TextVideoImg 		from '../../img/nav/text/video.png';
+import TextVideoActiveImg	from '../../img/nav/text/video-active.png';
 
 import Arrow from '../../img/icons/arrow.png';
 
@@ -79,11 +92,22 @@ export const GlobalStyle = createGlobalStyle `
 	.none { display: none; }
 `
 
+export const AppContainer = styled.div `
+	${size('700px', 'auto', 'table')};
+	${position('10%', '', '', '50%')};
+	transform: translate(-50%, -10%);
+`
+
 export const Wrapper = styled.div `
 	${size('336px', 'auto', 'block')};
-	${position('100px', '', '', 'calc(50% - 168px)')};
+	${position('0', '0', '', '')};
 	border: 1px solid #000;
 	color: #fff;
+`
+
+export const ClipsWrapper = styled.div `
+	${size('336px', 'auto', 'block')};
+	${position('0', '', '', '0')};
 `
 
 export const Header = styled.div `
@@ -103,6 +127,50 @@ export const Navigation = styled.div `
 	justify-content: center;
 	background-color: #212126;
 	border-bottom: 1px solid #000;
+`
+
+export const NavTextItem = styled.div `
+	${size('46px', '100%')};
+	position: relative;
+	display: block;
+	float: left;
+
+	:nth-child(1) {
+		${bgimage(TextImg,'no-repeat', '9px 0', '30px 32px')}
+	};
+
+	:nth-child(2) {
+		${bgimage(FrameImg,'no-repeat', '9px 0', '30px 32px')}
+	};
+
+	:nth-child(3) {
+		${bgimage(StyleImg,'no-repeat', '9px 0', '30px 32px')}
+	};
+
+	:nth-child(4) {
+		${bgimage(SettingsImg,'no-repeat', '9px 0', '30px 32px')}
+	};
+
+	:nth-child(5) {
+		${bgimage(TextVideoImg,'no-repeat', '13px 9px', '21px 14px')}
+	};
+
+	&.active {
+		box-shadow: inset 0px -2px 0px 0px rgba(230,75,61,1);
+
+		span {
+			color: #fff;
+		}
+	}
+
+	> span {
+		${position('', '', '5px', '0px')};
+		display: block;
+		width: 100%;
+		font-size: 10px;
+		text-align: center;
+		color: #828282;
+	}
 `
 
 export const NavItem = styled.div `
@@ -173,6 +241,7 @@ export const Toggle = styled.div `
 	&.active {
 		&::before {
 			${position('3px', '', '', '3px')};
+			background-color: #929292;
 		}
 	}
 `

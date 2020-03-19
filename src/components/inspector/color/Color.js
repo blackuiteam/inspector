@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import classNames from 'classnames';
-import {Toggle, LabelToggle, ToggleTools } from '../app/styles';
+import {Toggle, LabelToggle, ToggleTools } from '../../app/styles';
 import { Row } from './styles';
 
 function Color() {

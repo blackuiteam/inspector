@@ -1,10 +1,10 @@
 import React, { useState } from 'react';
 import classNames from 'classnames';
-import { Row, MiniContainer, Toggle, MiniToggle, LabelToggle, ToggleTools } from '../app/styles';
-import ColorGenerator 	from '../../img/effects/color-generator.png';
-import FaceRefineImg 	from '../../img/effects/face-refinement.png';
-import SkinMaskImg 		from '../../img/effects/skin-mask.png';
-import TextureImg 		from '../../img/effects/texture.png';
+import { Row, MiniContainer, Toggle, MiniToggle, LabelToggle, ToggleTools } from '../../app/styles';
+import ColorGenerator 	from '../../../img/effects/color-generator.png';
+import FaceRefineImg 	from '../../../img/effects/face-refinement.png';
+import SkinMaskImg 		from '../../../img/effects/skin-mask.png';
+import TextureImg 		from '../../../img/effects/texture.png';
 
 function Effects() {
 	const [ faceRefine, setFaceRefine ] = useState(false);
@@ -31,37 +31,37 @@ function Effects() {
 			</Row>
 			<img src={FaceRefineImg} width="294px" style={{'margin':'7px auto 11px auto'}} className={classNames('', faceRefineContent ? "none" : "")}/>
 
-			<MiniContainer className="first">
+			<MiniContainer className={classNames('first', faceRefineContent ? "none" : "")}>
 				<MiniToggle className={classNames('', skinMask ? "active" : "")} onClick={()=> setSkinMask(!skinMask)}>Skin Mask</MiniToggle>
 				<img src={SkinMaskImg} width="294px" style={{'margin':'7px auto 10px auto'}} className={classNames('', skinMask ? "none" : "")}/>
 			</MiniContainer>
 
-			<MiniContainer>
+			<MiniContainer className={classNames('', faceRefineContent ? "none" : "")}>
 				<MiniToggle className={classNames('', texture ? "active" : "")} onClick={()=> setTexture(!texture)}>Texture</MiniToggle>
 				<img src={TextureImg} width="294px" style={{'margin':'6px auto 9px auto'}} className={classNames('', texture ? "none" : "")}/>
 			</MiniContainer>
 
-			<MiniContainer>
+			<MiniContainer className={classNames('', faceRefineContent ? "none" : "")}>
 				<MiniToggle className={classNames('', eyes ? "active" : "")} onClick={()=> setEyes(!eyes)}>Eyes</MiniToggle>
 			</MiniContainer>
 
-			<MiniContainer>
+			<MiniContainer className={classNames('', faceRefineContent ? "none" : "")}>
 				<MiniToggle className={classNames('', colorG ? "active" : "")} onClick={()=> setColorG(!colorG)}>Color grading</MiniToggle>
 			</MiniContainer>
 
-			<MiniContainer>
+			<MiniContainer className={classNames('', faceRefineContent ? "none" : "")}>
 				<MiniToggle className={classNames('', lips ? "active" : "")} onClick={()=> setLips(!lips)}>Lips</MiniToggle>
 			</MiniContainer>
 
-			<MiniContainer>
+			<MiniContainer className={classNames('', faceRefineContent ? "none" : "")}>
 				<MiniToggle className={classNames('', brush ? "active" : "")} onClick={()=> setBrush(!brush)}>Brush</MiniToggle>
 			</MiniContainer>
 
-			<MiniContainer>
+			<MiniContainer className={classNames('', faceRefineContent ? "none" : "")}>
 				<MiniToggle className={classNames('', forehead ? "active" : "")} onClick={()=> setForehead(!forehead)}>Forehead</MiniToggle>
 			</MiniContainer>
 
-			<MiniContainer className="no-border">
+			<MiniContainer className={classNames('no-border', faceRefineContent ? "none" : "")}>
 				<MiniToggle className={classNames('', cheek ? "active" : "")} onClick={()=> setCheek(!cheek)}>Cheek</MiniToggle>
 			</MiniContainer>
 
