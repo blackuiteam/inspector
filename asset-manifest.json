@@ -1,13 +1,13 @@
 {
   "files": {
-    "main.js": "/inspector/static/js/main.dc4bd04a.chunk.js",
-    "main.js.map": "/inspector/static/js/main.dc4bd04a.chunk.js.map",
+    "main.js": "/inspector/static/js/main.1cca6229.chunk.js",
+    "main.js.map": "/inspector/static/js/main.1cca6229.chunk.js.map",
     "runtime-main.js": "/inspector/static/js/runtime-main.ab41d329.js",
     "runtime-main.js.map": "/inspector/static/js/runtime-main.ab41d329.js.map",
     "static/js/2.3caad687.chunk.js": "/inspector/static/js/2.3caad687.chunk.js",
     "static/js/2.3caad687.chunk.js.map": "/inspector/static/js/2.3caad687.chunk.js.map",
     "index.html": "/inspector/index.html",
-    "precache-manifest.f0dc40cc91b6b002c5fce6addff5cb22.js": "/inspector/precache-manifest.f0dc40cc91b6b002c5fce6addff5cb22.js",
+    "precache-manifest.808a46afa2a20b9d2391e057f92f3606.js": "/inspector/precache-manifest.808a46afa2a20b9d2391e057f92f3606.js",
     "service-worker.js": "/inspector/service-worker.js",
     "static/js/2.3caad687.chunk.js.LICENSE.txt": "/inspector/static/js/2.3caad687.chunk.js.LICENSE.txt",
     "static/media/background.png": "/inspector/static/media/background.76688b97.png",
@@ -43,6 +43,6 @@
   "entrypoints": [
     "static/js/runtime-main.ab41d329.js",
     "static/js/2.3caad687.chunk.js",
-    "static/js/main.dc4bd04a.chunk.js"
+    "static/js/main.1cca6229.chunk.js"
   ]
 }
