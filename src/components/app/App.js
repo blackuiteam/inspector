@@ -44,7 +44,7 @@ function App() {
 
 	const [ activeClip, setActiveClip ] = useState(0);
 	const [ activeIndex, setActiveIndex ] = useState(3);
-	const [ activeTextIndex, setTextActiveIndex ] = useState(4);
+	const [ activeTextIndex, setTextActiveIndex ] = useState(0);
 
 	return (
 		<>
