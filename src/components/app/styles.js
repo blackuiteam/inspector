@@ -24,6 +24,7 @@ import TextVideoImg 		from '../../img/nav/text/video.png';
 import TextVideoActiveImg	from '../../img/nav/text/video-active.png';
 
 import Arrow from '../../img/icons/arrow.png';
+import CursorImg from '../../img/common/cursor.png';
 
 import iconAudio 		from '../../img/icons/audio.png';
 import iconAudioActive 	from '../../img/icons/audio_active.png';
@@ -436,4 +437,116 @@ export const MiniToggle = styled.div `
 			transform: rotate(270deg);
 		}
 	}
+`
+
+export const RcSlider = styled.div `
+	/* border: 1px solid red; */
+
+	.rc-slider {
+		${size('100%', '4px', '')};
+		position: relative;
+		margin: 10px 0 10px 0;
+		padding: 0;
+		border: 1px solid #000;
+		border-bottom-left-radius: 2px;
+		border-bottom-right-radius: 2px;
+		-ms-touch-action: none;
+			touch-action: none;
+		box-sizing: border-box;
+		-webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+
+		&.white {
+			.rc-slider-handle {
+				background-color: #fff;
+			}
+
+			.rc-slider-track {
+				background-color: transparent;
+			}
+		}
+	}
+
+	.rc-slider-rail {
+		${size('100%', '2px')};
+		position: absolute;
+		background-color: #28282E;
+	}
+
+	.rc-slider-track {
+		${position('', '', '', '0')};
+		height: 2px;
+		border-radius: 6px;
+		background-color: #E64B3D;
+		opacity: .4;
+	}
+
+	.rc-slider-handle {
+		${size('5px', '4px')};
+		position: absolute;
+		margin-top: -1px;
+		border-radius: 2px;
+		border: solid 1px #000;
+		background-color: #E64B3D;
+		-ms-touch-action: pan-x;
+			touch-action: pan-x;
+		/* cursor: pointer;
+		cursor: -webkit-grab;
+		cursor: grab; */
+	}
+
+	.rc-slider-handle-dragging.rc-slider-handle-dragging.rc-slider-handle-dragging {
+		/* border-color: #57c5f7;
+		box-shadow: 0 0 0 5px #96dbfa; */
+	}
+
+	.rc-slider-handle:focus {
+		outline: none;
+	}
+
+	.rc-slider-handle-click-focused:focus {
+		/* border-color: #96dbfa;
+		box-shadow: unset; */
+	}
+
+	.rc-slider-handle:hover {
+		${size('5px', '9px')};
+		margin-top: -6px;
+		cursor: url('https://files.slack.com/files-pri/T02909Q0K-F010DH0JXSR/cursor.png') 11 12, auto;
+		/* border-color: #57c5f7; */
+	}
+
+	.rc-slider-handle:active {
+		${size('5px', '9px')};
+		margin-top: -6px;
+		cursor: url('https://files.slack.com/files-pri/T02909Q0K-F010DH0JXSR/cursor.png') 11 12, auto;
+		/* cursor: grabbing; */
+		/* border-color: #57c5f7;
+		box-shadow: 0 0 5px #57c5f7; */
+	}
+
+	.rc-slider-mark {
+		${position('18px', '', '', '0')};
+		width: 100%;
+		font-size: 12px;
+	}
+
+	.rc-slider-mark-text {
+		position: absolute;
+		display: inline-block;
+		vertical-align: middle;
+		text-align: center;
+		color: #999;
+		cursor: pointer;
+	}
+
+	.rc-slider-mark-text-active {
+		color: #666;
+	}
+
+	.rc-slider-step {
+		${size('100%', '4px')};
+		position: absolute;
+		background: transparent;
+	}
+
 `
