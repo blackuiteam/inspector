@@ -1,7 +1,11 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "cebbb41aa29f7172965fd2f672e809a1",
+    "revision": "bb048f8005ce28bcc5aeb8cefaff5807",
     "url": "/inspector/index.html"
+  },
+  {
+    "revision": "ee366431eb123a1ae3b8",
+    "url": "/inspector/static/css/main.02e811e5.chunk.css"
   },
   {
     "revision": "bd453c2718c24f7c1ad4",
@@ -12,8 +16,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/inspector/static/js/2.863487cb.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "ab6235b54a870dad054a",
-    "url": "/inspector/static/js/main.cd7f4449.chunk.js"
+    "revision": "ee366431eb123a1ae3b8",
+    "url": "/inspector/static/js/main.d2fbd95c.chunk.js"
   },
   {
     "revision": "87a4976ac38e99492c6f",
@@ -98,6 +102,22 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
     "revision": "89b2873a1c6cdb814b68def033115194",
     "url": "/inspector/static/media/layout.89b2873a.png"
+  },
+  {
+    "revision": "1bf71be111189e76987a4bb9b3115cb7",
+    "url": "/inspector/static/media/opensans-200.1bf71be1.ttf"
+  },
+  {
+    "revision": "629a55a7e793da068dc580d184cc0e31",
+    "url": "/inspector/static/media/opensans-300.629a55a7.ttf"
+  },
+  {
+    "revision": "33f225b8f5f7d6b34a0926f58f96c1e9",
+    "url": "/inspector/static/media/opensans-400.33f225b8.ttf"
+  },
+  {
+    "revision": "50145685042b4df07a1fd19957275b81",
+    "url": "/inspector/static/media/opensans-600.50145685.ttf"
   },
   {
     "revision": "871d7ec624d25bdd30de026adab61d0f",
