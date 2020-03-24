@@ -105,10 +105,11 @@ import iconTransform		from '../../img/icons/transform.png';
 import iconTransformActive 	from '../../img/icons/transform_active.png';
 import iconTransformHover 	from '../../img/icons/transform_active_hover.png';
 
+
 export const GlobalStyle = createGlobalStyle `
 	* {
 		box-sizing: border-box;
-		font-family: "Open Sans";
+		font-family: "OpenSans regular";
 		user-select: none;
 		cursor: default;
 	}
@@ -126,6 +127,30 @@ export const GlobalStyle = createGlobalStyle `
 	}
 
 	.none { display: none; }
+
+	@font-face {
+		font-family: 'OpenSans light';
+		font-weight: 200;
+		src: url('../../fonts/opensans-200.ttf') format('truetype');
+	}
+
+	@font-face {
+		font-family: 'OpenSans regular';
+		font-weight: 300;
+		src: url('../../fonts/opensans-300.ttf') format('truetype');
+	}
+
+	@font-face {
+		font-family: 'OpenSans semibold';
+		font-weight: 400;
+		src: url('../../fonts/opensans-400.ttf') format('truetype');
+	}
+
+	@font-face {
+		font-family: 'OpenSans bold';
+		font-weight: 600;
+		src: url('../../fonts/opensans-600.ttf') format('truetype');
+	}
 `
 
 export const AppContainer = styled.div `
@@ -528,8 +553,8 @@ export const Row = styled.div `
 	&.mini-title {
 		height: 23px;
 		padding: 8px 0 0 16px;
+		font-family: 'OpenSans light';
 		font-size: 10px;
-		font-weight: lighter;
 		color: #979797;
 	}
 
@@ -595,8 +620,8 @@ export const RoundedButton = styled.div `
 	border: 1px solid #43474D;
 	border-radius: 50px;
 	color: #979797;
+	font-family: 'OpenSans light';
 	font-size: 11px;
-	font-weight: lighter;
 	padding: 2px 0 0 0;
 
 	&.center { margin: 0 auto; }
@@ -606,8 +631,8 @@ export const InputLabel = styled.div `
 	${size('auto', '17px', 'block')};
 	${position('2px', '', '', '24px')};
 	color: #979797;
+	font-family: 'OpenSans light';
 	font-size: 11px;
-	font-weight: lighter;
 `
 
 export const Input = styled.input `
@@ -639,8 +664,8 @@ export const Tabs = styled.div `
 		border-top: 1px solid #000;
 		border-bottom: 1px solid #000;
 		text-align: center;
+		font-family: 'OpenSans light';
 		font-size: 11px;
-		font-weight: lighter;
 		color: #979797;
 		padding: 3px 0 0 0;
 
@@ -685,8 +710,8 @@ export const CheckBox = styled.div `
 	margin: 3px 0 0 0;
 	padding: 0 0 0 22px;
 	float: left;
+	font-family: 'OpenSans light';
 	font-size: 11px;
-	font-weight: lighter;
 	color: #979797;
 
 	&:before {
