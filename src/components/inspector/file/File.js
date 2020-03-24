@@ -17,7 +17,7 @@ function File() {
 
 	return (
 		<>
-			<img src={InfoImg} width="263" style={{'margin': '11px auto'}}/>
+			<img src={InfoImg} width="294" style={{'margin': '11px auto'}}/>
 
 			<Row className="header">
 				<LabelToggle>Clip</LabelToggle>

@@ -1,13 +1,73 @@
 import React, { useState } from 'react';
 import classNames from 'classnames';
-import { Row, MiniContainer, Toggle, MiniToggle, LabelToggle, ToggleTools } from '../../app/styles';
+import Slider from 'rc-slider';
+import { CheckBox, Tabs, RoundedButton, InputLabel, Input, RcSlider, Row, MiniToggle, MiniContainer, Toggle, LabelToggle, ToggleTools } from '../../app/styles';
 import ColorGenerator 	from '../../../img/effects/color-generator.png';
 import FaceRefineImg 	from '../../../img/effects/face-refinement.png';
 import SkinMaskImg 		from '../../../img/effects/skin-mask.png';
 import TextureImg 		from '../../../img/effects/texture.png';
 
 function Effects() {
+
+	// MAIN TAB
+	const mainTabs = [
+		{ id: 0, label: "Video" },
+		{ id: 1, label: "Audio" }
+	]
+
+	const [ activeMain, setMainTab ] = useState(0);
+
+	// FACE REFINEMENT
 	const [ faceRefine, setFaceRefine ] = useState(false);
+
+	const [ slider1, setSlider1 ] =  useState(50);
+	const [ handleSlider1, setHandleSlider1 ] = useState(false);
+	function sliderFunc1(value) {
+		setHandleSlider1(true);
+		setSlider1(value);
+	}
+
+	const [ slider2, setSlider2 ] =  useState(50);
+	const [ handleSlider2, setHandleSlider2 ] = useState(false);
+	function sliderFunc2(value) {
+		setHandleSlider2(true);
+		setSlider2(value);
+	}
+
+	const [ slider3, setSlider3 ] =  useState(50);
+	const [ handleSlider3, setHandleSlider3 ] = useState(false);
+	function sliderFunc3(value) {
+		setHandleSlider3(true);
+		setSlider3(value);
+	}
+
+	const [ slider4, setSlider4 ] =  useState(50);
+	const [ handleSlider4, setHandleSlider4 ] = useState(false);
+	function sliderFunc4(value) {
+		setHandleSlider4(true);
+		setSlider4(value);
+	}
+
+	const [ slider5, setSlider5 ] =  useState(50);
+	const [ handleSlider5, setHandleSlider5 ] = useState(false);
+	function sliderFunc5(value) {
+		setHandleSlider5(true);
+		setSlider5(value);
+	}
+
+	const [ check, setCheck ] = useState(false);
+	const [ check1, setCheck1 ] = useState(false);
+	const [ check2, setCheck2 ] = useState(false);
+	const [ check3, setCheck3 ] = useState(false);
+
+	const skinMaskTabs = [
+		{ id: 0, label: "None" },
+		{ id: 1, label: "Internal Skin" },
+		{ id: 2, label: "Input Alpha" }
+	]
+
+	const [ activeSkin, setActiveSkin ] = useState(0);
+
 	const [ faceRefineContent,  setFaceRefineContent ] = useState(false);
 	const [ skinMask, setSkinMask ] = useState(false);
 	const [ texture, setTexture ] = useState(false);
@@ -20,25 +80,99 @@ function Effects() {
 	const [ toggleColorG, setToggleColorG ] = useState(false);
 	const [ colorGenerator, setColorGenerator ] = useState(false);
 
+
 	return (
 		<>
+			{/* TABS */}
+			<Tabs style={{'margin':'10px 25px 9px 15px'}}>
+				{mainTabs.map((tab, i) => (
+					<div className={classNames('btn-tab two', i === activeMain ? "active" : "")} onClick={()=> setMainTab(i)}>{tab.label}</div>
+				))}
+			</Tabs>
+
 			{/* FACE REFINEMENT */}
-			<Row>
-				<Toggle onClick={()=> setFaceRefine(!faceRefine)} className={classNames('', faceRefine ? "active" : "")}/>
+			<Row className="header">
+				<Toggle onClick={()=> setFaceRefine(!faceRefine)} className={faceRefine ? "active" : ""}/>
 				<LabelToggle>Face Refinement</LabelToggle>
 				<ToggleTools className="ic-delete"/>
 				<ToggleTools className={classNames('ic-controls', faceRefineContent ? "active" : "")} onClick={()=> setFaceRefineContent(!faceRefineContent)}/>
 			</Row>
-			<img src={FaceRefineImg} width="294px" style={{'margin':'7px auto 11px auto'}} className={classNames('', faceRefineContent ? "none" : "")}/>
 
+			<RcSlider style={{"margin":"1px 0px 9px 0px"}} className={classNames('', faceRefineContent ? "none" : "")}>
+				<InputLabel>Global blend</InputLabel>
+				<Input className="input" type="text" value={slider1} min="0" max="100" onChange={(event) => setSlider1(event.target.value)}/>
+				<Slider className={classNames('white', handleSlider1 === true ? 'active': '')} onChange={sliderFunc1} startPoint={100} value={slider1} />
+			</RcSlider>
+
+			<Row className="mini-row" style={{"margin":"5px 20px 3px 0px"}}></Row>
+
+			<Row style={{"margin":"0px 0px 2px 0px"}}>
+				<RoundedButton style={{"margin":"0px 20px 0px 0px"}}>Analyze</RoundedButton>
+				<CheckBox className={check ? "active" : ""} onClick={()=> setCheck(!check)}>Show Overlay</CheckBox>
+			</Row>
+
+			{/* NEEDS STYLES */}
 			<MiniContainer className={classNames('first', faceRefineContent ? "none" : "")}>
 				<MiniToggle className={classNames('', skinMask ? "active" : "")} onClick={()=> setSkinMask(!skinMask)}>Skin Mask</MiniToggle>
-				<img src={SkinMaskImg} width="294px" style={{'margin':'7px auto 10px auto'}} className={classNames('', skinMask ? "none" : "")}/>
+
+				<div className={skinMask ? "none" : ""}>
+				<Row className="mini-title" style={{"height":"21px","padding":"3px 0px 0px 2px"}}>Skin Mask Source</Row>
+
+				<Tabs style={{'margin':'0px 5px 7px 0px'}}>
+					{skinMaskTabs.map((tab, i) => (
+						<div className={classNames('btn-tab three', i === activeSkin ? "active" : "")} onClick={()=> setActiveSkin(i)}>{tab.label}</div>
+					))}
+				</Tabs>
+
+				<Row style={{"padding":"0", "height":"25px"}}>
+					<CheckBox className={check1 ? "active" : ""} onClick={()=> setCheck1(!check1)}>Use Mask</CheckBox>
+				</Row>
+
+				<Row style={{"padding":"0", "height":"25px", "margin-bottom": "1px"}}>
+					<RcSlider className={classNames('', faceRefineContent ? "none" : "")}>
+						<InputLabel style={{"left":"9px"}}>Global blend</InputLabel>
+						<Input className="input" style={{"right":"4px"}} type="text" value={slider2} min="0" max="100" onChange={(event) => setSlider2(event.target.value)}/>
+						<Slider style={{"width":"100%","margin":"0px 0px 0px 0px"}}  className={classNames('white', handleSlider2 === true ? 'active': '')} onChange={sliderFunc2} startPoint={100} value={slider2} />
+					</RcSlider>
+				</Row>
+
+				<Row style={{"padding":"0", "height":"25px", "margin-bottom": "2px"}}>
+					<RcSlider className={classNames('', faceRefineContent ? "none" : "")}>
+						<InputLabel style={{"left":"9px"}}>Face Mask Softness</InputLabel>
+						<Input className="input" style={{"right":"4px"}} type="text" value={slider3} min="0" max="100" onChange={(event) => setSlider3(event.target.value)}/>
+						<Slider style={{"width":"100%","margin":"0px 0px 0px 0px"}}  className={classNames('white', handleSlider3 === true ? 'active': '')} onChange={sliderFunc3} startPoint={100} value={slider3} />
+					</RcSlider>
+				</Row>
+
+				<Row style={{"padding":"0", "height":"25px"}}>
+					<CheckBox className={check2 ? "active" : ""} onClick={()=> setCheck2(!check2)}>Adjust Mask</CheckBox>
+				</Row>
+
+				<Row style={{"padding":"0", "height":"25px", "margin-bottom": "1px"}}>
+					<RcSlider className={classNames('', faceRefineContent ? "none" : "")}>
+						<InputLabel style={{"left":"9px"}}>Denoise Mask</InputLabel>
+						<Input className="input" style={{"right":"4px"}} type="text" value={slider4} min="0" max="100" onChange={(event) => setSlider4(event.target.value)}/>
+						<Slider style={{"width":"100%","margin":"0px 0px 0px 0px"}}  className={classNames('white', handleSlider4 === true ? 'active': '')} onChange={sliderFunc4} startPoint={100} value={slider4} />
+					</RcSlider>
+				</Row>
+
+				<Row style={{"padding":"0", "height":"25px", "margin-bottom": "2px"}}>
+					<RcSlider className={classNames('', faceRefineContent ? "none" : "")}>
+						<InputLabel style={{"left":"9px"}}>Refine Mask</InputLabel>
+						<Input className="input" style={{"right":"4px"}} type="text" value={slider5} min="0" max="100" onChange={(event) => setSlider5(event.target.value)}/>
+						<Slider style={{"width":"100%","margin":"0px 0px 0px 0px"}}  className={classNames('white', handleSlider5 === true ? 'active': '')} onChange={sliderFunc5} startPoint={100} value={slider5} />
+					</RcSlider>
+				</Row>
+
+				<Row style={{"padding":"0", "height":"25px", "margin-bottom": "6px"}}>
+					<CheckBox className={check3 ? "active" : ""} onClick={()=> setCheck3(!check3)}>Show Mask</CheckBox>
+				</Row>
+				</div>
 			</MiniContainer>
 
 			<MiniContainer className={classNames('', faceRefineContent ? "none" : "")}>
 				<MiniToggle className={classNames('', texture ? "active" : "")} onClick={()=> setTexture(!texture)}>Texture</MiniToggle>
-				<img src={TextureImg} width="294px" style={{'margin':'6px auto 9px auto'}} className={classNames('', texture ? "none" : "")}/>
+				<img src={TextureImg} width="294px" style={{'margin':'6px auto 10px auto'}} className={classNames('', texture ? "none" : "")}/>
 			</MiniContainer>
 
 			<MiniContainer className={classNames('', faceRefineContent ? "none" : "")}>
@@ -72,7 +206,7 @@ function Effects() {
 				<ToggleTools className="ic-delete"/>
 				<ToggleTools className={classNames('ic-controls', colorGenerator ? "active" : "")} onClick={()=> setColorGenerator(!colorGenerator)}/>
 			</Row>
-			<img src={ColorGenerator} width="294px" className={classNames('', colorGenerator ? "none" : "")} style={{'margin':'6px auto 19px auto'}}/>
+			<img src={ColorGenerator} width="294px" className={classNames('', colorGenerator ? "none" : "")} style={{'margin':'6px 0 19px 15px'}}/>
 		</>
 	)
 }

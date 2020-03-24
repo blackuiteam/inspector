@@ -32,42 +32,42 @@ function TextFrame() {
 				<LabelToggle>Layout</LabelToggle>
 				<ToggleTools onClick={()=> setLayout(!layoutContent)} className={classNames('ic-controls', layoutContent ? "active" : "")}/>
 			</Row>
-			<img  src={LayoutImg} width="294" style={{'margin': '1px auto 8px auto'}} className={classNames('', layoutContent ? "none" : "")}/>
+			<img  src={LayoutImg} width="294" style={{'margin': '5px auto 9px 15px'}} className={classNames('', layoutContent ? "none" : "")}/>
 
 			<Row className="header">
 				<Toggle onClick={()=> setToggleRotation(!toggleRotation)} className={classNames('', toggleRotation ? "active" : "")}/>
 				<LabelToggle>Rotation</LabelToggle>
 				<ToggleTools onClick={()=> setRotation(!rotationContent)} className={classNames('ic-controls', rotationContent ? "active" : "")}/>
 			</Row>
-			<img  src={RotationImg} width="294" style={{'margin': '1px auto 9px auto'}} className={classNames('', rotationContent ? "none" : "")}/>
+			<img  src={RotationImg} width="294" style={{'margin': '1px auto 9px 15px'}} className={classNames('', rotationContent ? "none" : "")}/>
 
 			<Row className="header">
 				<Toggle onClick={()=> setToggleBackground(!toggleBackground)} className={classNames('', toggleBackground ? "active" : "")}/>
 				<LabelToggle>Background</LabelToggle>
 				<ToggleTools onClick={()=> setBackground(!backgroundContent)} className={classNames('ic-controls', backgroundContent ? "active" : "")}/>
 			</Row>
-			<img  src={BackgroundImg} width="294" style={{'margin': '6px auto 9px auto'}} className={classNames('', backgroundContent ? "none" : "")}/>
+			<img  src={BackgroundImg} width="294" style={{'margin': '6px auto 9px 15px'}} className={classNames('', backgroundContent ? "none" : "")}/>
 
 			<Row className="header">
 				<Toggle onClick={()=> setToggleTransform(!toggleTransform)} className={classNames('', toggleTransform ? "active" : "")}/>
 				<LabelToggle>Transform</LabelToggle>
 				<ToggleTools onClick={()=> setTransform(!transformContent)} className={classNames('ic-controls', transformContent ? "active" : "")}/>
 			</Row>
-			<img  src={TransformImg} width="294" style={{'margin': '1px auto 9px auto'}} className={classNames('', transformContent ? "none" : "")}/>
+			<img  src={TransformImg} width="294" style={{'margin': '1px auto 9px 15px'}} className={classNames('', transformContent ? "none" : "")}/>
 
 			<Row className="header">
 				<Toggle onClick={()=> setToggleShear(!toggleShear)} className={classNames('', toggleShear ? "active" : "")}/>
 				<LabelToggle>Shear</LabelToggle>
 				<ToggleTools onClick={()=> setShear(!shearContent)} className={classNames('ic-controls', shearContent ? "active" : "")}/>
 			</Row>
-			<img  src={ShearImg} width="294" style={{'margin': '6px auto 9px auto'}} className={classNames('', shearContent ? "none" : "")}/>
+			<img  src={ShearImg} width="294" style={{'margin': '6px auto 9px 15px'}} className={classNames('', shearContent ? "none" : "")}/>
 
 			<Row className="header">
 				<Toggle onClick={()=> setToggleSize(!toggleSize)} className={classNames('', toggleSize ? "active" : "")}/>
 				<LabelToggle>Size</LabelToggle>
 				<ToggleTools onClick={()=> setSize(!sizeContent)} className={classNames('ic-controls', sizeContent ? "active" : "")}/>
 			</Row>
-			<img  src={SizeImg} width="294" style={{'margin': '6px auto 19px auto'}} className={classNames('', sizeContent ? "none" : "")}/>
+			<img  src={SizeImg} width="294" style={{'margin': '6px auto 19px 15px'}} className={classNames('', sizeContent ? "none" : "")}/>
 		</>
 	)
 }

@@ -18,7 +18,7 @@ function TextText() {
 				<LabelToggle>Text</LabelToggle>
 				<ToggleTools className={classNames('ic-controls', textContent ? "active" : "")} onClick={()=> setTextContent(!textContent)}/>
 			</Row>
-			<img  src={TextTextImg} width="294" style={{'margin': '1px auto 10px auto'}} className={classNames('', textContent ? "none" : "")}/>
+			<img  src={TextTextImg} width="294" style={{'margin': '1px auto 10px 15px'}} className={classNames('', textContent ? "none" : "")}/>
 
 			<MiniContainer className="first">
 				<MiniToggle className={classNames('', textTabSpacing ? "active" : "")} onClick={()=> setTabSpacing(!textTabSpacing)}>Tab Spacing</MiniToggle>

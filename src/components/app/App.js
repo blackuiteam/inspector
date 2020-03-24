@@ -13,7 +13,13 @@ import TextStyle 	from '../text/style';
 import TextSettings from '../text/settings';
 import TextVideo 	from '../text/video';
 
-import { AppContainer, Wrapper, ClipsWrapper, GlobalStyle, Header, Navigation, NavItem, NavTextItem } from './styles';
+import GeneratorSizing from '../generator/sizing';
+import GeneratorVideo from '../generator/video';
+
+import TransitionVideo from '../transition/video';
+import TransitionAudio from '../transition/audio';
+
+import { AppContainer, Wrapper, ClipsWrapper, GlobalStyle, Header, Navigation, NavItem, NavTextItem, NavGenItem, NavTransItem } from './styles';
 import { ClipsNavigation } from '../inspector/clips/styles';
 
 function App() {
@@ -25,14 +31,6 @@ function App() {
 		{ id: 3, },
 	]
 
-	const textNavigation = [
-		{ id: 0, label: 'Text', 	component: <TextText/> },
-		{ id: 0, label: 'Frame', 	component: <TextFrame/> },
-		{ id: 0, label: 'Style', 	component: <TextStyle/> },
-		{ id: 0, label: 'Settings', component: <TextSettings/> },
-		{ id: 0, label: 'Video', 	component: <TextVideo/> },
-	]
-
 	const InspectorNavigation = [
 		{ id: 0, label: 'Video', 	component: <Video/> },
 		{ id: 1, label: 'Sizing', 	component: <Sizing/> },
@@ -42,9 +40,29 @@ function App() {
 		{ id: 5, label: 'File', 	component: <File/> },
 	]
 
+	const textNavigation = [
+		{ id: 0, label: 'Text', 	component: <TextText/> },
+		{ id: 0, label: 'Frame', 	component: <TextFrame/> },
+		{ id: 0, label: 'Style', 	component: <TextStyle/> },
+		{ id: 0, label: 'Settings', component: <TextSettings/> },
+		{ id: 0, label: 'Video', 	component: <TextVideo/> },
+	]
+
+	const generatorNavigation = [
+		{ id: 0, label: 'Video', 	component: <GeneratorVideo/> },
+		{ id: 1, label: 'Sizing', 	component: <GeneratorSizing/> },
+	]
+
+	const transitionNavigation = [
+		{ id: 0, label: 'Video', 	component: <TransitionVideo/> },
+		{ id: 0, label: 'Audio', 	component: <TransitionAudio/> },
+	]
+
 	const [ activeClip, setActiveClip ] = useState(0);
 	const [ activeIndex, setActiveIndex ] = useState(0);
 	const [ activeTextIndex, setTextActiveIndex ] = useState(0);
+	const [ activeGenIndex, setGenActiveIndex ] = useState(0);
+	const [ activeTransIndex, setTransActiveIndex ] = useState(0);
 
 	return (
 		<>
@@ -93,6 +111,46 @@ function App() {
 					{/* COMPONENTS */}
 					{textNavigation.map((compText, i) => (
 						<div className={classNames('', i !== activeTextIndex ? "none": "")}>{compText.component}</div>
+					))}
+				</Wrapper>
+
+				{/* GENERATOR */}
+				<Wrapper className={classNames('', activeClip !== 2 ? "none" : "")}>
+					{/* HEADER */}
+					<Header>Generator</Header>
+
+					{/* NAVIGATION */}
+					<Navigation>
+						{generatorNavigation.map((navGen, i)=>(
+							<NavGenItem onClick={()=> setGenActiveIndex(i)} className={classNames('', i === activeGenIndex ? 'active' : '')}>
+								<span>{navGen.label}</span>
+							</NavGenItem>
+						))}
+					</Navigation>
+
+					{/* COMPONENTS */}
+					{generatorNavigation.map((compGen, i) => (
+						<div className={classNames('', i !== activeGenIndex ? "none": "")}>{compGen.component}</div>
+					))}
+				</Wrapper>
+
+				{/* TRANSITIONS */}
+				<Wrapper className={classNames('', activeClip !== 3 ? "none" : "")}>
+					{/* HEADER */}
+					<Header>Transition</Header>
+
+					{/* NAVIGATION */}
+					<Navigation>
+						{transitionNavigation.map((navTrans, i)=>(
+							<NavTransItem onClick={()=> setTransActiveIndex(i)} className={classNames('', i === activeTransIndex ? 'active' : '')}>
+								<span>{navTrans.label}</span>
+							</NavTransItem>
+						))}
+					</Navigation>
+
+					{/* COMPONENTS */}
+					{transitionNavigation.map((compText, i) => (
+						<div className={classNames('', i !== activeTransIndex ? "none": "")}>{compText.component}</div>
 					))}
 				</Wrapper>
 			</AppContainer>

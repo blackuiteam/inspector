@@ -37,60 +37,60 @@ function TextSettings() {
 	return (
 		<>
 			<Row>
-				<Toggle onClick={()=> setToggleImage(!toggleImage)} className={classNames('', toggleImage ? "active" : "")}/>
-				<LabelToggle>Image</LabelToggle>
+				{/* <Toggle onClick={()=> setToggleImage(!toggleImage)} className={classNames('', toggleImage ? "active" : "")}/> */}
+				<LabelToggle style={{"margin":"8px 0 0 0px"}}>Image</LabelToggle>
 				<ToggleTools onClick={()=> setImage(!imageContent)} className={classNames('ic-controls', imageContent ? "active" : "")}/>
 			</Row>
-			<img  src={ImageImg} width="294" style={{'margin': '3px auto 11px auto'}} className={classNames('', imageContent ? "none" : "")}/>
+			<img  src={ImageImg} width="294" style={{'margin': '3px auto 11px 15px'}} className={classNames('', imageContent ? "none" : "")}/>
 
 			<Row className="header">
 				<Toggle onClick={()=> setToggleSrcColorSpace(!toggleSrcColorSpace)} className={classNames('', toggleSrcColorSpace ? "active" : "")}/>
 				<LabelToggle>Source Color Space</LabelToggle>
 				<ToggleTools onClick={()=> setSrcColorSpace(!srcColorSpaceContent)} className={classNames('ic-controls', srcColorSpaceContent ? "active" : "")}/>
 			</Row>
-			<img  src={SourceColorSpaceImg} width="294" style={{'margin': '3px auto 11px auto'}} className={classNames('', srcColorSpaceContent ? "none" : "")}/>
+			<img  src={SourceColorSpaceImg} width="294" style={{'margin': '5px auto 10px 15px'}} className={classNames('', srcColorSpaceContent ? "none" : "")}/>
 
 			<Row className="header">
 				<Toggle onClick={()=> setToggleSrcGammaSpace(!toggleSrcGammaSpace)} className={classNames('', toggleSrcGammaSpace ? "active" : "")}/>
 				<LabelToggle>Source Gamma Space</LabelToggle>
 				<ToggleTools onClick={()=> setSrcGammaSpace(!srcGammaSpaceContent)} className={classNames('ic-controls', srcGammaSpaceContent ? "active" : "")}/>
 			</Row>
-			<img  src={SourceGammaSpaceImg} width="294" style={{'margin': '3px auto 11px auto'}} className={classNames('', srcGammaSpaceContent ? "none" : "")}/>
+			<img  src={SourceGammaSpaceImg} width="294" style={{'margin': '7px auto 12px 15px'}} className={classNames('', srcGammaSpaceContent ? "none" : "")}/>
 
 			<Row className="header">
 				<Toggle onClick={()=> setToggleSettings(!toggleSettings)} className={classNames('', toggleSettings ? "active" : "")}/>
 				<LabelToggle>Settings</LabelToggle>
 				<ToggleTools onClick={()=> setSettings(!settingsContent)} className={classNames('ic-controls', settingsContent ? "active" : "")}/>
 			</Row>
-			<img  src={SettingsImg} width="294" style={{'margin': '3px auto 11px auto'}} className={classNames('', settingsContent ? "none" : "")}/>
+			<img  src={SettingsImg} width="294" style={{'margin': '7px auto 12px 15px'}} className={classNames('', settingsContent ? "none" : "")}/>
 
 			<Row className="header">
 				<Toggle onClick={()=> setToggleComments(!toggleComments)} className={classNames('', toggleComments ? "active" : "")}/>
 				<LabelToggle>Comments</LabelToggle>
 				<ToggleTools onClick={()=> setComments(!commentsContent)} className={classNames('ic-controls', commentsContent ? "active" : "")}/>
 			</Row>
-			<img  src={TextFieldImg} width="294" style={{'margin': '3px auto 11px auto'}} className={classNames('', commentsContent ? "none" : "")}/>
+			<img  src={TextFieldImg} width="294" style={{'margin': '2px auto 8px 15px'}} className={classNames('', commentsContent ? "none" : "")}/>
 
 			<Row className="header">
 				<Toggle onClick={()=> setToggleFrame(!toggleFrame)} className={classNames('', toggleFrame ? "active" : "")}/>
 				<LabelToggle>Frame Render Script</LabelToggle>
 				<ToggleTools onClick={()=> setFrame(!frameContent)} className={classNames('ic-controls', frameContent ? "active" : "")}/>
 			</Row>
-			<img  src={TextFieldImg} width="294" style={{'margin': '3px auto 11px auto'}} className={classNames('', frameContent ? "none" : "")}/>
+			<img  src={TextFieldImg} width="294" style={{'margin': '2px auto 8px 15px'}} className={classNames('', frameContent ? "none" : "")}/>
 
 			<Row className="header">
 				<Toggle onClick={()=> setToggleStart(!toggleStart)} className={classNames('', toggleStart ? "active" : "")}/>
 				<LabelToggle>Start Render Script</LabelToggle>
 				<ToggleTools onClick={()=> setStart(!startContent)} className={classNames('ic-controls', startContent ? "active" : "")}/>
 			</Row>
-			<img  src={TextFieldImg} width="294" style={{'margin': '3px auto 11px auto'}} className={classNames('', startContent ? "none" : "")}/>
+			<img  src={TextFieldImg} width="294" style={{'margin': '2px auto 8px 15px'}} className={classNames('', startContent ? "none" : "")}/>
 
 			<Row className="header">
 				<Toggle onClick={()=> setToggleEnd(!toggleEnd)} className={classNames('', toggleEnd ? "active" : "")}/>
 				<LabelToggle>End Render Script</LabelToggle>
 				<ToggleTools onClick={()=> setEnd(!endContent)} className={classNames('ic-controls', endContent ? "active" : "")}/>
 			</Row>
-			<img  src={TextFieldImg} width="294" style={{'margin': '3px auto 11px auto'}} className={classNames('', endContent ? "none" : "")}/>
+			<img  src={TextFieldImg} width="294" style={{'margin': '2px auto 18px 15px'}} className={classNames('', endContent ? "none" : "")}/>
 		</>
 	)
 }
