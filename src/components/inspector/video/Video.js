@@ -4,10 +4,12 @@ import classNames from 'classnames';
 import { RoundedButton, InputLabel, Input, RcSlider, Row, MiniContainer, Toggle, MiniToggle, LabelToggle, ToggleTools } from '../../app/styles';
 import DropdownNormal from '../../../img/dropdown/dropdown-normal.png';
 import DropdownPerspective from '../../../img/dropdown/dropdown-perspective-group.png';
-import SpeedChange from '../../../img/video/speed-change.png';
+import SpeedChange1 from '../../../img/video/speed-change-01.png';
+import SpeedChange2 from '../../../img/video/speed-change-02.png';
 import LensCorrection from '../../../img/video/lens-correction.png';
 import Attributes from '../../../img/video/attributes.png';
-import Dynamic from '../../../img/video/dynamic-zoom.png';
+import Dynamic1 from '../../../img/video/dynamic-zoom-01.png';
+import Dynamic2 from '../../../img/video/dynamic-zoom-02.png';
 
 function Video() {
 
@@ -15,13 +17,15 @@ function Video() {
 	const [ composite, setComposite ] = useState(false);
 
 	const [ toggleDynamic, setToggleDynamic ] = useState(false);
-	const [ dynamic, setDynamic ] = useState(false);
+	const [ dynamic1, setDynamic1 ] = useState(false);
+	const [ dynamic2, setDynamic2 ] = useState(false);
 
 	const [ toggleStablization, setToggleStablization ] = useState(false);
 	const [ stablization, setStablization ] = useState(false);
 
 	const [ toggleSpeedChange, setToggleSpeedChange ] = useState(false);
-	const [ speedChange, setSpeedChange] = useState(false);
+	const [ speedChange1, setSpeedChange1] = useState(false);
+	const [ speedChange2, setSpeedChange2] = useState(false);
 
 	const [ toggleLens, setToggleLens ] = useState(false);
 	const [ lens, setLens] = useState(false);
@@ -43,6 +47,7 @@ function Video() {
 	function sliderFunc(value) {
 		setHandleSlider(true);
 		setSlider(value);
+		console.log("handler" + handleSlider);
 	}
 
 	function sliderFunc1(value) { setSlider1(value); }
@@ -69,7 +74,7 @@ function Video() {
 
 			<RcSlider style={{"margin":"0px 0px 9px 0px"}} className={composite ? "none" : ""}>
 				<InputLabel>Opacity</InputLabel>
-				<Input className="input" type="text" value={slider} min="0" max="100" onChange={(event) => setSlider(event.target.value)}/>
+				<Input className={classNames("input")} type="text" value={slider} min="0" max="100" onChange={(event) => setSlider(event.target.value)}/>
 				<Slider onChange={sliderFunc} startPoint={100} value={slider} />
 			</RcSlider>
 
@@ -77,10 +82,11 @@ function Video() {
 			<Row className="header">
 				<Toggle onClick={()=> setToggleDynamic(!toggleDynamic)} className={classNames('', toggleDynamic ? "active" : "")}/>
 				<LabelToggle>Dynamic Zoom</LabelToggle>
-				<ToggleTools className={'ic-controls'}/>
-				<ToggleTools className={classNames('ic-dynamic', dynamic ? "active" : "")} onClick={()=> setDynamic(!dynamic)}/>
+				<ToggleTools className={classNames('ic-controls', dynamic2 ? "active" : "")} onClick={()=> setDynamic2(!dynamic2)}/>
+				<ToggleTools className={classNames('ic-dynamic', dynamic1 ? "active" : "")} onClick={()=> setDynamic1(!dynamic1)}/>
 			</Row>
-			<img src={Dynamic} width="296" style={{"margin":"0px 0px 9px 15px"}} className={dynamic ? "none" : ""}/>
+			<img src={Dynamic1} width="296" style={{"margin":"0px 0px 9px 15px"}} className={dynamic1 ? "none" : ""}/>
+			<img src={Dynamic2} width="294" style={{"margin":"0px 0px 9px 15px"}} className={dynamic2 ? "none" : ""}/>
 
 			{/* STABLIZATION */}
 			<Row className="header">
@@ -119,10 +125,11 @@ function Video() {
 			<Row className="header">
 				<Toggle onClick={()=> setToggleSpeedChange(!toggleSpeedChange)} className={classNames('', toggleSpeedChange ? "active" : "")}/>
 				<LabelToggle>Speed Change</LabelToggle>
-				<ToggleTools className={classNames('ic-controls', speedChange ? "active" : "")} onClick={()=> setSpeedChange(!speedChange)}/>
-				<ToggleTools className={classNames('ic-speed')}/>
+				<ToggleTools className={classNames('ic-controls', speedChange1 ? "active" : "")} onClick={()=> setSpeedChange1(!speedChange1)}/>
+				<ToggleTools className={classNames('ic-speed', speedChange2 ? "active" : "")} onClick={()=> setSpeedChange2(!speedChange2)}/>
 			</Row>
-			<img src={SpeedChange} width="294" style={{"margin":"7px 0px 9px 15px"}} className={speedChange ? "none" : ""}/>
+			<img src={SpeedChange1} width="294" style={{"margin":"6px 0px 10px 15px"}} className={speedChange1 ? "none" : ""}/>
+			<img src={SpeedChange2} width="296" style={{"margin":"6px 0px 9px 14px"}} className={speedChange2 ? "none" : ""}/>
 
 			{/* LENS CORRECTION */}
 			<Row className="header">
@@ -131,7 +138,7 @@ function Video() {
 				<ToggleTools className={classNames('ic-controls', lens ? "active" : "")} onClick={()=> setLens(!lens)}/>
 			</Row>
 			<div className={lens ? "none" : ""}>
-				<img src={LensCorrection} width="294" style={{"margin":"7px 0px 5px 15px"}}/>
+				<img src={LensCorrection} width="294" style={{"margin":"6px 0px 6px 15px"}}/>
 
 				<RcSlider style={{"margin":"0px 0px 8px 0px"}}>
 					<InputLabel>Distortion</InputLabel>
@@ -146,11 +153,10 @@ function Video() {
 
 			{/* ATTRIBUTES */}
 			<Row className="header">
-				{/* <Toggle onClick={()=> setToggleSpeedChange(!toggleSpeedChange)} className={classNames('', toggleSpeedChange ? "active" : "")}/> */}
-				<LabelToggle style={{"margin":"8px 0 0 0px"}}>Attributes</LabelToggle>
+				<LabelToggle style={{"margin":"6px 0 0 1px"}}>Attributes</LabelToggle>
 				<ToggleTools className={classNames('ic-controls', attr ? "active" : "")} onClick={()=> setAttr(!attr)}/>
 			</Row>
-			<img src={Attributes} width="294" style={{"margin":"5px 0px 18px 15px"}} className={attr ? "none" : ""}/>
+			<img src={Attributes} width="294" style={{"margin":"4px 0px 19px 15px"}} className={attr ? "none" : ""}/>
 		</>
 	)
 }

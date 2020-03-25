@@ -2,9 +2,9 @@ import React, { useState } from 'react';
 import classNames from 'classnames';
 import { Row, MiniContainer, MiniToggle, LabelToggle, ToggleTools } from '../../app/styles';
 
-import TextTextImg from '../../../img/text/text/text-text.png';
-import TextTabSpacingImg from '../../../img/text/text/text-tab-spacing.png';
-import TextAdvancedImg from '../../../img/text/text/text-advanced.png';
+import TextTextImg 			from '../../../img/text/text/text-text.png';
+import TextTabSpacingImg 	from '../../../img/text/text/text-tab-spacing.png';
+import TextAdvancedImg 		from '../../../img/text/text/text-advanced.png';
 
 function TextText() {
 
@@ -15,19 +15,19 @@ function TextText() {
 	return (
 		<>
 			<Row>
-				<LabelToggle>Text</LabelToggle>
+				<LabelToggle style={{"margin":"6px 0 0 0px"}}>Text</LabelToggle>
 				<ToggleTools className={classNames('ic-controls', textContent ? "active" : "")} onClick={()=> setTextContent(!textContent)}/>
 			</Row>
-			<img  src={TextTextImg} width="294" style={{'margin': '1px auto 10px 15px'}} className={classNames('', textContent ? "none" : "")}/>
+			<img  src={TextTextImg} width="294" style={{'margin': '0px auto 10px 15px'}} className={classNames('', textContent ? "none" : "")}/>
 
-			<MiniContainer className="first">
+			<MiniContainer className={classNames('first', textContent ? "none" : "")}>
 				<MiniToggle className={classNames('', textTabSpacing ? "active" : "")} onClick={()=> setTabSpacing(!textTabSpacing)}>Tab Spacing</MiniToggle>
-				<img  src={TextTabSpacingImg} width="294" style={{'margin': '1px auto 10px auto'}} className={classNames('', textTabSpacing ? "none" : "")}/>
+				<img  src={TextTabSpacingImg} width="294" style={{'margin': '5px 0px 9px -1px'}} className={classNames('', textTabSpacing ? "none" : "")}/>
 			</MiniContainer>
 
-			<MiniContainer className="no-border">
+			<MiniContainer className={classNames('no-border', textContent ? "none" : "")}>
 				<MiniToggle className={classNames('', textAdvanced ? "active" : "")} onClick={()=> setAdvanced(!textAdvanced)}>Advanced</MiniToggle>
-				<img  src={TextAdvancedImg} width="294" style={{'margin': '1px auto 10px auto'}} className={classNames('', textAdvanced ? "none" : "")}/>
+				<img  src={TextAdvancedImg} width="294" style={{'margin': '6px 0px 20px -1px'}} className={classNames('', textAdvanced ? "none" : "")}/>
 			</MiniContainer>
 		</>
 	)

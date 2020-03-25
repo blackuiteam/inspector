@@ -61,7 +61,7 @@ function App() {
 	const [ activeClip, setActiveClip ] = useState(0);
 	const [ activeIndex, setActiveIndex ] = useState(0);
 	const [ activeTextIndex, setTextActiveIndex ] = useState(0);
-	const [ activeGenIndex, setGenActiveIndex ] = useState(0);
+	const [ activeGenIndex, setGenActiveIndex ] = useState(1);
 	const [ activeTransIndex, setTransActiveIndex ] = useState(0);
 
 	return (
@@ -77,7 +77,7 @@ function App() {
 				{/* INSPECTOR */}
 				<Wrapper className={classNames('', activeClip !== 0 ? "none" : "")}>
 					{/* HEADER */}
-					<Header>A021_06141404_C011.braw</Header>
+					<Header>D004_07081656_C011.braw</Header>
 
 					{/* NAVIGATION */}
 					<Navigation>
@@ -97,7 +97,7 @@ function App() {
 				{/* TEXT TEMPLATE */}
 				<Wrapper className={classNames('', activeClip !== 1 ? "none" : "")}>
 					{/* HEADER */}
-					<Header>Text Template</Header>
+					<Header>Fusion Title - Text+</Header>
 
 					{/* NAVIGATION */}
 					<Navigation>

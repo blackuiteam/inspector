@@ -30,12 +30,24 @@ import SliderTintImg 		from '../../img/common/slider-tint.png';
 import SliderYellowImg 		from '../../img/common/slider-yellow.png';
 
 // NAVIGATION INSPECTOR
-import AudioImg 	from '../../img/nav/audio.png';
-import ColorImg 	from '../../img/nav/color.png';
-import EffectsImg 	from '../../img/nav/effects.png';
-import FileImg 		from '../../img/nav/file.png';
-import SizingImg 	from '../../img/nav/sizing.png';
-import VideoImg 	from '../../img/nav/video.png';
+import VideoImg 		from '../../img/nav/video.png';
+import VideoActiveImg 	from '../../img/nav/video-active.png';
+
+import SizingImg 		from '../../img/nav/sizing.png';
+import SizingActiveImg 	from '../../img/nav/sizing-active.png';
+
+import AudioImg 		from '../../img/nav/audio.png';
+import AudioActiveImg 	from '../../img/nav/audio-active.png';
+
+import ColorImg 		from '../../img/nav/color.png';
+import ColorActiveImg 	from '../../img/nav/color-active.png';
+
+import EffectsImg 		from '../../img/nav/effects.png';
+import EffectsActiveImg from '../../img/nav/effects-active.png';
+
+import FileImg 			from '../../img/nav/file.png';
+import FileActiveImg 	from '../../img/nav/file-active.png';
+
 
 // NAVIGATION TEXT TEMPLATE
 import TextImg 				from '../../img/nav/text/text.png';
@@ -174,8 +186,7 @@ export const ClipsWrapper = styled.div `
 export const Header = styled.div `
 	${size('100%', '24px')};
 	display: flex;
-	align-items: center;
-	padding: 0 0 0 10px;
+	padding: 2px 0 0 9px;
 	font-size: 12px;
 	background-color: #212126;
 	border-bottom: 1px solid #000;
@@ -196,45 +207,74 @@ export const NavItem = styled.div `
 	display: block;
 	float: left;
 
-	&.active {
-		box-shadow: inset 0px -2px 0px 0px rgba(230,75,61,1);
-
-		span {
-			color: #fff;
-		}
-	}
-
-	:nth-child(1) {
-		${bgimage(VideoImg,'no-repeat', '13px 9px', '21px 14px')}
-	};
-
-	:nth-child(2) {
-		${bgimage(SizingImg,'no-repeat', '13px 9px', '21px 14px')}
-	};
-
-	:nth-child(3) {
-		${bgimage(AudioImg,'no-repeat', '15px 9px', '15px 16px')}
-	}
-
-	:nth-child(4) {
-		${bgimage(ColorImg,'no-repeat', '15px 9px', '17px 17px')}
-	}
-
-	:nth-child(5) {
-		${bgimage(EffectsImg,'no-repeat', '15px 8px', '19px 20px')}
-	}
-
-	:nth-child(6) {
-		${bgimage(FileImg,'no-repeat', '12px 9px', '25px 16px')}
-	}
-
 	> span {
-		${position('', '', '5px', '0px')};
+		${position('', '', '7px', '0px')};
 		display: block;
 		width: 100%;
 		font-size: 10px;
 		text-align: center;
 		color: #828282;
+	}
+
+	&.active {
+		&:before {
+			content: "";
+			${size('40px', '2px')};
+			${position('', '', '1px', '3px')};
+			background-color: #E64B3D;
+		}
+
+		span {
+			color: #fff;
+		}
+
+		:nth-child(1) {
+			${bgimage(VideoActiveImg,'no-repeat', '11px 6px', '24px 18px')}
+		};
+
+		:nth-child(2) {
+			${bgimage(SizingActiveImg,'no-repeat', '11px 7px', '25px 16px')}
+		};
+
+		:nth-child(3) {
+			${bgimage(AudioActiveImg,'no-repeat', '11px 5px', '25px 19px')}
+		}
+
+		:nth-child(4) {
+			${bgimage(ColorActiveImg,'no-repeat', '12px 4px', '23px 21px')}
+		}
+
+		:nth-child(5) {
+			${bgimage(EffectsActiveImg,'no-repeat', '10px 4px', '25px 21px')}
+		}
+
+		:nth-child(6) {
+			${bgimage(FileActiveImg,'no-repeat', '11px 4px', '25px 21px')}
+		}
+	}
+
+	:nth-child(1) {
+		${bgimage(VideoImg,'no-repeat', '13px 8px', '21px 13px')}
+	};
+
+	:nth-child(2) {
+		${bgimage(SizingImg,'no-repeat', '13px 8px', '21px 13px')}
+	};
+
+	:nth-child(3) {
+		${bgimage(AudioImg,'no-repeat', '11px 5px', '25px 19px')}
+	}
+
+	:nth-child(4) {
+		${bgimage(ColorImg,'no-repeat', '11px 4px', '25px 21px')}
+	}
+
+	:nth-child(5) {
+		${bgimage(EffectsImg,'no-repeat', '11px 4px', '25px 21px')}
+	}
+
+	:nth-child(6) {
+		${bgimage(FileImg,'no-repeat', '11px 4px', '25px 21px')}
 	}
 `
 
@@ -244,12 +284,54 @@ export const NavTextItem = styled.div `
 	display: block;
 	float: left;
 
+	> span {
+		${position('', '', '6px', '0px')};
+		display: block;
+		width: 100%;
+		font-size: 10px;
+		text-align: center;
+		color: #828282;
+	}
+
+	&.active {
+		&:before {
+			content: "";
+			${size('40px', '2px')};
+			${position('', '', '1px', '3px')};
+			background-color: #E64B3D;
+		}
+
+		:nth-child(1) {
+			${bgimage(TextActiveImg,'no-repeat', '15px 7px', '16px 18px')}
+		};
+
+		:nth-child(2) {
+			${bgimage(FrameActiveImg,'no-repeat', '8px 0', '30px 32px')}
+		};
+
+		:nth-child(3) {
+			${bgimage(StyleActiveImg,'no-repeat', '9px 0', '30px 32px')}
+		};
+
+		:nth-child(4) {
+			${bgimage(SettingsActiveImg,'no-repeat', '8px 0', '30px 32px')}
+		};
+
+		:nth-child(5) {
+			${bgimage(TextVideoActiveImg,'no-repeat', '11px 7px', '24px 18px')}
+		};
+
+		span {
+			color: #fff;
+		}
+	}
+
 	:nth-child(1) {
-		${bgimage(TextImg,'no-repeat', '9px 0', '30px 32px')}
+		${bgimage(TextImg,'no-repeat', '8px 0px', '32px 32px')}
 	};
 
 	:nth-child(2) {
-		${bgimage(FrameImg,'no-repeat', '9px 0', '30px 32px')}
+		${bgimage(FrameImg,'no-repeat', '8px 0', '30px 32px')}
 	};
 
 	:nth-child(3) {
@@ -257,29 +339,12 @@ export const NavTextItem = styled.div `
 	};
 
 	:nth-child(4) {
-		${bgimage(SettingsImg,'no-repeat', '9px 0', '30px 32px')}
+		${bgimage(SettingsImg,'no-repeat', '8px 0', '30px 32px')}
 	};
 
 	:nth-child(5) {
-		${bgimage(TextVideoImg,'no-repeat', '13px 9px', '21px 14px')}
+		${bgimage(TextVideoImg,'no-repeat', '13px 9px', '21px 13px')}
 	};
-
-	&.active {
-		box-shadow: inset 0px -2px 0px 0px rgba(230,75,61,1);
-
-		span {
-			color: #fff;
-		}
-	}
-
-	> span {
-		${position('', '', '5px', '0px')};
-		display: block;
-		width: 100%;
-		font-size: 10px;
-		text-align: center;
-		color: #828282;
-	}
 `
 
 export const NavGenItem = styled.div `
@@ -347,16 +412,16 @@ export const NavTransItem = styled.div `
 `
 
 export const Toggle = styled.div `
-	${size('22px', '14px')};
+	${size('21px', '14px')};
 	position: relative;
 	float: left;
-	margin: 9px 0 0 0;
+	margin: 9px 0 0 0px;
 	background-color: #171717;
 	border-radius: 30px;
 
 	&::before {
 		${size('8px', '8px')};
-		${position('3px', '', '', '11px')};
+		${position('3px', '', '', '10px')};
 		content:"";
 		background-color: #E64B3D;
 		border-radius: 50%;
@@ -374,7 +439,7 @@ export const Toggle = styled.div `
 export const LabelToggle = styled.div `
 	display: block;
 	float: left;
-	margin: 8px 0 0 10px;
+	margin: 6px 0 0 8px;
 	font-size: 11px;
 	color: #fff;
 `
@@ -386,158 +451,158 @@ export const ToggleTools = styled.div `
 	margin: 5px 0 0 0;
 
 	&.ic-audio {
-		${ bgimage(iconAudioActive,'no-repeat', 'center', '23px 23px') }
+		${ bgimage(iconAudioActive,'no-repeat', '1px -1px', '23px 23px') }
 
 		&.active {
-			${ bgimage(iconAudio,'no-repeat', 'center', '23px 23px') }
+			${ bgimage(iconAudio,'no-repeat', '1px -1px', '23px 23px') }
 		}
 
 		&:hover {
-			${ bgimage(iconAudioHover,'no-repeat', 'center', '23px 23px') }
+			${ bgimage(iconAudioHover,'no-repeat', '1px -1px', '23px 23px') }
 		}
 	}
 
 	&.ic-auto {
-		${ bgimage(iconAuto,'no-repeat', 'center', '23px 23px') }
+		${ bgimage(iconAuto,'no-repeat', '1px -1px', '23px 23px') }
 
 		&.active {
-			${ bgimage(iconAutoActive,'no-repeat', 'center', '23px 23px') }
+			${ bgimage(iconAutoActive,'no-repeat', '1px -1px', '23px 23px') }
 		}
 
 		&:hover {
-			${ bgimage(iconAutoHover,'no-repeat', 'center', '23px 23px') }
+			${ bgimage(iconAutoHover,'no-repeat', '1px -1px', '23px 23px') }
 		}
 	}
 
 	&.ic-col-science {
-		${ bgimage(iconColScienceActive,'no-repeat', 'center', '23px 23px') }
+		${ bgimage(iconColScienceActive,'no-repeat', '1px -1px', '23px 23px') }
 
 		&.active {
-			${ bgimage(iconColScience,'no-repeat', 'center', '23px 23px') }
+			${ bgimage(iconColScience,'no-repeat', '1px -1px', '23px 23px') }
 		}
 
 		&:hover {
-			${ bgimage(iconColScienceHover,'no-repeat', 'center', '23px 23px') }
+			${ bgimage(iconColScienceHover,'no-repeat', '1px -1px', '23px 23px') }
 		}
 	}
 
 	&.ic-colorwheel {
-		${ bgimage(iconColorWheelsActive,'no-repeat', 'center', '23px 23px') }
+		${ bgimage(iconColorWheelsActive,'no-repeat', '1px -1px', '23px 23px') }
 
 		&.active {
-			${ bgimage(iconColorWheels,'no-repeat', 'center', '23px 23px') }
+			${ bgimage(iconColorWheels,'no-repeat', '1px -1px', '23px 23px') }
 		}
 
 		&:hover {
-			${ bgimage(iconColorWheelsHover,'no-repeat', 'center', '23px 23px') }
+			${ bgimage(iconColorWheelsHover,'no-repeat', '1px -1px', '23px 23px') }
 		}
 	}
 
 	&.ic-controls {
-		${ bgimage(iconControlsActive,'no-repeat', 'center', '23px 23px') }
+		${ bgimage(iconControlsActive,'no-repeat', '1px -1px', '23px 23px') }
 
 		&.active {
-			${ bgimage(iconControls,'no-repeat', 'center', '23px 23px') }
+			${ bgimage(iconControls,'no-repeat', '1px -1px', '23px 23px') }
 		}
 
 		&:hover {
-			${ bgimage(iconControlsHover,'no-repeat', 'center', '23px 23px') }
+			${ bgimage(iconControlsHover,'no-repeat', '1px -1px', '23px 23px') }
 		}
 	}
 
 	&.ic-crop {
-		${ bgimage(iconCropActive,'no-repeat', 'center', '23px 23px') }
+		${ bgimage(iconCropActive,'no-repeat', '1px -1px', '23px 23px') }
 
 		&.active {
-			${ bgimage(iconCrop,'no-repeat', 'center', '23px 23px') }
+			${ bgimage(iconCrop,'no-repeat', '1px -1px', '23px 23px') }
 		}
 
 		&:hover {
-			${ bgimage(iconCropHover,'no-repeat', 'center', '23px 23px') }
+			${ bgimage(iconCropHover,'no-repeat', '1px -1px', '23px 23px') }
 		}
 	}
 
 	&.ic-curves {
-		${ bgimage(iconCurvesActive,'no-repeat', 'center', '23px 23px') }
+		${ bgimage(iconCurvesActive,'no-repeat', '1px -1px', '23px 23px') }
 
 		&.active {
-			${ bgimage(iconCurves,'no-repeat', 'center', '23px 23px') }
+			${ bgimage(iconCurves,'no-repeat', '1px -1px', '23px 23px') }
 		}
 
 		&:hover {
-			${ bgimage(iconCurvesHover,'no-repeat', 'center', '23px 23px') }
+			${ bgimage(iconCurvesHover,'no-repeat', '1px -1px', '23px 23px') }
 		}
 	}
 
 	&.ic-delete {
-		${ bgimage(iconDelete,'no-repeat', 'center', '23px 23px') }
+		${ bgimage(iconDelete,'no-repeat', '1px -1px', '23px 23px') }
 
 		&.active {
-			${ bgimage(iconDeleteActive,'no-repeat', 'center', '23px 23px') }
+			${ bgimage(iconDeleteActive,'no-repeat', '1px -1px', '23px 23px') }
 		}
 
 		&:hover {
-			${ bgimage(iconDeleteHover,'no-repeat', 'center', '23px 23px') }
+			${ bgimage(iconDeleteHover,'no-repeat', '1px -1px', '23px 23px') }
 		}
 	}
 
 	&.ic-dynamic {
-		${ bgimage(iconDynamicActive,'no-repeat', 'center', '23px 23px') }
+		${ bgimage(iconDynamicActive,'no-repeat', '1px -1px', '23px 23px') }
 
 		&.active {
-			${ bgimage(iconDynamic,'no-repeat', 'center', '23px 23px') }
+			${ bgimage(iconDynamic,'no-repeat', '1px -1px', '23px 23px') }
 		}
 
 		&:hover {
-			${ bgimage(iconDynamicHover,'no-repeat', 'center', '23px 23px') }
+			${ bgimage(iconDynamicHover,'no-repeat', '1px -1px', '23px 23px') }
 		}
 	}
 
 	&.ic-eq {
-		${ bgimage(iconEqActive,'no-repeat', 'center', '23px 23px') }
+		${ bgimage(iconEqActive,'no-repeat', '1px -1px', '23px 23px') }
 
 		&.active {
-			${ bgimage(iconEq,'no-repeat', 'center', '23px 23px') }
+			${ bgimage(iconEq,'no-repeat', '1px -1px', '23px 23px') }
 		}
 
 		&:hover {
-			${ bgimage(iconEqHover,'no-repeat', 'center', '23px 23px') }
+			${ bgimage(iconEqHover,'no-repeat', '1px -1px', '23px 23px') }
 		}
 	}
 
 	&.ic-speed {
-		${ bgimage(iconSpeedActive,'no-repeat', 'center', '23px 23px') }
+		${ bgimage(iconSpeedActive,'no-repeat', '1px -1px', '23px 23px') }
 
 		&.active {
-			${ bgimage(iconSpeed,'no-repeat', 'center', '23px 23px') }
+			${ bgimage(iconSpeed,'no-repeat', '1px -1px', '23px 23px') }
 		}
 
 		&:hover {
-			${ bgimage(iconSpeedHover,'no-repeat', 'center', '23px 23px') }
+			${ bgimage(iconSpeedHover,'no-repeat', '1px -1px', '23px 23px') }
 		}
 	}
 
 	&.ic-preview {
-		${ bgimage(iconPreviewActive,'no-repeat', 'center', '23px 23px') }
+		${ bgimage(iconPreviewActive,'no-repeat', '1px -1px', '23px 23px') }
 
 		&.active {
-			${ bgimage(iconPreview,'no-repeat', 'center', '23px 23px') }
+			${ bgimage(iconPreview,'no-repeat', '1px -1px', '23px 23px') }
 		}
 
 		&:hover {
-			${ bgimage(iconPreviewHover,'no-repeat', 'center', '23px 23px') }
+			${ bgimage(iconPreviewHover,'no-repeat', '1px -1px', '23px 23px') }
 		}
 	}
 
 	&.ic-transform {
-		${ bgimage(iconTransformActive,'no-repeat', 'center', '23px 23px') }
+		${ bgimage(iconTransformActive,'no-repeat', '1px -1px', '23px 23px') }
 
 		&.active {
-			${ bgimage(iconTransform,'no-repeat', 'center', '23px 23px') }
+			${ bgimage(iconTransform,'no-repeat', '1px -1px', '23px 23px') }
 		}
 
 		&:hover {
-			${ bgimage(iconTransformHover,'no-repeat', 'center', '23px 23px') }
+			${ bgimage(iconTransformHover,'no-repeat', '1px -1px', '23px 23px') }
 		}
 	}
 `
@@ -573,7 +638,7 @@ export const Row = styled.div `
 
 export const MiniContainer = styled.div `
 	${size('calc(100% - 39px)', 'auto', 'block')};
-	margin: 0 0 0 15px;
+	margin: 0 0 0 16px;
 	border-bottom: 1px solid #1B1B1E;
 
 	&.first {
@@ -582,7 +647,7 @@ export const MiniContainer = styled.div `
 
 	&.no-border {
 		border: none;
-		margin: 0 auto 9px auto;
+		/* margin: 0 0 0 0; */
 	}
 
 	.row {
@@ -614,7 +679,7 @@ export const MiniToggle = styled.div `
 `
 
 export const RoundedButton = styled.div `
-	${size('96px', '21px', 'block')};
+	${size('95px', '21px', 'block')};
 	float: left;
 	text-align: center;
 	border: 1px solid #43474D;
@@ -622,9 +687,13 @@ export const RoundedButton = styled.div `
 	color: #979797;
 	font-family: 'OpenSans light';
 	font-size: 11px;
-	padding: 2px 0 0 0;
+	margin: -1px 0 0 0;
+	padding: 1px 0 0 0;
 
-	&.center { margin: 0 auto; }
+	&.offset {
+		width: 80px;
+		margin: 0 0 0 106px;
+	}
 `
 
 export const InputLabel = styled.div `
@@ -655,7 +724,7 @@ export const Input = styled.input `
 
 export const Tabs = styled.div `
 	${size('auto', '23px', 'block')};
-	margin: 0 20px 0 15px;
+	margin: 0 25px 0 15px;
 
 	.btn-tab {
 		float: left;
@@ -707,8 +776,8 @@ export const Tabs = styled.div `
 export const CheckBox = styled.div `
 	${size('auto','15px','block')};
 	position: relative;
-	margin: 3px 0 0 0;
-	padding: 0 0 0 22px;
+	margin: 3px 0 0 -1px;
+	padding: 0 0 0 23px;
 	float: left;
 	font-family: 'OpenSans light';
 	font-size: 11px;
@@ -738,6 +807,10 @@ export const RcSlider = styled.div `
 	&.opacity {
 		pointer-events: none;
 		opacity: .5;
+	}
+
+	&:active {
+		input { color: #fff;}
 	}
 
 	.rc-slider {

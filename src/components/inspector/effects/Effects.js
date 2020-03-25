@@ -107,8 +107,8 @@ function Effects() {
 			<Row className="mini-row" style={{"margin":"5px 20px 3px 0px"}}></Row>
 
 			<Row style={{"margin":"0px 0px 2px 0px"}}>
-				<RoundedButton style={{"margin":"0px 20px 0px 0px"}}>Analyze</RoundedButton>
-				<CheckBox className={check ? "active" : ""} onClick={()=> setCheck(!check)}>Show Overlay</CheckBox>
+				<RoundedButton style={{"margin":"1px 20px 0px 0px"}}>Analyze</RoundedButton>
+				<CheckBox className={check ? "active" : ""} style={{"margin":"4px 0px 0px 0px"}} onClick={()=> setCheck(!check)}>Show Overlay</CheckBox>
 			</Row>
 
 			{/* NEEDS STYLES */}
@@ -118,19 +118,19 @@ function Effects() {
 				<div className={skinMask ? "none" : ""}>
 				<Row className="mini-title" style={{"height":"21px","padding":"3px 0px 0px 2px"}}>Skin Mask Source</Row>
 
-				<Tabs style={{'margin':'0px 5px 7px 0px'}}>
+				<Tabs style={{'margin':'0px 5px 7px -1px'}}>
 					{skinMaskTabs.map((tab, i) => (
 						<div className={classNames('btn-tab three', i === activeSkin ? "active" : "")} onClick={()=> setActiveSkin(i)}>{tab.label}</div>
 					))}
 				</Tabs>
 
 				<Row style={{"padding":"0", "height":"25px"}}>
-					<CheckBox className={check1 ? "active" : ""} onClick={()=> setCheck1(!check1)}>Use Mask</CheckBox>
+					<CheckBox className={check1 ? "active" : ""} onClick={()=> setCheck1(!check1)}>Use Face Mask</CheckBox>
 				</Row>
 
 				<Row style={{"padding":"0", "height":"25px", "margin-bottom": "1px"}}>
 					<RcSlider className={classNames('', faceRefineContent ? "none" : "")}>
-						<InputLabel style={{"left":"9px"}}>Global blend</InputLabel>
+						<InputLabel style={{"left":"9px"}}>Face Mask Size</InputLabel>
 						<Input className="input" style={{"right":"4px"}} type="text" value={slider2} min="0" max="100" onChange={(event) => setSlider2(event.target.value)}/>
 						<Slider style={{"width":"100%","margin":"0px 0px 0px 0px"}}  className={classNames('white', handleSlider2 === true ? 'active': '')} onChange={sliderFunc2} startPoint={100} value={slider2} />
 					</RcSlider>
@@ -172,7 +172,7 @@ function Effects() {
 
 			<MiniContainer className={classNames('', faceRefineContent ? "none" : "")}>
 				<MiniToggle className={classNames('', texture ? "active" : "")} onClick={()=> setTexture(!texture)}>Texture</MiniToggle>
-				<img src={TextureImg} width="294px" style={{'margin':'6px auto 10px auto'}} className={classNames('', texture ? "none" : "")}/>
+				<img src={TextureImg} width="294px" style={{'margin':'6px 0px 9px 0px'}} className={classNames('', texture ? "none" : "")}/>
 			</MiniContainer>
 
 			<MiniContainer className={classNames('', faceRefineContent ? "none" : "")}>
@@ -195,7 +195,7 @@ function Effects() {
 				<MiniToggle className={classNames('', forehead ? "active" : "")} onClick={()=> setForehead(!forehead)}>Forehead</MiniToggle>
 			</MiniContainer>
 
-			<MiniContainer className={classNames('no-border', faceRefineContent ? "none" : "")}>
+			<MiniContainer className={classNames('no-border', faceRefineContent ? "none" : "")} style={{'margin-bottom':'10px'}}>
 				<MiniToggle className={classNames('', cheek ? "active" : "")} onClick={()=> setCheek(!cheek)}>Cheek</MiniToggle>
 			</MiniContainer>
 

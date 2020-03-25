@@ -177,20 +177,20 @@ function Color() {
 				<ToggleTools className={classNames('ic-auto')}/>
 			</Row>
 
-			<img src={ColorWheelsImg} width="294" style={{"margin":"2px 0px 3px 15px"}} className={wheelsImg ? "none" : ""}/>
+			<img src={ColorWheelsImg} width="289" style={{"margin":"4px 0px 3px 17px"}} className={wheelsImg ? "none" : ""}/>
 
 			<Row className={wheelsImg ? "none" : ""}>
-				<RoundedButton className="center">Offset</RoundedButton>
+				<RoundedButton className="offset">Offset</RoundedButton>
 			</Row>
 
 			<div className={wheelsSliders ? "none" : ""}>
-				<Tabs style={{"margin":"2px 24px 7px 15px"}}>
+				<Tabs style={{"margin":"2px 24px 6px 15px"}}>
 					{tabsColorWheel.map((tab, i)=> (
 						<div className={classNames('btn-tab four', i === activeTab1 ? "active" : "")} onClick={()=> setTab1(i)}>{tab.label}</div>
 					))}
 				</Tabs>
 
-				<RcSlider style={{"margin":"0px 0px 2px 0px"}} className={toggleWheels ? "none" : ""}>
+				<RcSlider style={{"margin":"0px 0px 3px 0px"}} className={toggleWheels ? "none" : ""}>
 					<InputLabel>Luminance</InputLabel>
 					<Input className="input" type="text" value={slider2} min="0" max="100" onChange={(event) => setSlider2(event.target.value)}/>
 					<Slider className={classNames('lum', handleSlider2 === true ? 'active': '')} onChange={sliderFunc2} startPoint={50} value={slider2} />
@@ -229,7 +229,7 @@ function Color() {
 				<ToggleTools className={classNames('ic-curves', adjCurves ? "active" : "")} onClick={()=> setAdjCurves(!adjCurves)}/>
 			</Row>
 
-			<img src={ColorAdjImg} width="305" style={{"margin":"11px 0px 8px 7px"}} className={adjCurves ? "none" : ""}/>
+			<img src={ColorAdjImg} width="305" style={{"margin":"11px 0px 8px 6px"}} className={adjCurves ? "none" : ""}/>
 
 			<div className={adjSliders ? "none" : ""}>
 				<RcSlider style={{"margin":"0px 0px 3px 0px"}}>

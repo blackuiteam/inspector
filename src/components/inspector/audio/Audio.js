@@ -108,7 +108,7 @@ function Audio() {
 				<ToggleTools className={classNames('ic-audio', contentAudio ? "active" : "")} onClick={()=> setContentAudio(!contentAudio)}/>
 			</Row>
 
-			<RcSlider style={{"margin":"-1px 0px 3px 0px"}} className={slidersAudio ? "none" : ""}>
+			<RcSlider style={{"margin":"0px 0px 3px 0px"}} className={slidersAudio ? "none" : ""}>
 				<InputLabel>Gain</InputLabel>
 				<Input className="input" type="text" value={slider1} min="0" max="100" onChange={(event) => setSlider1(event.target.value)}/>
 				<Slider className={classNames('white', handleSlider1 === true ? 'active': '')} onChange={sliderFunc1} startPoint={100} value={slider1} />
@@ -126,7 +126,7 @@ function Audio() {
 				<Slider className={classNames('white', handleSlider3 === true ? 'active': '')} onChange={sliderFunc3} startPoint={50} value={slider3} />
 			</RcSlider>
 
-			<img src={EmbeddedImg} width="294" alt="" style={{"margin":"0px 0px 10px 15px"}} className={contentAudio ? "none" : ""}/>
+			<img src={EmbeddedImg} width="294" alt="" style={{"margin":"0px 0px 9px 12px"}} className={contentAudio ? "none" : ""}/>
 
 			{/* AUTO DUCK */}
 			<Row className="header">
@@ -143,7 +143,7 @@ function Audio() {
 				</Tabs>
 
 				<RcSlider style={{"margin":"0px 0px 3px 0px"}} className={slidersAudio ? "none" : ""}>
-					<InputLabel>Treshould Sensitivity</InputLabel>
+					<InputLabel>Treshold Sensitivity</InputLabel>
 					<Input className="input" type="text" value={slider4} min="0" max="100" onChange={(event) => setSlider4(event.target.value)}/>
 					<Slider className={classNames('white', handleSlider4 === true ? 'active': '')} onChange={sliderFunc4} startPoint={50} value={slider4} />
 				</RcSlider>
@@ -171,13 +171,13 @@ function Audio() {
 			</Row>
 
 			<div className={contentPitch ? "none" : ""}>
-				<RcSlider style={{"margin":"0px 0px 5px 0px"}}>
+				<RcSlider style={{"margin":"1px 0px 3px 0px"}}>
 					<InputLabel>Semi Tones</InputLabel>
 					<Input className="input" type="text" value={slider7} min="0" max="100" onChange={(event) => setSlider7(event.target.value)}/>
 					<Slider className={classNames('white', handleSlider7 === true ? 'active': '')} onChange={sliderFunc7} startPoint={50} value={slider7} />
 				</RcSlider>
 
-				<RcSlider style={{"margin":"0px 0px 8px 0px"}}>
+				<RcSlider style={{"margin":"0px 0px 9px 0px"}}>
 					<InputLabel>Cents</InputLabel>
 					<Input className="input" type="text" value={slider8} min="0" max="100" onChange={(event) => setSlider8(event.target.value)}/>
 					<Slider className={classNames('white', handleSlider8 === true ? 'active': '')} onChange={sliderFunc8} startPoint={50} value={slider8} />
@@ -192,9 +192,9 @@ function Audio() {
 				<ToggleTools className={classNames('ic-eq', contentEq ? "active" : "")} onClick={()=> setContentEq(!contentEq)}/>
 			</Row>
 
-			<img src={Eq1Img} width="294" alt="" style={eqSliders ? {"margin":"0px 0px 20px 15px"} : {"margin":"0px 0px 4px 15px"}} className={contentEq ? "none" : ""}/>
+			<img src={Eq1Img} width="294" alt="" style={eqSliders ? {"margin":"1px 0px 20px 15px"} : {"margin":"1px 0px 3px 15px"}} className={contentEq ? "none" : ""}/>
 
-			<RcSlider style={{"margin":"0px 0px 5px 0px"}} className={eqSliders ? "none" : ""}>
+			<RcSlider style={{"margin":"0px 0px 6px 0px"}} className={eqSliders ? "none" : ""}>
 				<InputLabel>Global Gain</InputLabel>
 				<Input className="input" type="text" value={slider6} min="0" max="100" onChange={(event) => setSlider6(event.target.value)}/>
 				<Slider className={classNames('white', handleSlider6 === true ? 'active': '')} onChange={sliderFunc6} startPoint={50} value={slider6} />
