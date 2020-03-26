@@ -712,7 +712,7 @@ export const InputLabel = styled.label `
 	font-size: 11px;
 `
 
-export const Input = styled.div `
+export const Input = styled.input `
 	${size('50px', '17px', 'block')};
 	${position('1px', '29px', '', '')};
 	border: 1px solid transparent;
@@ -815,32 +815,6 @@ export const RcSlider = styled.div `
 	&.opacity {
 		pointer-events: none;
 		opacity: .5;
-	}
-
-	.label {
-		${size('auto', '17px', 'block')};
-		${position('2px', '', '', '24px')};
-		color: #979797;
-		font-family: 'OpenSans light';
-		font-size: 11px;
-	}
-
-	input {
-		${size('50px', '17px', 'block')};
-		${position('1px', '29px', '', '')};
-		border: 1px solid transparent;
-		background-color: #28282E;
-		text-align: right;
-		color: #979797;
-		padding: 0 3px;
-		outline: none;
-		user-select: none;
-
-		&:hover, &:focus, &.active {
-			color: #fff;
-			border: 1px solid #E64B3D;
-			border-radius: 3px;
-		}
 	}
 
 	.rc-slider {
