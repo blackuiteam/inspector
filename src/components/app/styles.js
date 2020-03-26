@@ -817,6 +817,11 @@ export const RcSlider = styled.div `
 		opacity: .5;
 	}
 
+	&:active {
+		label { color: #fff; };
+		input { color: #fff; }
+	}
+
 	.rc-slider {
 		${size('calc(100% - 40px)', '4px', '')};
 		${position('', '', '0px', '0px')};

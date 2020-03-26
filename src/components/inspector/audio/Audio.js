@@ -142,13 +142,13 @@ function Audio() {
 					))}
 				</Tabs>
 
-				<RcSlider style={{"margin":"0px 0px 3px 0px"}} className={slidersAudio ? "none" : ""}>
+				<RcSlider style={{"margin":"0px 0px 3px 0px"}} className={contentAudioDuck ? "none" : ""}>
 					<InputLabel>Treshold Sensitivity</InputLabel>
 					<Input className="input" type="text" value={slider4} min="0" max="100" onChange={(event) => setSlider4(event.target.value)}/>
 					<Slider className={classNames('white', handleSlider4 === true ? 'active': '')} onChange={sliderFunc4} startPoint={50} value={slider4} />
 				</RcSlider>
 
-				<RcSlider style={{"margin":"0px 0px 0px 0px"}} className={slidersAudio ? "none" : ""}>
+				<RcSlider style={{"margin":"0px 0px 0px 0px"}} className={contentAudioDuck ? "none" : ""}>
 					<InputLabel>Amount</InputLabel>
 					<Input className="input" type="text" value={slider5} min="0" max="100" onChange={(event) => setSlider5(event.target.value)}/>
 					<Slider className={classNames('white', handleSlider5 === true ? 'active': '')} onChange={sliderFunc5} startPoint={50} value={slider5} />
