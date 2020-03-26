@@ -57,6 +57,16 @@ function Sizing() {
 		setSlider4(value);
 	}
 
+	function resetSlider4(value) {
+		setHandleSlider4(false);
+		setSlider4(50);
+	}
+
+	function resetSlider5(value) {
+		setHandleSlider5(false);
+		setSlider5(50);
+	}
+
 	const [ slider5, setSlider5 ] =  useState(50);
 	const [ handleSlider5, setHandleSlider5 ] = useState(false);
 	function sliderFunc5(value) {
@@ -98,11 +108,15 @@ function Sizing() {
 			<img src={CroppingContent} width="296" alt="" style={{"margin":"0px 0px 14px 15px"}} className={croppingContent ? "none" : ""}/>
 
 			<img src={CroppingContent2} width="294" alt="" style={{"margin":"0px 0px 0px 15px"}} className={croppingSliders ? "none" : ""}/>
-			<RcSlider style={{"margin":"3px 0px 6px 0px"}} className={croppingSliders ? "none" : ""}>
-				<InputLabel>Softness</InputLabel>
-				<Input className="input" type="text" value={slider3} min="0" max="100" onChange={(event) => setSlider3(event.target.value)}/>
-				<Slider onChange={sliderFunc3} startPoint={50} value={slider3} />
-			</RcSlider>
+
+			<Row className={classNames("row-slider", croppingSliders ? "none" : "")} style={{"margin":"3px 0px 6px 0px"}}>
+				<InputLabel onDoubleClick={()=> setSlider3(20)}>Softness</InputLabel>
+				<RcSlider>
+					<Input className="input" type="text" value={slider3} min="0" max="100" onChange={(event) => setSlider3(event.target.value)}/>
+					<Slider onChange={sliderFunc3} startPoint={50} value={slider3} />
+				</RcSlider>
+			</Row>
+
 			<img src={CroppingContent3} width="294" alt="" style={{"margin":"0px 0px 9px 15px"}} className={croppingSliders ? "none" : ""}/>
 
 			{/* SCALING */}
@@ -127,17 +141,21 @@ function Sizing() {
 					))}
 				</Tabs>
 
-				<RcSlider style={{"margin":"3px 0px 3px 0px"}} className={classNames("", activeTab2 === 0 ? "opacity" : "", scallingContent ? "none" : "")}>
-					<InputLabel>Sharpness</InputLabel>
-					<Input className="input" type="text" value={slider4} min="0" max="100" onChange={(event) => setSlider4(event.target.value)}/>
-					<Slider className={classNames('white', handleSlider4 === true ? 'active': '')} onChange={sliderFunc4} startPoint={50} value={slider4} />
-				</RcSlider>
+				<Row className={classNames("row-slider")} style={{"margin":"3px 0px 3px 0px"}}>
+					<InputLabel onDoubleClick={()=> resetSlider4()}>Sharpness</InputLabel>
+					<RcSlider className={classNames("", activeTab2 === 0 ? "opacity" : "", scallingContent ? "none" : "")}>
+						<Input className="input" type="text" value={slider4} min="0" max="100" onChange={(event) => setSlider4(event.target.value)}/>
+						<Slider className={classNames('white', handleSlider4 === true ? 'active': '')} onChange={sliderFunc4} startPoint={50} value={slider4} />
+					</RcSlider>
+				</Row>
 
-				<RcSlider style={{"margin":"3px 0px 18px 0px"}} className={classNames("", activeTab2 === 0 ? "opacity" : "", scallingContent ? "none" : "")}>
-					<InputLabel>Noise Reduction</InputLabel>
-					<Input className="input" type="text" value={slider5} min="0" max="100" onChange={(event) => setSlider5(event.target.value)}/>
-					<Slider className={classNames('white', handleSlider5 === true ? 'active': '')} onChange={sliderFunc5} startPoint={50} value={slider5} />
-				</RcSlider>
+				<Row className={classNames("row-slider")} style={{"margin":"3px 0px 18px 0px"}}>
+					<InputLabel onDoubleClick={()=> resetSlider5()}>Noise Reduction</InputLabel>
+					<RcSlider className={classNames("", activeTab2 === 0 ? "opacity" : "", scallingContent ? "none" : "")}>
+						<Input className="input" type="text" value={slider5} min="0" max="100" onChange={(event) => setSlider5(event.target.value)}/>
+						<Slider className={classNames('white', handleSlider5 === true ? 'active': '')} onChange={sliderFunc5} startPoint={50} value={slider5} />
+					</RcSlider>
+				</Row>
 			</div>
 		</>
 	)

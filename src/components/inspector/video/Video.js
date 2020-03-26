@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import Slider from 'rc-slider';
 import classNames from 'classnames';
-import { RoundedButton, InputLabel, Input, RcSlider, Row, MiniContainer, Toggle, MiniToggle, LabelToggle, ToggleTools } from '../../app/styles';
+import { mSlider, RoundedButton, InputLabel, Input, RcSlider, Row, MiniContainer, Toggle, MiniToggle, LabelToggle, ToggleTools } from '../../app/styles';
 import DropdownNormal from '../../../img/dropdown/dropdown-normal.png';
 import DropdownPerspective from '../../../img/dropdown/dropdown-perspective-group.png';
 import SpeedChange1 from '../../../img/video/speed-change-01.png';
@@ -56,6 +56,16 @@ function Video() {
 		setSlider3(value);
 	}
 
+	function resetSlider3(value) {
+		setHandleSlider3(false);
+		setSlider3(100);
+	}
+
+	function resetSlider4(value) {
+		setHandleSlider4(false);
+		setSlider4(40);
+	}
+
 	function sliderFunc4(value) {
 		setHandleSlider4(true);
 		setSlider4(value);
@@ -71,11 +81,13 @@ function Video() {
 			</Row>
 			<img src={DropdownNormal} width="294" style={{"margin":"0px 0px 3px 15px"}} className={composite ? "none" : ""}/>
 
-			<RcSlider style={{"margin":"0px 0px 9px 0px"}} className={composite ? "none" : ""}>
+			<Row className={classNames("row-slider", composite ? "none" : "")} style={{"marginBottom": "9px"}}>
 				<InputLabel onDoubleClick={()=>setSlider(50)}>Opacity</InputLabel>
-				<Input className={classNames("input")} type="text" value={slider} min="0" max="100" onChange={(event) => setSlider(event.target.value)}/>
-				<Slider onChange={sliderFunc} startPoint={100} value={slider} />
-			</RcSlider>
+				<RcSlider>
+					<Input className={classNames("input")} type="text" value={slider} min="0" max="100" onChange={(event) => setSlider(event.target.value)}/>
+					<Slider onChange={sliderFunc} startPoint={100} value={slider} />
+				</RcSlider>
+			</Row>
 
 			{/* DYNAMIC ZOOM */}
 			<Row className="header">
@@ -97,23 +109,29 @@ function Video() {
 			<div className={stablization ? "none" : ""}>
 				<img src={DropdownPerspective} width="294" style={{"margin":"1px 0px 3px 15px"}} className={stablization ? "none" : ""}/>
 
-				<RcSlider style={{"margin":"0px 0px 3px 0px"}}>
-					<InputLabel>Cropping Ratio</InputLabel>
-					<Input className="input" type="text" value={slider1} min="0" max="100" onChange={(event) => setSlider1(event.target.value)}/>
-					<Slider className={classNames('')} onChange={sliderFunc1} startPoint={30} value={slider1} />
-				</RcSlider>
+				<Row className={classNames("row-slider")} style={{"marginBottom": "3px"}}>
+					<InputLabel onDoubleClick={()=>setSlider1(50)}>Cropping Ratio</InputLabel>
+					<RcSlider>
+						<Input className="input" type="text" value={slider1} min="0" max="100" onChange={(event) => setSlider1(event.target.value)}/>
+						<Slider className={classNames('')} onChange={sliderFunc1} startPoint={30} value={slider1} />
+					</RcSlider>
+				</Row>
 
-				<RcSlider style={{"margin":"0px 0px 3px 0px"}}>
-					<InputLabel>Smooth</InputLabel>
-					<Input className="input" type="text" value={slider2} min="0" max="100" onChange={(event) => setSlider2(event.target.value)}/>
-					<Slider className={classNames('')} onChange={sliderFunc2} startPoint={0} value={slider2} />
-				</RcSlider>
+				<Row className={classNames("row-slider")} style={{"marginBottom": "3px"}}>
+					<InputLabel onDoubleClick={()=>setSlider2(30)}>Smooth</InputLabel>
+					<RcSlider>
+						<Input className="input" type="text" value={slider2} min="0" max="100" onChange={(event) => setSlider2(event.target.value)}/>
+						<Slider className={classNames('')} onChange={sliderFunc2} startPoint={0} value={slider2} />
+					</RcSlider>
+				</Row>
 
-				<RcSlider style={{"margin":"0px 0px 8px 0px"}}>
-					<InputLabel>Strengh</InputLabel>
-					<Input className="input" type="text" value={slider3} min="0" max="100" onChange={(event) => setSlider3(event.target.value)}/>
-					<Slider className={classNames('white', handleSlider3 === true ? 'active': '')} onChange={sliderFunc3} startPoint={100} value={slider3} />
-				</RcSlider>
+				<Row className={classNames("row-slider")} style={{"marginBottom": "8px"}}>
+					<InputLabel onDoubleClick={()=> resetSlider3()}>Strengh</InputLabel>
+					<RcSlider>
+						<Input className="input" type="text" value={slider3} min="0" max="100" onChange={(event) => setSlider3(event.target.value)}/>
+						<Slider className={classNames('white', handleSlider3 === true ? 'active': '')} onChange={sliderFunc3} startPoint={100} value={slider3} />
+					</RcSlider>
+				</Row>
 
 				<Row>
 					<RoundedButton>Stablize</RoundedButton>
@@ -139,11 +157,13 @@ function Video() {
 			<div className={lens ? "none" : ""}>
 				<img src={LensCorrection} width="294" style={{"margin":"6px 0px 6px 15px"}}/>
 
-				<RcSlider style={{"margin":"0px 0px 8px 0px"}}>
-					<InputLabel>Distortion</InputLabel>
-					<Input className="input" type="text" value={slider4} min="0" max="100" onChange={(event) => setSlider4(event.target.value)}/>
-					<Slider className={classNames('white', handleSlider4 === true ? 'active': '')} onChange={sliderFunc4} startPoint={100} value={slider4} />
-				</RcSlider>
+				<Row className={classNames("row-slider")} style={{"marginBottom": "8px"}}>
+					<InputLabel onDoubleClick={()=>resetSlider4()}>Distortion</InputLabel>
+					<RcSlider>
+						<Input className="input" type="text" value={slider4} min="0" max="100" onChange={(event) => setSlider4(event.target.value)}/>
+						<Slider className={classNames('white', handleSlider4 === true ? 'active': '')} onChange={sliderFunc4} startPoint={100} value={slider4} />
+					</RcSlider>
+				</Row>
 
 				<Row>
 					<RoundedButton>Analyze</RoundedButton>

@@ -615,35 +615,6 @@ export const ToggleTools = styled.div `
 	}
 `
 
-export const Row = styled.div `
-	${size('100%', '30px')};
-	padding: 0 20px 0 16px;
-
-	&.header {
-		border-top: 1px solid #000;
-	}
-
-	&.mini-title {
-		height: 23px;
-		padding: 8px 0 0 16px;
-		font-family: 'OpenSans light';
-		font-size: 10px;
-		color: #979797;
-	}
-
-	&.mini-row {
-		position: relative;
-		height: 4px;
-
-		&:before {
-			content: "";
-			${size('calc(100% - 39px)', '1px', 'block')};
-			${position('0','','','15px')};
-			background-color: #1B1B1E;
-		}
-	}
-`
-
 export const MiniContainer = styled.div `
 	${size('calc(100% - 39px)', 'auto', 'block')};
 	margin: 0 0 0 16px;
@@ -705,11 +676,12 @@ export const RoundedButton = styled.div `
 `
 
 export const InputLabel = styled.label `
-	${size('auto', '17px', 'block')};
+	${size('150px', '17px', 'block')};
 	${position('2px', '', '', '24px')};
 	color: #979797;
 	font-family: 'OpenSans light';
 	font-size: 11px;
+	z-index: 3;
 `
 
 export const Input = styled.input `
@@ -808,9 +780,45 @@ export const CheckBox = styled.div `
 	}
 `
 
+export const Row = styled.div `
+	${size('100%', '30px')};
+	padding: 0 20px 0 16px;
+
+	&.header {
+		border-top: 1px solid #000;
+	}
+
+	&.mini-title {
+		height: 23px;
+		padding: 8px 0 0 16px;
+		font-family: 'OpenSans light';
+		font-size: 10px;
+		color: #979797;
+	}
+
+	&.row-slider {
+		height: 23px;
+		padding: 0;
+		position: relative;
+	}
+
+	&.mini-row {
+		position: relative;
+		height: 4px;
+
+		&:before {
+			content: "";
+			${size('calc(100% - 39px)', '1px', 'block')};
+			${position('0','','','15px')};
+			background-color: #1B1B1E;
+		}
+	}
+`
+
 export const RcSlider = styled.div `
-	${size('100%', '23px', '')};
+	${size('100%', '23px', 'block')};
 	position: relative;
+	z-index: 1;
 
 	&.opacity {
 		pointer-events: none;
@@ -818,12 +826,13 @@ export const RcSlider = styled.div `
 	}
 
 	&:active {
-		label { color: #fff; };
-		input { color: #fff; }
+		${Input} {
+			color: white
+		};
 	}
 
 	.rc-slider {
-		${size('calc(100% - 40px)', '4px', '')};
+		${size('calc(100% - 40px)', '4px', 'block')};
 		${position('', '', '0px', '0px')};
 		margin: 0 25px 0 15px;
 		border: 1px solid #000;
@@ -1090,9 +1099,4 @@ export const RcSlider = styled.div `
 			cursor: ew-resize;
 		}
 	}
-`
-
-
-export const Slider = styled.div `
-
 `

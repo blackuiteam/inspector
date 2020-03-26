@@ -20,11 +20,21 @@ function Audio() {
 		setSlider1(value);
 	}
 
+	function resetSlider1(value) {
+		setHandleSlider1(false);
+		setSlider1(100);
+	}
+
 	const [ slider2, setSlider2 ] =  useState(50);
 	const [ handleSlider2, setHandleSlider2 ] = useState(false);
 	function sliderFunc2(value) {
 		setHandleSlider2(true);
 		setSlider2(value);
+	}
+
+	function resetSlider2(value) {
+		setHandleSlider2(false);
+		setSlider2(100);
 	}
 
 	const [ slider3, setSlider3 ] =  useState(50);
@@ -53,11 +63,16 @@ function Audio() {
 
 	const [ contentAudioDuck, setContentAudioDuck ] = useState(false);
 
-	const [ slider4, setSlider4 ] =  useState(50);
+	const [ slider4, setSlider4 ] =  useState(100);
 	const [ handleSlider4, setHandleSlider4 ] = useState(false);
 	function sliderFunc4(value) {
 		setHandleSlider4(true);
 		setSlider4(value);
+	}
+
+	function resetSlider4(value) {
+		setHandleSlider4(false);
+		setSlider4(100);
 	}
 
 	const [ slider5, setSlider5 ] =  useState(50);
@@ -66,6 +81,12 @@ function Audio() {
 		setHandleSlider5(true);
 		setSlider5(value);
 	}
+
+	function resetSlider5(value) {
+		setHandleSlider5(false);
+		setSlider5(50);
+	}
+
 
 	// PITCH
 	const [ togglePitch, setTogglePitch ] = useState(false);
@@ -78,11 +99,21 @@ function Audio() {
 		setSlider7(value);
 	}
 
+	function resetSlider7(value) {
+		setHandleSlider7(false);
+		setSlider7(50);
+	}
+
 	const [ slider8, setSlider8 ] =  useState(50);
 	const [ handleSlider8, setHandleSlider8 ] = useState(false);
 	function sliderFunc8(value) {
 		setHandleSlider8(true);
 		setSlider8(value);
+	}
+
+	function resetSlider8(value) {
+		setHandleSlider8(false);
+		setSlider8(50);
 	}
 
 	// EQUALIZER
@@ -97,6 +128,10 @@ function Audio() {
 		setSlider6(value);
 	}
 
+	function resetSlider6(value) {
+		setHandleSlider6(false);
+		setSlider6(50);
+	}
 
 	return (
 		<>
@@ -108,23 +143,21 @@ function Audio() {
 				<ToggleTools className={classNames('ic-audio', contentAudio ? "active" : "")} onClick={()=> setContentAudio(!contentAudio)}/>
 			</Row>
 
-			<RcSlider style={{"margin":"0px 0px 3px 0px"}} className={slidersAudio ? "none" : ""}>
-				<InputLabel>Gain</InputLabel>
-				<Input className="input" type="text" value={slider1} min="0" max="100" onChange={(event) => setSlider1(event.target.value)}/>
-				<Slider className={classNames('white', handleSlider1 === true ? 'active': '')} onChange={sliderFunc1} startPoint={100} value={slider1} />
-			</RcSlider>
+			<Row className={classNames("row-slider", slidersAudio ? "none" : "")} style={{"marginBottom": "3px"}}>
+				<InputLabel onDoubleClick={()=>resetSlider1()}>Gains</InputLabel>
+				<RcSlider>
+					<Input className="input" type="text" value={slider1} min="0" max="100" onChange={(event) => setSlider1(event.target.value)}/>
+					<Slider className={classNames('white', handleSlider1 === true ? 'active': '')} onChange={sliderFunc1} startPoint={100} value={slider1} />
+				</RcSlider>
+			</Row>
 
-			<RcSlider style={{"margin":"0px 0px 10px 0px"}} className={slidersAudio ? "none" : ""}>
-				<InputLabel>Pan</InputLabel>
-				<Input className="input" type="text" value={slider2} min="0" max="100" onChange={(event) => setSlider2(event.target.value)}/>
-				<Slider className={classNames('white', handleSlider2 === true ? 'active': '')} onChange={sliderFunc2} startPoint={50} value={slider2} />
-			</RcSlider>
-
-			<RcSlider style={{"margin":"0px 0px 10px 0px"}} className={slidersAudio ? "none" : "none"}>
-				<InputLabel>Pitch</InputLabel>
-				<Input className="input" type="text" value={slider3} min="0" max="100" onChange={(event) => setSlider3(event.target.value)}/>
-				<Slider className={classNames('white', handleSlider3 === true ? 'active': '')} onChange={sliderFunc3} startPoint={50} value={slider3} />
-			</RcSlider>
+			<Row className={classNames("row-slider", slidersAudio ? "none" : "")} style={{"marginBottom": "10px"}}>
+				<InputLabel onDoubleClick={()=>resetSlider1()}>Pan</InputLabel>
+				<RcSlider>
+					<Input className="input" type="text" value={slider2} min="0" max="100" onChange={(event) => setSlider2(event.target.value)}/>
+					<Slider className={classNames('white', handleSlider2 === true ? 'active': '')} onChange={sliderFunc2} startPoint={50} value={slider2} />
+				</RcSlider>
+			</Row>
 
 			<img src={EmbeddedImg} width="294" alt="" style={{"margin":"0px 0px 9px 12px"}} className={contentAudio ? "none" : ""}/>
 
@@ -142,17 +175,21 @@ function Audio() {
 					))}
 				</Tabs>
 
-				<RcSlider style={{"margin":"0px 0px 3px 0px"}} className={contentAudioDuck ? "none" : ""}>
-					<InputLabel>Treshold Sensitivity</InputLabel>
-					<Input className="input" type="text" value={slider4} min="0" max="100" onChange={(event) => setSlider4(event.target.value)}/>
-					<Slider className={classNames('white', handleSlider4 === true ? 'active': '')} onChange={sliderFunc4} startPoint={50} value={slider4} />
-				</RcSlider>
+				<Row className={classNames("row-slider", contentAudioDuck ? "none" : "")} style={{"marginBottom": "3px"}}>
+					<InputLabel onDoubleClick={()=>resetSlider4()}>Treshold Sensitivity</InputLabel>
+					<RcSlider>
+						<Input className="input" type="text" value={slider4} min="0" max="100" onChange={(event) => setSlider4(event.target.value)}/>
+						<Slider className={classNames('white', handleSlider4 === true ? 'active': '')} onChange={sliderFunc4} startPoint={50} value={slider4} />
+					</RcSlider>
+				</Row>
 
-				<RcSlider style={{"margin":"0px 0px 0px 0px"}} className={contentAudioDuck ? "none" : ""}>
-					<InputLabel>Amount</InputLabel>
-					<Input className="input" type="text" value={slider5} min="0" max="100" onChange={(event) => setSlider5(event.target.value)}/>
-					<Slider className={classNames('white', handleSlider5 === true ? 'active': '')} onChange={sliderFunc5} startPoint={50} value={slider5} />
-				</RcSlider>
+				<Row className={classNames("row-slider", contentAudioDuck ? "none" : "")} style={{"margin": "0px"}}>
+					<InputLabel onDoubleClick={()=>resetSlider5()}>Amount</InputLabel>
+					<RcSlider>
+						<Input className="input" type="text" value={slider5} min="0" max="100" onChange={(event) => setSlider5(event.target.value)}/>
+						<Slider className={classNames('white', handleSlider5 === true ? 'active': '')} onChange={sliderFunc5} startPoint={50} value={slider5} />
+					</RcSlider>
+				</Row>
 
 				<Row className="mini-title" style={{"margin":"0px 0px 3px 0px"}}>Reaction Time</Row>
 
@@ -171,17 +208,21 @@ function Audio() {
 			</Row>
 
 			<div className={contentPitch ? "none" : ""}>
-				<RcSlider style={{"margin":"1px 0px 3px 0px"}}>
-					<InputLabel>Semi Tones</InputLabel>
-					<Input className="input" type="text" value={slider7} min="0" max="100" onChange={(event) => setSlider7(event.target.value)}/>
-					<Slider className={classNames('white', handleSlider7 === true ? 'active': '')} onChange={sliderFunc7} startPoint={50} value={slider7} />
-				</RcSlider>
+				<Row className={classNames("row-slider")} style={{"margin":"1px 0px 3px 0px"}}>
+					<InputLabel onDoubleClick={()=>resetSlider7()}>Semi Tones</InputLabel>
+					<RcSlider>
+						<Input className="input" type="text" value={slider7} min="0" max="100" onChange={(event) => setSlider7(event.target.value)}/>
+						<Slider className={classNames('white', handleSlider7 === true ? 'active': '')} onChange={sliderFunc7} startPoint={50} value={slider7} />
+					</RcSlider>
+				</Row>
 
-				<RcSlider style={{"margin":"0px 0px 9px 0px"}}>
-					<InputLabel>Cents</InputLabel>
-					<Input className="input" type="text" value={slider8} min="0" max="100" onChange={(event) => setSlider8(event.target.value)}/>
-					<Slider className={classNames('white', handleSlider8 === true ? 'active': '')} onChange={sliderFunc8} startPoint={50} value={slider8} />
-				</RcSlider>
+				<Row className={classNames("row-slider")} style={{"margin":"0px 0px 9px 0px"}}>
+					<InputLabel onDoubleClick={()=>resetSlider8()}>Cents</InputLabel>
+					<RcSlider>
+						<Input className="input" type="text" value={slider8} min="0" max="100" onChange={(event) => setSlider8(event.target.value)}/>
+						<Slider className={classNames('white', handleSlider8 === true ? 'active': '')} onChange={sliderFunc8} startPoint={50} value={slider8} />
+					</RcSlider>
+				</Row>
 			</div>
 
 			{/* EQUALIZER */}
@@ -193,12 +234,13 @@ function Audio() {
 			</Row>
 
 			<img src={Eq1Img} width="294" alt="" style={eqSliders ? {"margin":"1px 0px 20px 15px"} : {"margin":"1px 0px 3px 15px"}} className={contentEq ? "none" : ""}/>
-
-			<RcSlider style={{"margin":"0px 0px 6px 0px"}} className={eqSliders ? "none" : ""}>
-				<InputLabel>Global Gain</InputLabel>
-				<Input className="input" type="text" value={slider6} min="0" max="100" onChange={(event) => setSlider6(event.target.value)}/>
-				<Slider className={classNames('white', handleSlider6 === true ? 'active': '')} onChange={sliderFunc6} startPoint={50} value={slider6} />
-			</RcSlider>
+			<Row className={classNames("row-slider", eqSliders ? "none" : "")} style={{"margin":"0px 0px 6px 0px"}}>
+				<InputLabel onDoubleClick={()=>resetSlider6()}>Global Gain</InputLabel>
+				<RcSlider>
+					<Input className="input" type="text" value={slider6} min="0" max="100" onChange={(event) => setSlider6(event.target.value)}/>
+					<Slider className={classNames('white', handleSlider6 === true ? 'active': '')} onChange={sliderFunc6} startPoint={50} value={slider6} />
+				</RcSlider>
+			</Row>
 
 			<img src={Eq2Img} width="294" alt="" style={{"margin":"0px 0px 20px 15px"}} className={eqSliders ? "none" : ""}/>
 		</>

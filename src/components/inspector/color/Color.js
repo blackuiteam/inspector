@@ -18,6 +18,11 @@ function Color() {
 		setSlider1(value);
 	}
 
+	function resetSlider1(value) {
+		setHandleSlider1(false);
+		setSlider1(100);
+	}
+
 	// COLOR WHEELS
 	const [ toggleWheels, setWheels ] = useState(false);
 	const [ wheelsImg, setWheelsImg ] = useState(false);
@@ -39,11 +44,21 @@ function Color() {
 		setSlider2(value);
 	}
 
+	function resetSlider2(value) {
+		setHandleSlider2(false);
+		setSlider2(50);
+	}
+
 	const [ slider3, setSlider3 ] =  useState(50);
 	const [ handleSlider3, setHandleSlider3 ] = useState(false);
 	function sliderFunc3(value) {
 		setHandleSlider3(true);
 		setSlider3(value);
+	}
+
+	function resetSlider3(value) {
+		setHandleSlider3(false);
+		setSlider3(50);
 	}
 
 	const [ slider4, setSlider4 ] =  useState(50);
@@ -53,6 +68,11 @@ function Color() {
 		setSlider4(value);
 	}
 
+	function resetSlider4(value) {
+		setHandleSlider4(false);
+		setSlider4(50);
+	}
+
 	const [ slider5, setSlider5] =  useState(50);
 	const [ handleSlider5, setHandleSlider5 ] = useState(false);
 	function sliderFunc5(value) {
@@ -60,11 +80,21 @@ function Color() {
 		setSlider5(value);
 	}
 
+	function resetSlider5(value) {
+		setHandleSlider5(false);
+		setSlider5(50);
+	}
+
 	const [ slider6, setSlider6 ] =  useState(50);
 	const [ handleSlider6, setHandleSlider6 ] = useState(false);
 	function sliderFunc6(value) {
 		setHandleSlider6(true);
 		setSlider6(value);
+	}
+
+	function resetSlider6(value) {
+		setHandleSlider6(false);
+		setSlider6(50);
 	}
 
 	// COLOR ADJUSTMENTS
@@ -79,11 +109,21 @@ function Color() {
 		setSlider7(value);
 	}
 
+	function resetSlider7(value) {
+		setHandleSlider7(false);
+		setSlider7(50);
+	}
+
 	const [ slider8, setSlider8 ] =  useState(50);
 	const [ handleSlider8, setHandleSlider8 ] = useState(false);
 	function sliderFunc8(value) {
 		setHandleSlider8(true);
 		setSlider8(value);
+	}
+
+	function resetSlider8(value) {
+		setHandleSlider8(false);
+		setSlider8(50);
 	}
 
 	const [ slider9, setSlider9 ] =  useState(50);
@@ -93,11 +133,21 @@ function Color() {
 		setSlider9(value);
 	}
 
+	function resetSlider9(value) {
+		setHandleSlider9(false);
+		setSlider9(50);
+	}
+
 	const [ slider10, setSlider10 ] =  useState(50);
 	const [ handleSlider10, setHandleSlider10 ] = useState(false);
 	function sliderFunc10(value) {
 		setHandleSlider10(true);
 		setSlider10(value);
+	}
+
+	function resetSlider10(value) {
+		setHandleSlider10(false);
+		setSlider10(50);
 	}
 
 	const [ slider11, setSlider11 ] =  useState(50);
@@ -107,11 +157,21 @@ function Color() {
 		setSlider11(value);
 	}
 
+	function resetSlider11(value) {
+		setHandleSlider11(false);
+		setSlider11(50);
+	}
+
 	const [ slider12, setSlider12 ] =  useState(50);
 	const [ handleSlider12, setHandleSlider12 ] = useState(false);
 	function sliderFunc12(value) {
 		setHandleSlider12(true);
 		setSlider12(value);
+	}
+
+	function resetSlider12(value) {
+		setHandleSlider12(false);
+		setSlider12(50);
 	}
 
 	const [ slider13, setSlider13 ] =  useState(50);
@@ -121,11 +181,21 @@ function Color() {
 		setSlider13(value);
 	}
 
+	function resetSlider13(value) {
+		setHandleSlider13(false);
+		setSlider13(50);
+	}
+
 	const [ slider14, setSlider14 ] =  useState(50);
 	const [ handleSlider14, setHandleSlider14 ] = useState(false);
 	function sliderFunc14(value) {
 		setHandleSlider14(true);
 		setSlider14(value);
+	}
+
+	function resetSlider14(value) {
+		setHandleSlider14(false);
+		setSlider14(50);
 	}
 
 	const [ slider15, setSlider15 ] =  useState(50);
@@ -135,6 +205,11 @@ function Color() {
 		setSlider15(value);
 	}
 
+	function resetSlider15(value) {
+		setHandleSlider15(false);
+		setSlider15(50);
+	}
+
 	const [ slider16, setSlider16 ] =  useState(50);
 	const [ handleSlider16, setHandleSlider16 ] = useState(false);
 	function sliderFunc16(value) {
@@ -142,11 +217,21 @@ function Color() {
 		setSlider16(value);
 	}
 
+	function resetSlider16(value) {
+		setHandleSlider16(false);
+		setSlider16(50);
+	}
+
 	const [ slider17, setSlider17 ] =  useState(50);
 	const [ handleSlider17, setHandleSlider17 ] = useState(false);
 	function sliderFunc17(value) {
 		setHandleSlider17(true);
 		setSlider17(value);
+	}
+
+	function resetSlider17(value) {
+		setHandleSlider17(false);
+		setSlider17(50);
 	}
 
 	return (
@@ -161,11 +246,13 @@ function Color() {
 			<div className={lutsSlider ? "none" : ""}>
 				<img src={LutsDropdown} width="294" style={{"margin":"0px 0px 3px 15px"}}/>
 
-				<RcSlider style={{"margin":"0px 0px 9px 0px"}}>
-					<InputLabel>Intensity</InputLabel>
-					<Input className="input" type="text" value={slider1} min="0" max="100" onChange={(event) => setSlider1(event.target.value)}/>
-					<Slider className={classNames('white', handleSlider1 === true ? 'active': '')} onChange={sliderFunc1} startPoint={100} value={slider1} />
-				</RcSlider>
+				<Row className={classNames("row-slider")} style={{"marginBottom": "9px"}}>
+					<InputLabel onDoubleClick={()=>resetSlider1()}>Intensity</InputLabel>
+					<RcSlider>
+						<Input className="input" type="text" value={slider1} min="0" max="100" onChange={(event) => setSlider1(event.target.value)}/>
+						<Slider className={classNames('white', handleSlider1 === true ? 'active': '')} onChange={sliderFunc1} startPoint={100} value={slider1} />
+					</RcSlider>
+				</Row>
 			</div>
 
 			{/* COLOR WHEELS */}
@@ -190,35 +277,49 @@ function Color() {
 					))}
 				</Tabs>
 
-				<RcSlider style={{"margin":"0px 0px 3px 0px"}} className={toggleWheels ? "none" : ""}>
-					<InputLabel>Luminance</InputLabel>
-					<Input className="input" type="text" value={slider2} min="0" max="100" onChange={(event) => setSlider2(event.target.value)}/>
-					<Slider className={classNames('lum', handleSlider2 === true ? 'active': '')} onChange={sliderFunc2} startPoint={50} value={slider2} />
-				</RcSlider>
+				<Row className={classNames("row-slider", toggleWheels ? "none" : "")} style={{"marginBottom": "3px"}}>
+					<InputLabel onDoubleClick={()=>resetSlider2()}>Luminance</InputLabel>
+					<RcSlider>
+						<Input className="input" type="text" value={slider2} min="0" max="100" onChange={(event) => setSlider2(event.target.value)}/>
+						<Slider className={classNames('lum', handleSlider2 === true ? 'active': '')} onChange={sliderFunc2} startPoint={50} value={slider2} />
+					</RcSlider>
+				</Row>
 
-				<RcSlider style={{"margin":"0px 0px 3px 0px"}} className={toggleWheels ? "none" : ""}>
-					<InputLabel>Red</InputLabel>
-					<Input className="input" type="text" value={slider3} min="0" max="100" onChange={(event) => setSlider3(event.target.value)}/>
-					<Slider className={classNames('red', handleSlider3 === true ? 'active': '')} onChange={sliderFunc3} startPoint={50} value={slider3} />
-				</RcSlider>
+				<Row className={classNames("row-slider", toggleWheels ? "none" : "")} style={{"marginBottom": "3px"}}>
+					<InputLabel onDoubleClick={()=>resetSlider3()}>Red</InputLabel>
+					<RcSlider >
+						<Input className="input" type="text" value={slider3} min="0" max="100" onChange={(event) => setSlider3(event.target.value)}/>
+						<Slider className={classNames('red', handleSlider3 === true ? 'active': '')} onChange={sliderFunc3} startPoint={50} value={slider3} />
+					</RcSlider>
+				</Row>
 
-				<RcSlider style={{"margin":"0px 0px 3px 0px"}} className={toggleWheels ? "none" : ""}>
-					<InputLabel>Green</InputLabel>
-					<Input className="input" type="text" value={slider4} min="0" max="100" onChange={(event) => setSlider4(event.target.value)}/>
-					<Slider className={classNames('green', handleSlider4 === true ? 'active': '')} onChange={sliderFunc4} startPoint={50} value={slider4} />
-				</RcSlider>
+				<Row className={classNames("row-slider", toggleWheels ? "none" : "")} style={{"marginBottom": "3px"}}>
+					<InputLabel onDoubleClick={()=>resetSlider4()}>Green</InputLabel>
+					<RcSlider>
+						<Input className="input" type="text" value={slider4} min="0" max="100" onChange={(event) => setSlider4(event.target.value)}/>
+						<Slider className={classNames('green', handleSlider4 === true ? 'active': '')} onChange={sliderFunc4} startPoint={50} value={slider4} />
+					</RcSlider>
+				</Row>
 
-				<RcSlider style={{"margin":"0px 0px 3px 0px"}} className={toggleWheels ? "none" : ""}>
-					<InputLabel>Blue</InputLabel>
-					<Input className="input" type="text" value={slider5} min="0" max="100" onChange={(event) => setSlider5(event.target.value)}/>
-					<Slider className={classNames('blue', handleSlider5 === true ? 'active': '')} onChange={sliderFunc5} startPoint={50} value={slider5} />
-				</RcSlider>
+				<Row className={classNames("row-slider", toggleWheels ? "none" : "")} style={{"marginBottom": "3px"}}>
+					<InputLabel onDoubleClick={()=>resetSlider5()}>Blue</InputLabel>
+					<RcSlider>
+						<Input className="input" type="text" value={slider5} min="0" max="100" onChange={(event) => setSlider5(event.target.value)}/>
+						<Slider className={classNames('blue', handleSlider5 === true ? 'active': '')} onChange={sliderFunc5} startPoint={50} value={slider5} />
+					</RcSlider>
+				</Row>
 
-				<RcSlider style={{"margin":"0px 0px 9px 0px"}} className={toggleWheels ? "none" : ""}>
-					<InputLabel>All</InputLabel>
-					<Input className="input" type="text" value={slider6} min="0" max="100" onChange={(event) => setSlider6(event.target.value)}/>
-					<Slider className={classNames('default', handleSlider6 === true ? 'active': '')} onChange={sliderFunc6} startPoint={50} value={slider6} />
-				</RcSlider>
+				<Row className={classNames("row-slider", toggleWheels ? "none" : "")} style={{"marginBottom": "9px"}}>
+					<InputLabel onDoubleClick={()=>resetSlider6()}>All</InputLabel>
+					<RcSlider>
+						<Input className="input" type="text" value={slider6} min="0" max="100" onChange={(event) => setSlider6(event.target.value)}/>
+						<Slider className={classNames('default', handleSlider6 === true ? 'active': '')} onChange={sliderFunc6} startPoint={50} value={slider6} />
+					</RcSlider>
+				</Row>
+
+
+
+
 			</div>
 
 			{/* COLOR ADJUSTMENTS */}
@@ -232,71 +333,94 @@ function Color() {
 			<img src={ColorAdjImg} width="305" style={{"margin":"11px 0px 8px 6px"}} className={adjCurves ? "none" : ""}/>
 
 			<div className={adjSliders ? "none" : ""}>
-				<RcSlider style={{"margin":"0px 0px 3px 0px"}}>
-					<InputLabel>Temperature</InputLabel>
+
+			<Row className={classNames("row-slider")} style={{"marginBottom": "3px"}}>
+				<InputLabel onDoubleClick={()=>resetSlider7()}>Temperature</InputLabel>
+				<RcSlider>
 					<Input className="input" type="text" value={slider7} min="0" max="100" onChange={(event) => setSlider7(event.target.value)}/>
 					<Slider className={classNames('temperature', handleSlider7 === true ? 'active': '')} onChange={sliderFunc7} startPoint={50} value={slider7} />
 				</RcSlider>
+			</Row>
 
-				<RcSlider style={{"margin":"0px 0px 3px 0px"}}>
-					<InputLabel>Tint</InputLabel>
+			<Row className={classNames("row-slider")} style={{"marginBottom": "3px"}}>
+				<InputLabel onDoubleClick={()=>resetSlider8()}>Tint</InputLabel>
+				<RcSlider>
 					<Input className="input" type="text" value={slider8} min="0" max="100" onChange={(event) => setSlider8(event.target.value)}/>
 					<Slider className={classNames('tint', handleSlider8 === true ? 'active': '')} onChange={sliderFunc8} startPoint={50} value={slider8} />
 				</RcSlider>
+			</Row>
 
-				<RcSlider style={{"margin":"0px 0px 3px 0px"}}>
-					<InputLabel>Contrast</InputLabel>
+			<Row className={classNames("row-slider")} style={{"marginBottom": "3px"}}>
+				<InputLabel onDoubleClick={()=>resetSlider9()}>Contrast</InputLabel>
+				<RcSlider>
 					<Input className="input" type="text" value={slider9} min="0" max="100" onChange={(event) => setSlider9(event.target.value)}/>
 					<Slider className={classNames('bw', handleSlider9 === true ? 'active': '')} onChange={sliderFunc9} startPoint={50} value={slider9} />
 				</RcSlider>
+			</Row>
 
-				<RcSlider style={{"margin":"0px 0px 3px 0px"}}>
-					<InputLabel>Pivot</InputLabel>
+			<Row className={classNames("row-slider")} style={{"marginBottom": "3px"}}>
+				<InputLabel onDoubleClick={()=>resetSlider10()}>Pivot</InputLabel>
+				<RcSlider>
 					<Input className="input" type="text" value={slider10} min="0" max="100" onChange={(event) => setSlider10(event.target.value)}/>
 					<Slider className={classNames('pivot', handleSlider10 === true ? 'active': '')} onChange={sliderFunc10} startPoint={50} value={slider10} />
 				</RcSlider>
+			</Row>
 
-				<RcSlider style={{"margin":"0px 0px 3px 0px"}}>
-					<InputLabel>Midtone Detail</InputLabel>
+			<Row className={classNames("row-slider")} style={{"marginBottom": "3px"}}>
+				<InputLabel onDoubleClick={()=>resetSlider11()}>Midtone Detail</InputLabel>
+				<RcSlider>
 					<Input className="input" type="text" value={slider11} min="0" max="100" onChange={(event) => setSlider11(event.target.value)}/>
 					<Slider className={classNames('detail', handleSlider11 === true ? 'active': '')} onChange={sliderFunc11} startPoint={50} value={slider11} />
 				</RcSlider>
+			</Row>
 
-				<RcSlider style={{"margin":"0px 0px 3px 0px"}}>
-					<InputLabel>Color Boost</InputLabel>
+			<Row className={classNames("row-slider")} style={{"marginBottom": "3px"}}>
+				<InputLabel onDoubleClick={()=>resetSlider12()}>Color Boost</InputLabel>
+				<RcSlider>
 					<Input className="input" type="text" value={slider12} min="0" max="100" onChange={(event) => setSlider12(event.target.value)}/>
 					<Slider className={classNames('boost', handleSlider12 === true ? 'active': '')} onChange={sliderFunc12} startPoint={50} value={slider12} />
 				</RcSlider>
+			</Row>
 
-				<RcSlider style={{"margin":"0px 0px 3px 0px"}}>
-					<InputLabel>Shadows</InputLabel>
+			<Row className={classNames("row-slider")} style={{"marginBottom": "3px"}}>
+				<InputLabel onDoubleClick={()=>resetSlider13()}>Shadows</InputLabel>
+				<RcSlider>
 					<Input className="input" type="text" value={slider13} min="0" max="100" onChange={(event) => setSlider13(event.target.value)}/>
 					<Slider className={classNames('shadow', handleSlider13 === true ? 'active': '')} onChange={sliderFunc13} startPoint={50} value={slider13} />
 				</RcSlider>
+			</Row>
 
-				<RcSlider style={{"margin":"0px 0px 3px 0px"}}>
-					<InputLabel>Highlights</InputLabel>
+			<Row className={classNames("row-slider")} style={{"marginBottom": "3px"}}>
+				<InputLabel onDoubleClick={()=>resetSlider14()}>Highlights</InputLabel>
+				<RcSlider>
 					<Input className="input" type="text" value={slider14} min="0" max="100" onChange={(event) => setSlider14(event.target.value)}/>
 					<Slider className={classNames('highlight', handleSlider14 === true ? 'active': '')} onChange={sliderFunc14} startPoint={50} value={slider14} />
 				</RcSlider>
+			</Row>
 
-				<RcSlider style={{"margin":"0px 0px 3px 0px"}}>
-					<InputLabel>Saturation</InputLabel>
+			<Row className={classNames("row-slider")} style={{"marginBottom": "3px"}}>
+				<InputLabel onDoubleClick={()=>resetSlider15()}>Saturation</InputLabel>
+				<RcSlider>
 					<Input className="input" type="text" value={slider15} min="0" max="100" onChange={(event) => setSlider15(event.target.value)}/>
 					<Slider className={classNames('saturation', handleSlider15 === true ? 'active': '')} onChange={sliderFunc15} startPoint={50} value={slider15} />
 				</RcSlider>
+			</Row>
 
-				<RcSlider style={{"margin":"0px 0px 3px 0px"}}>
-					<InputLabel>Hue</InputLabel>
+			<Row className={classNames("row-slider")} style={{"marginBottom": "3px"}}>
+				<InputLabel onDoubleClick={()=>resetSlider16()}>Hue</InputLabel>
+				<RcSlider>
 					<Input className="input" type="text" value={slider16} min="0" max="100" onChange={(event) => setSlider16(event.target.value)}/>
 					<Slider className={classNames('hue-global', handleSlider16 === true ? 'active': '')} onChange={sliderFunc16} startPoint={50} value={slider16} />
 				</RcSlider>
+			</Row>
 
-				<RcSlider style={{"margin":"0px 0px 19px 0px"}}>
-					<InputLabel>Lum Mix</InputLabel>
+			<Row className={classNames("row-slider")} style={{"marginBottom": "19px"}}>
+				<InputLabel onDoubleClick={()=>resetSlider17()}>Lum Mix</InputLabel>
+				<RcSlider>
 					<Input className="input" type="text" value={slider17} min="0" max="100" onChange={(event) => setSlider17(event.target.value)}/>
 					<Slider className={classNames('mix', handleSlider17 === true ? 'active': '')} onChange={sliderFunc17} startPoint={50} value={slider17} />
 				</RcSlider>
+			</Row>
 			</div>
 		</>
 	)
