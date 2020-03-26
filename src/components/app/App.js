@@ -61,7 +61,7 @@ function App() {
 	const [ activeClip, setActiveClip ] = useState(0);
 	const [ activeIndex, setActiveIndex ] = useState(0);
 	const [ activeTextIndex, setTextActiveIndex ] = useState(0);
-	const [ activeGenIndex, setGenActiveIndex ] = useState(1);
+	const [ activeGenIndex, setGenActiveIndex ] = useState(0);
 	const [ activeTransIndex, setTransActiveIndex ] = useState(0);
 
 	return (

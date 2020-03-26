@@ -48,7 +48,6 @@ import EffectsActiveImg from '../../img/nav/effects-active.png';
 import FileImg 			from '../../img/nav/file.png';
 import FileActiveImg 	from '../../img/nav/file-active.png';
 
-
 // NAVIGATION TEXT TEMPLATE
 import TextImg 				from '../../img/nav/text/text.png';
 import TextActiveImg		from '../../img/nav/text/text-active.png';
@@ -176,6 +175,7 @@ export const Wrapper = styled.div `
 	${position('0', '0', '', '')};
 	border: 1px solid #000;
 	color: #fff;
+	margin-bottom: 60px;
 `
 
 export const ClipsWrapper = styled.div `
@@ -386,15 +386,23 @@ export const NavTransItem = styled.div `
 	float: left;
 
 	:nth-child(1) {
-		${bgimage(VideoImg,'no-repeat', '13px 9px', '21px 14px')}
+		${bgimage(VideoImg,'no-repeat', '13px 8px', '21px 13px')}
 	};
 
 	:nth-child(2) {
-		${bgimage(AudioImg,'no-repeat', '15px 9px', '15px 16px')}
+		${bgimage(AudioImg,'no-repeat', '11px 5px', '25px 19px')}
 	};
 
 	&.active {
 		box-shadow: inset 0px -2px 0px 0px rgba(230,75,61,1);
+
+		:nth-child(1) {
+			${bgimage(VideoActiveImg,'no-repeat', '11px 6px', '24px 18px')}
+		};
+
+		:nth-child(2) {
+			${bgimage(AudioActiveImg,'no-repeat', '11px 5px', '25px 19px')}
+		};
 
 		span {
 			color: #fff;
@@ -696,7 +704,7 @@ export const RoundedButton = styled.div `
 	}
 `
 
-export const InputLabel = styled.div `
+export const InputLabel = styled.label `
 	${size('auto', '17px', 'block')};
 	${position('2px', '', '', '24px')};
 	color: #979797;
@@ -704,7 +712,7 @@ export const InputLabel = styled.div `
 	font-size: 11px;
 `
 
-export const Input = styled.input `
+export const Input = styled.div `
 	${size('50px', '17px', 'block')};
 	${position('1px', '29px', '', '')};
 	border: 1px solid transparent;
@@ -713,7 +721,7 @@ export const Input = styled.input `
 	color: #979797;
 	padding: 0 3px;
 	outline: none;
-	/* caret-color: transparent; */
+	user-select: none;
 
 	&:hover, &:focus, &.active {
 		color: #fff;
@@ -809,8 +817,30 @@ export const RcSlider = styled.div `
 		opacity: .5;
 	}
 
-	&:active {
-		input { color: #fff;}
+	.label {
+		${size('auto', '17px', 'block')};
+		${position('2px', '', '', '24px')};
+		color: #979797;
+		font-family: 'OpenSans light';
+		font-size: 11px;
+	}
+
+	input {
+		${size('50px', '17px', 'block')};
+		${position('1px', '29px', '', '')};
+		border: 1px solid transparent;
+		background-color: #28282E;
+		text-align: right;
+		color: #979797;
+		padding: 0 3px;
+		outline: none;
+		user-select: none;
+
+		&:hover, &:focus, &.active {
+			color: #fff;
+			border: 1px solid #E64B3D;
+			border-radius: 3px;
+		}
 	}
 
 	.rc-slider {
@@ -1062,25 +1092,28 @@ export const RcSlider = styled.div `
 		background-color: #E64B3D;
 		-ms-touch-action: pan-x;
 			touch-action: pan-x;
-		cursor: ew-resize;
-	}
+		/* cursor: ew-resize; */
 
-	.rc-slider-handle:focus {
-		outline: none;
-		cursor: ew-resize;
-	}
+		&:focus {
+			outline: none;
+			cursor: ew-resize;
+		}
 
-	.rc-slider-handle:hover {
-		${size('5px', '9px')};
-		margin-top: -6px;
-		cursor: ew-resize;
-		/* cursor: url('https://files.slack.com/files-pri/T02909Q0K-F010DH0JXSR/cursor.png') 11 12, auto; */
-	}
+		&:hover {
+			${size('5px', '9px')};
+			margin-top: -6px;
+			cursor: ew-resize;
+		}
 
-	.rc-slider-handle:active {
-		${size('5px', '9px')};
-		margin-top: -6px;
-		cursor: ew-resize;
-		/* cursor: url('https://files.slack.com/files-pri/T02909Q0K-F010DH0JXSR/cursor.png') 11 12, auto; */
+		&:active {
+			${size('5px', '9px')};
+			margin-top: -6px;
+			cursor: ew-resize;
+		}
 	}
+`
+
+
+export const Slider = styled.div `
+
 `

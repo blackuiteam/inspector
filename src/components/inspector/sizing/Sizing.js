@@ -127,13 +127,13 @@ function Sizing() {
 					))}
 				</Tabs>
 
-				<RcSlider style={{"margin":"3px 0px 3px 0px"}} className={classNames("", activeTab2 === 0 ? "opacity" : "", transformSliders ? "none" : "")}>
+				<RcSlider style={{"margin":"3px 0px 3px 0px"}} className={classNames("", activeTab2 === 0 ? "opacity" : "", scallingContent ? "none" : "")}>
 					<InputLabel>Sharpness</InputLabel>
 					<Input className="input" type="text" value={slider4} min="0" max="100" onChange={(event) => setSlider4(event.target.value)}/>
 					<Slider className={classNames('white', handleSlider4 === true ? 'active': '')} onChange={sliderFunc4} startPoint={50} value={slider4} />
 				</RcSlider>
 
-				<RcSlider style={{"margin":"3px 0px 18px 0px"}} className={classNames("", activeTab2 === 0 ? "opacity" : "", transformSliders ? "none" : "")}>
+				<RcSlider style={{"margin":"3px 0px 18px 0px"}} className={classNames("", activeTab2 === 0 ? "opacity" : "", scallingContent ? "none" : "")}>
 					<InputLabel>Noise Reduction</InputLabel>
 					<Input className="input" type="text" value={slider5} min="0" max="100" onChange={(event) => setSlider5(event.target.value)}/>
 					<Slider className={classNames('white', handleSlider5 === true ? 'active': '')} onChange={sliderFunc5} startPoint={50} value={slider5} />

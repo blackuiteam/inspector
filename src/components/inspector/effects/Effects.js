@@ -104,9 +104,9 @@ function Effects() {
 				<Slider className={classNames('white', handleSlider1 === true ? 'active': '')} onChange={sliderFunc1} startPoint={100} value={slider1} />
 			</RcSlider>
 
-			<Row className="mini-row" style={{"margin":"5px 20px 3px 0px"}}></Row>
+			<Row style={{"margin":"5px 20px 3px 0px"}} className={classNames("mini-row", faceRefineContent ? "none" : "")}/>
 
-			<Row style={{"margin":"0px 0px 2px 0px"}}>
+			<Row style={{"margin":"0px 0px 2px 0px"}} className={faceRefineContent ? "none" : ""}>
 				<RoundedButton style={{"margin":"1px 20px 0px 0px"}}>Analyze</RoundedButton>
 				<CheckBox className={check ? "active" : ""} style={{"margin":"4px 0px 0px 0px"}} onClick={()=> setCheck(!check)}>Show Overlay</CheckBox>
 			</Row>

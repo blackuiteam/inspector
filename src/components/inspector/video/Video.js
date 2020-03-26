@@ -47,7 +47,6 @@ function Video() {
 	function sliderFunc(value) {
 		setHandleSlider(true);
 		setSlider(value);
-		console.log("handler" + handleSlider);
 	}
 
 	function sliderFunc1(value) { setSlider1(value); }
@@ -73,7 +72,7 @@ function Video() {
 			<img src={DropdownNormal} width="294" style={{"margin":"0px 0px 3px 15px"}} className={composite ? "none" : ""}/>
 
 			<RcSlider style={{"margin":"0px 0px 9px 0px"}} className={composite ? "none" : ""}>
-				<InputLabel>Opacity</InputLabel>
+				<InputLabel onDoubleClick={()=>setSlider(50)}>Opacity</InputLabel>
 				<Input className={classNames("input")} type="text" value={slider} min="0" max="100" onChange={(event) => setSlider(event.target.value)}/>
 				<Slider onChange={sliderFunc} startPoint={100} value={slider} />
 			</RcSlider>

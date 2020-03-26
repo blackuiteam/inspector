@@ -2,11 +2,14 @@ import React, { useState } from 'react';
 import classNames from 'classnames';
 import { Row, LabelToggle, ToggleTools, Toggle } from '../../app/styles';
 
-import CompositeImg from '../../../img/text/video/composite.png';
-import Transform1Img from '../../../img/text/video/transform-content.png';
-import Transform2Img from '../../../img/text/video/transform-02.png';
-import Cropping1Img from '../../../img/text/video/cropping-01.png';
-import Cropping2Img from '../../../img/text/video/cropping-02.png';
+import CompositeImg 	from '../../../img/text/video/composite.png';
+import Transform1Img 	from '../../../img/text/video/transform-01.png';
+import Transform2Img 	from '../../../img/text/video/transform-02.png';
+import Cropping1Img 	from '../../../img/text/video/cropping-01.png';
+import Cropping2Img 	from '../../../img/text/video/cropping-02.png';
+import Dyn1 			from '../../../img/text/video/dyn-01.png';
+import Dyn2 			from '../../../img/text/video/dyn-02.png';
+import Stablization1 	from '../../../img/text/video/stablization.png';
 
 function TextVideo() {
 
@@ -27,6 +30,10 @@ function TextVideo() {
 
 	const [ toggleDynamic, setToggleDynamic ] = useState(false);
 	const [ toggleStablization, setToggleStablization ] = useState(false);
+	const [ dyn, setDyn ] = useState(false);
+	const [ dyn2, setDyn2 ] = useState(false);
+
+	const [ stabl, setStabl ] = useState(false);
 
 	return (
 		<>
@@ -35,7 +42,7 @@ function TextVideo() {
 				<LabelToggle>Composite</LabelToggle>
 				<ToggleTools onClick={()=> setComposite(!compositeContent)} className={classNames('ic-controls', compositeContent ? "active" : "")}/>
 			</Row>
-			<img  src={CompositeImg} width="294" style={{'margin': '3px auto 11px 15px'}} className={classNames('', compositeContent ? "none" : "")}/>
+			<img  src={CompositeImg} width="294" style={{'margin': '0px auto 9px 15px'}} className={classNames('', compositeContent ? "none" : "")}/>
 
 			<Row className="header">
 				<Toggle onClick={()=> setToggleTransform1(!toggleTransform1)} className={classNames('', toggleTransform1 ? "active" : "")}/>
@@ -43,7 +50,8 @@ function TextVideo() {
 				<ToggleTools onClick={()=> setTransform1(!transform1Content)} className={classNames('ic-controls', transform1Content ? "active" : "")}/>
 				<ToggleTools onClick={()=> setTransform2(!transform2Content)} className={classNames('ic-transform', transform2Content ? "active" : "")}/>
 			</Row>
-			<img  src={Transform1Img} width="296" style={{'margin': '3px auto 11px 15px'}} className={classNames('', transform2Content ? "none" : "")}/>
+			<img  src={Transform1Img} width="296" style={{'margin': '0px auto 12px 15px'}} className={classNames('', transform2Content ? "none" : "")}/>
+			<img  src={Transform2Img} width="294" style={{'margin': '0px auto 9px 15px'}} className={classNames('', transform1Content ? "none" : "")}/>
 
 			<Row className="header">
 				<Toggle onClick={()=> setToggleCropping1(!toggleCropping1)} className={classNames('', toggleCropping1 ? "active" : "")}/>
@@ -51,20 +59,24 @@ function TextVideo() {
 				<ToggleTools onClick={()=> setCropping2(!cropping2Content)} className={classNames('ic-controls', cropping2Content ? "active" : "")}/>
 				<ToggleTools onClick={()=> setCropping1(!cropping1Content)} className={classNames('ic-crop', cropping1Content ? "active" : "")}/>
 			</Row>
-			<img  src={Cropping1Img} width="296" style={{'margin': '3px auto 11px 15px'}} className={classNames('', cropping1Content ? "none" : "")}/>
-			<img  src={Cropping2Img} width="294" style={{'margin': '3px auto 11px 15px'}} className={classNames('', cropping2Content ? "none" : "")}/>
+			<img  src={Cropping1Img} width="296" style={{'margin': '0px auto 14px 14px'}} className={classNames('', cropping1Content ? "none" : "")}/>
+			<img  src={Cropping2Img} width="294" style={{'margin': '0px auto 9px 15px'}} className={classNames('', cropping2Content ? "none" : "")}/>
 
 			<Row className="header">
 				<Toggle onClick={()=> setToggleDynamic(!toggleDynamic)} className={classNames('', toggleDynamic ? "active" : "")}/>
 				<LabelToggle>Dynamic Zoom</LabelToggle>
-				<ToggleTools className="ic-controls"/>
+				<ToggleTools className={classNames('ic-controls', dyn ? "active" : "")} onClick={()=> setDyn(!dyn)}/>
+				<ToggleTools className={classNames('ic-dynamic', dyn2 ? "active" : "")} onClick={()=> setDyn2(!dyn2)}/>
 			</Row>
+			<img src={Dyn1} width="296" style={{'margin': '0px 0px 9px 19px'}} className={classNames('', dyn2 ? "none" : "")} />
+			<img src={Dyn2} width="294" style={{'margin': '4px 0px 9px 15px'}} className={classNames('', dyn ? "none" : "")}/>
 
 			<Row className="header">
 				<Toggle onClick={()=> setToggleStablization(!toggleStablization)} className={classNames('', toggleStablization ? "active" : "")}/>
 				<LabelToggle>Stablization</LabelToggle>
-				<ToggleTools className="ic-controls"/>
+				<ToggleTools className={classNames('ic-controls', stabl ? "active" : "")} onClick={()=> setStabl(!stabl)}/>
 			</Row>
+			<img src={Stablization1} width="294" style={{'margin': '1px 0px 20px 15px'}} className={stabl ? "none" : ""}/>
 		</>
 	)
 }
