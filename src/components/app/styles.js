@@ -682,6 +682,8 @@ export const InputLabel = styled.label `
 	font-family: 'OpenSans light';
 	font-size: 11px;
 	z-index: 3;
+
+	&.active { color: #fff; }
 `
 
 export const Input = styled.input `
@@ -844,11 +846,30 @@ export const RcSlider = styled.div `
 		-webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 		cursor: ew-resize;
 
+		&.default {
+			.rc-slider-track {
+				/* background-color: transparent; */
+			}
+
+			.rc-slider-handle {
+				background-color: #fff;
+
+				&:hover {
+					background-color: #E64B3D;
+				}
+			}
+
+			&.active {
+				.rc-slider-handle {
+					background-color: #E64B3D;
+				}
+			}
+		}
+
 		&.blue,
 		&.boost,
 		&.bw,
 		&.cyan,
-		&.default,
 		&.detail,
 		&.green,
 		&.highlight,
@@ -868,7 +889,26 @@ export const RcSlider = styled.div `
 		&.shadow,
 		&.temperature,
 		&.tint,
-		&.yellow,
+		&.yellow {
+			.rc-slider-track {
+				background-color: transparent;
+			}
+
+			.rc-slider-handle {
+				background-color: #fff;
+
+				&:hover {
+					background-color: #E64B3D;
+				}
+			}
+
+			&.active {
+				.rc-slider-handle {
+					background-color: #E64B3D;
+				}
+			}
+		}
+
 		&.white {
 			.rc-slider-track {
 				background-color: transparent;
@@ -1038,22 +1078,6 @@ export const RcSlider = styled.div `
 				${bgimage(SliderYellowImg,'no-repeat', '0 0', '100%')};
 			}
 		}
-
-		&.white {
-			.rc-slider-handle {
-				background-color: #fff;
-
-				&:hover {
-					background-color: #E64B3D;
-				}
-			}
-
-			&.active {
-				.rc-slider-handle {
-					background-color: #E64B3D;
-				}
-			}
-		}
 	}
 
 	.rc-slider-rail {
@@ -1077,7 +1101,8 @@ export const RcSlider = styled.div `
 		margin-top: -1px;
 		border-radius: 2px;
 		border: solid 1px #000;
-		background-color: #E64B3D;
+		/* background-color: #E64B3D; */
+		background-color: #fff;
 		-ms-touch-action: pan-x;
 			touch-action: pan-x;
 		/* cursor: ew-resize; */

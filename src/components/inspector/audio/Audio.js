@@ -15,34 +15,21 @@ function Audio() {
 
 	const [ slider1, setSlider1 ] =  useState(100);
 	const [ handleSlider1, setHandleSlider1 ] = useState(false);
-	function sliderFunc1(value) {
-		setHandleSlider1(true);
-		setSlider1(value);
-	}
-
-	function resetSlider1(value) {
-		setHandleSlider1(false);
-		setSlider1(100);
-	}
+	const [sld1, setSld1 ] = useState(false);
+	function sliderFunc1(value) { setHandleSlider1(true); setSlider1(value); }
+	function resetSlider1(value) { setHandleSlider1(false); setSlider1(100); }
 
 	const [ slider2, setSlider2 ] =  useState(50);
 	const [ handleSlider2, setHandleSlider2 ] = useState(false);
-	function sliderFunc2(value) {
-		setHandleSlider2(true);
-		setSlider2(value);
-	}
-
-	function resetSlider2(value) {
-		setHandleSlider2(false);
-		setSlider2(100);
-	}
+	const [sld2, setSld2 ] = useState(false);
+	function sliderFunc2(value) { setHandleSlider2(true); setSlider2(value); }
+	function resetSlider2(value) { setHandleSlider2(false); setSlider2(50); }
 
 	const [ slider3, setSlider3 ] =  useState(50);
 	const [ handleSlider3, setHandleSlider3 ] = useState(false);
-	function sliderFunc3(value) {
-		setHandleSlider3(true);
-		setSlider3(value);
-	}
+	const [sld3, setSld3 ] = useState(false);
+	function sliderFunc3(value) { setHandleSlider3(true); setSlider3(value); }
+	function resetSlider3(value) { setHandleSlider3(false); setSlider3(50); }
 
 	// AUDIO DUCK
 	const [ toggleAudioDuck, setToggleAudioDuck ] = useState(false);
@@ -63,29 +50,17 @@ function Audio() {
 
 	const [ contentAudioDuck, setContentAudioDuck ] = useState(false);
 
-	const [ slider4, setSlider4 ] =  useState(100);
+	const [ slider4, setSlider4 ] =  useState(50);
 	const [ handleSlider4, setHandleSlider4 ] = useState(false);
-	function sliderFunc4(value) {
-		setHandleSlider4(true);
-		setSlider4(value);
-	}
-
-	function resetSlider4(value) {
-		setHandleSlider4(false);
-		setSlider4(100);
-	}
+	const [sld4, setSld4 ] = useState(false);
+	function sliderFunc4(value) { setHandleSlider4(true); setSlider4(value);}
+	function resetSlider4(value) { setHandleSlider4(false); setSlider4(50); }
 
 	const [ slider5, setSlider5 ] =  useState(50);
 	const [ handleSlider5, setHandleSlider5 ] = useState(false);
-	function sliderFunc5(value) {
-		setHandleSlider5(true);
-		setSlider5(value);
-	}
-
-	function resetSlider5(value) {
-		setHandleSlider5(false);
-		setSlider5(50);
-	}
+	const [sld5, setSld5 ] = useState(false);
+	function sliderFunc5(value) { setHandleSlider5(true); setSlider5(value); }
+	function resetSlider5(value) { setHandleSlider5(false); setSlider5(50); }
 
 
 	// PITCH
@@ -94,27 +69,15 @@ function Audio() {
 
 	const [ slider7, setSlider7 ] =  useState(50);
 	const [ handleSlider7, setHandleSlider7 ] = useState(false);
-	function sliderFunc7(value) {
-		setHandleSlider7(true);
-		setSlider7(value);
-	}
-
-	function resetSlider7(value) {
-		setHandleSlider7(false);
-		setSlider7(50);
-	}
+	const [sld7, setSld7 ] = useState(false);
+	function sliderFunc7(value) { setHandleSlider7(true); setSlider7(value); }
+	function resetSlider7(value) { setHandleSlider7(false); setSlider7(50); }
 
 	const [ slider8, setSlider8 ] =  useState(50);
 	const [ handleSlider8, setHandleSlider8 ] = useState(false);
-	function sliderFunc8(value) {
-		setHandleSlider8(true);
-		setSlider8(value);
-	}
-
-	function resetSlider8(value) {
-		setHandleSlider8(false);
-		setSlider8(50);
-	}
+	const [sld8, setSld8 ] = useState(false);
+	function sliderFunc8(value) { setHandleSlider8(true); setSlider8(value); }
+	function resetSlider8(value) { setHandleSlider8(false); setSlider8(50); }
 
 	// EQUALIZER
 	const [ toggleEq, setToggleEq ] = useState(false);
@@ -123,15 +86,9 @@ function Audio() {
 
 	const [ slider6, setSlider6 ] =  useState(50);
 	const [ handleSlider6, setHandleSlider6 ] = useState(false);
-	function sliderFunc6(value) {
-		setHandleSlider6(true);
-		setSlider6(value);
-	}
-
-	function resetSlider6(value) {
-		setHandleSlider6(false);
-		setSlider6(50);
-	}
+	const [sld6, setSld6 ] = useState(false);
+	function sliderFunc6(value) { setHandleSlider6(true); setSlider6(value); }
+	function resetSlider6(value) { setHandleSlider6(false); setSlider6(50); }
 
 	return (
 		<>
@@ -144,18 +101,28 @@ function Audio() {
 			</Row>
 
 			<Row className={classNames("row-slider", slidersAudio ? "none" : "")} style={{"marginBottom": "3px"}}>
-				<InputLabel onDoubleClick={()=>resetSlider1()}>Gains</InputLabel>
+				<InputLabel className={sld1 ? "active" : ""} onDoubleClick={()=>resetSlider1()}>Gain</InputLabel>
 				<RcSlider>
 					<Input className="input" type="text" value={slider1} min="0" max="100" onChange={(event) => setSlider1(event.target.value)}/>
-					<Slider className={classNames('white', handleSlider1 === true ? 'active': '')} onChange={sliderFunc1} startPoint={100} value={slider1} />
+					<Slider
+						className={classNames('white', handleSlider1 === true ? 'active': '')}
+						onChange={sliderFunc1}
+						onBeforeChange={()=>setSld1(!sld1)}
+						onAfterChange={()=>setSld1(!sld1)}
+						value={slider1}/>
 				</RcSlider>
 			</Row>
 
 			<Row className={classNames("row-slider", slidersAudio ? "none" : "")} style={{"marginBottom": "10px"}}>
-				<InputLabel onDoubleClick={()=>resetSlider1()}>Pan</InputLabel>
+				<InputLabel className={sld2 ? "active" : ""} onDoubleClick={()=>resetSlider2()}>Pan</InputLabel>
 				<RcSlider>
 					<Input className="input" type="text" value={slider2} min="0" max="100" onChange={(event) => setSlider2(event.target.value)}/>
-					<Slider className={classNames('white', handleSlider2 === true ? 'active': '')} onChange={sliderFunc2} startPoint={50} value={slider2} />
+					<Slider
+						className={classNames('white', handleSlider2 === true ? 'active': '')}
+						onChange={sliderFunc2}
+						onBeforeChange={()=>setSld2(!sld2)}
+						onAfterChange={()=>setSld2(!sld2)}
+						value={slider2}/>
 				</RcSlider>
 			</Row>
 
@@ -176,18 +143,28 @@ function Audio() {
 				</Tabs>
 
 				<Row className={classNames("row-slider", contentAudioDuck ? "none" : "")} style={{"marginBottom": "3px"}}>
-					<InputLabel onDoubleClick={()=>resetSlider4()}>Treshold Sensitivity</InputLabel>
+					<InputLabel className={sld4 ? "active" : ""} onDoubleClick={()=>resetSlider4()}>Treshold Sensitivity</InputLabel>
 					<RcSlider>
 						<Input className="input" type="text" value={slider4} min="0" max="100" onChange={(event) => setSlider4(event.target.value)}/>
-						<Slider className={classNames('white', handleSlider4 === true ? 'active': '')} onChange={sliderFunc4} startPoint={50} value={slider4} />
+						<Slider
+							className={classNames('white', handleSlider4 === true ? 'active': '')}
+							onChange={sliderFunc4}
+							onBeforeChange={()=>setSld4(!sld4)}
+							onAfterChange={()=>setSld4(!sld4)}
+							value={slider4}/>
 					</RcSlider>
 				</Row>
 
 				<Row className={classNames("row-slider", contentAudioDuck ? "none" : "")} style={{"margin": "0px"}}>
-					<InputLabel onDoubleClick={()=>resetSlider5()}>Amount</InputLabel>
+					<InputLabel className={sld5 ? "active" : ""} onDoubleClick={()=>resetSlider5()}>Amount</InputLabel>
 					<RcSlider>
 						<Input className="input" type="text" value={slider5} min="0" max="100" onChange={(event) => setSlider5(event.target.value)}/>
-						<Slider className={classNames('white', handleSlider5 === true ? 'active': '')} onChange={sliderFunc5} startPoint={50} value={slider5} />
+						<Slider
+							className={classNames('white', handleSlider4 === true ? 'active': '')}
+							onChange={sliderFunc5}
+							onBeforeChange={()=>setSld5(!sld5)}
+							onAfterChange={()=>setSld5(!sld5)}
+							value={slider5}/>
 					</RcSlider>
 				</Row>
 
@@ -209,18 +186,28 @@ function Audio() {
 
 			<div className={contentPitch ? "none" : ""}>
 				<Row className={classNames("row-slider")} style={{"margin":"1px 0px 3px 0px"}}>
-					<InputLabel onDoubleClick={()=>resetSlider7()}>Semi Tones</InputLabel>
+					<InputLabel className={sld7 ? "active" : ""} onDoubleClick={()=>resetSlider7()}>Semi Tones</InputLabel>
 					<RcSlider>
 						<Input className="input" type="text" value={slider7} min="0" max="100" onChange={(event) => setSlider7(event.target.value)}/>
-						<Slider className={classNames('white', handleSlider7 === true ? 'active': '')} onChange={sliderFunc7} startPoint={50} value={slider7} />
+						<Slider
+							className={classNames('white', handleSlider7 === true ? 'active': '')}
+							onChange={sliderFunc7}
+							onBeforeChange={()=>setSld7(!sld7)}
+							onAfterChange={()=>setSld7(!sld7)}
+							value={slider7}/>
 					</RcSlider>
 				</Row>
 
 				<Row className={classNames("row-slider")} style={{"margin":"0px 0px 9px 0px"}}>
-					<InputLabel onDoubleClick={()=>resetSlider8()}>Cents</InputLabel>
+					<InputLabel className={sld8 ? "active" : ""} onDoubleClick={()=>resetSlider8()}>Cents</InputLabel>
 					<RcSlider>
 						<Input className="input" type="text" value={slider8} min="0" max="100" onChange={(event) => setSlider8(event.target.value)}/>
-						<Slider className={classNames('white', handleSlider8 === true ? 'active': '')} onChange={sliderFunc8} startPoint={50} value={slider8} />
+						<Slider
+							className={classNames('white', handleSlider8 === true ? 'active': '')}
+							onChange={sliderFunc8}
+							onBeforeChange={()=>setSld8(!sld8)}
+							onAfterChange={()=>setSld8(!sld8)}
+							value={slider8}/>
 					</RcSlider>
 				</Row>
 			</div>
@@ -235,10 +222,15 @@ function Audio() {
 
 			<img src={Eq1Img} width="294" alt="" style={eqSliders ? {"margin":"1px 0px 20px 15px"} : {"margin":"1px 0px 3px 15px"}} className={contentEq ? "none" : ""}/>
 			<Row className={classNames("row-slider", eqSliders ? "none" : "")} style={{"margin":"0px 0px 6px 0px"}}>
-				<InputLabel onDoubleClick={()=>resetSlider6()}>Global Gain</InputLabel>
+				<InputLabel className={sld6 ? "active" : ""} onDoubleClick={()=>resetSlider6()}>Global Gain</InputLabel>
 				<RcSlider>
 					<Input className="input" type="text" value={slider6} min="0" max="100" onChange={(event) => setSlider6(event.target.value)}/>
-					<Slider className={classNames('white', handleSlider6 === true ? 'active': '')} onChange={sliderFunc6} startPoint={50} value={slider6} />
+					<Slider
+							className={classNames('white', handleSlider6 === true ? 'active': '')}
+							onChange={sliderFunc6}
+							onBeforeChange={()=>setSld6(!sld6)}
+							onAfterChange={()=>setSld6(!sld6)}
+							value={slider6}/>
 				</RcSlider>
 			</Row>
 

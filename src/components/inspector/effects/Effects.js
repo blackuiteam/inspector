@@ -22,63 +22,34 @@ function Effects() {
 
 	const [ slider1, setSlider1 ] =  useState(50);
 	const [ handleSlider1, setHandleSlider1 ] = useState(false);
-	function sliderFunc1(value) {
-		setHandleSlider1(true);
-		setSlider1(value);
-	}
+	const [sld1, setSld1 ] = useState(false);
+	function sliderFunc1(value) { setHandleSlider1(true); setSlider1(value); }
+	function resetSlider1(value) { setHandleSlider1(false); setSlider1(50); }
 
-	function resetSlider1(value) {
-		setHandleSlider1(false);
-		setSlider1(50);
-	}
 
 	const [ slider2, setSlider2 ] =  useState(50);
 	const [ handleSlider2, setHandleSlider2 ] = useState(false);
-	function sliderFunc2(value) {
-		setHandleSlider2(true);
-		setSlider2(value);
-	}
-
-	function resetSlider2(value) {
-		setHandleSlider2(false);
-		setSlider2(50);
-	}
+	const [sld2, setSld2 ] = useState(false);
+	function sliderFunc2(value) { setHandleSlider2(true); setSlider2(value); }
+	function resetSlider2(value) { setHandleSlider2(false); setSlider2(50); }
 
 	const [ slider3, setSlider3 ] =  useState(50);
 	const [ handleSlider3, setHandleSlider3 ] = useState(false);
-	function sliderFunc3(value) {
-		setHandleSlider3(true);
-		setSlider3(value);
-	}
-
-	function resetSlider3(value) {
-		setHandleSlider3(false);
-		setSlider3(50);
-	}
+	const [sld3, setSld3 ] = useState(false);
+	function sliderFunc3(value) { setHandleSlider3(true); setSlider3(value); }
+	function resetSlider3(value) { setHandleSlider3(false); setSlider3(50); }
 
 	const [ slider4, setSlider4 ] =  useState(50);
 	const [ handleSlider4, setHandleSlider4 ] = useState(false);
-	function sliderFunc4(value) {
-		setHandleSlider4(true);
-		setSlider4(value);
-	}
+	const [sld4, setSld4 ] = useState(false);
+	function sliderFunc4(value) { setHandleSlider4(true); setSlider4(value); }
+	function resetSlider4(value) { setHandleSlider4(false); setSlider4(50); }
 
-	function resetSlider4(value) {
-		setHandleSlider4(false);
-		setSlider4(50);
-	}
-
-	const [ slider5, setSlider5 ] =  useState(50);
+	const [ slider5, setSlider5] =  useState(50);
 	const [ handleSlider5, setHandleSlider5 ] = useState(false);
-	function sliderFunc5(value) {
-		setHandleSlider5(true);
-		setSlider5(value);
-	}
-
-	function resetSlider5(value) {
-		setHandleSlider5(false);
-		setSlider5(50);
-	}
+	const [sld5, setSld5 ] = useState(false);
+	function sliderFunc5(value) { setHandleSlider5(true); setSlider5(value); }
+	function resetSlider5(value) { setHandleSlider5(false); setSlider5(50); }
 
 	const [ check, setCheck ] = useState(false);
 	const [ check1, setCheck1 ] = useState(false);
@@ -124,10 +95,18 @@ function Effects() {
 			</Row>
 
 			<Row className={classNames('row-slider', faceRefineContent ? "none" : "")} style={{"margin":"1px 0px 9px 0px"}}>
-				<InputLabel onDoubleClick={()=>resetSlider1()}>Global blend</InputLabel>
+				<InputLabel className={sld1 ? "active" : ""} onDoubleClick={()=>resetSlider1()}>Global blend</InputLabel>
 				<RcSlider>
 					<Input className="input" type="text" value={slider1} min="0" max="100" onChange={(event) => setSlider1(event.target.value)}/>
-					<Slider className={classNames('white', handleSlider1 === true ? 'active': '')} onChange={sliderFunc1} startPoint={100} value={slider1} />
+					<RcSlider>
+						<Input className="input" type="text" value={slider1} min="0" max="100" onChange={(event) => setSlider1(event.target.value)}/>
+						<Slider
+							className={classNames('white', handleSlider1 === true ? 'active': '')}
+							onChange={sliderFunc1}
+							onBeforeChange={()=>setSld1(!sld1)}
+							onAfterChange={()=>setSld1(!sld1)}
+							value={slider1}/>
+					</RcSlider>
 				</RcSlider>
 			</Row>
 
@@ -156,18 +135,30 @@ function Effects() {
 				</Row>
 
 				<Row className={classNames('row-slider', faceRefineContent ? "none" : "")} style={{"padding":"0", "height":"25px", "margin-bottom": "1px"}}>
-					<InputLabel style={{"left":"9px"}} onDoubleClick={()=>resetSlider2()}>Face Mask Size</InputLabel>
+					<InputLabel className={sld2 ? "active" : ""} style={{"left":"9px"}} onDoubleClick={()=>resetSlider2()}>Face Mask Size</InputLabel>
 					<RcSlider>
 						<Input className="input" style={{"right":"4px"}} type="text" value={slider2} min="0" max="100" onChange={(event) => setSlider2(event.target.value)}/>
-						<Slider style={{"width":"100%","margin":"0px 0px 0px 0px"}}  className={classNames('white', handleSlider2 === true ? 'active': '')} onChange={sliderFunc2} startPoint={100} value={slider2} />
+						<Slider
+						 	style={{"width":"100%","margin":"0px 0px 0px 0px"}}
+							className={classNames('white', handleSlider2 === true ? 'active': '')}
+							onChange={sliderFunc2}
+							onBeforeChange={()=>setSld2(!sld2)}
+							onAfterChange={()=>setSld2(!sld2)}
+							value={slider2}/>
 					</RcSlider>
 				</Row>
 
 				<Row className={classNames('row-slider', faceRefineContent ? "none" : "")} style={{"padding":"0", "height":"25px", "margin-bottom": "2px"}}>
-					<InputLabel style={{"left":"9px"}} onDoubleClick={()=>resetSlider3()}>Face Mask Softness</InputLabel>
+					<InputLabel className={sld3 ? "active" : ""} style={{"left":"9px"}} onDoubleClick={()=>resetSlider3()}>Face Mask Softness</InputLabel>
 					<RcSlider>
 						<Input className="input" style={{"right":"4px"}} type="text" value={slider3} min="0" max="100" onChange={(event) => setSlider3(event.target.value)}/>
-						<Slider style={{"width":"100%","margin":"0px 0px 0px 0px"}}  className={classNames('white', handleSlider3 === true ? 'active': '')} onChange={sliderFunc3} startPoint={100} value={slider3} />
+						<Slider
+						 	style={{"width":"100%","margin":"0px 0px 0px 0px"}}
+							className={classNames('white', handleSlider3 === true ? 'active': '')}
+							onChange={sliderFunc3}
+							onBeforeChange={()=>setSld3(!sld3)}
+							onAfterChange={()=>setSld3(!sld3)}
+							value={slider3}/>
 					</RcSlider>
 				</Row>
 
@@ -176,18 +167,30 @@ function Effects() {
 				</Row>
 
 				<Row className={classNames('row-slider', faceRefineContent ? "none" : "")} style={{"padding":"0", "height":"25px", "margin-bottom": "1px"}}>
-					<InputLabel style={{"left":"9px"}} onDoubleClick={()=>resetSlider4()}>Denoise Mask</InputLabel>
+					<InputLabel className={sld4 ? "active" : ""} style={{"left":"9px"}} onDoubleClick={()=>resetSlider4()}>Denoise Mask</InputLabel>
 					<RcSlider className={classNames('', faceRefineContent ? "none" : "")}>
 						<Input className="input" style={{"right":"4px"}} type="text" value={slider4} min="0" max="100" onChange={(event) => setSlider4(event.target.value)}/>
-						<Slider style={{"width":"100%","margin":"0px 0px 0px 0px"}}  className={classNames('white', handleSlider4 === true ? 'active': '')} onChange={sliderFunc4} startPoint={100} value={slider4}/>
+						<Slider
+						 	style={{"width":"100%","margin":"0px 0px 0px 0px"}}
+							className={classNames('white', handleSlider4 === true ? 'active': '')}
+							onChange={sliderFunc4}
+							onBeforeChange={()=>setSld4(!sld4)}
+							onAfterChange={()=>setSld4(!sld4)}
+							value={slider4}/>
 					</RcSlider>
 				</Row>
 
 				<Row className={classNames('row-slider', faceRefineContent ? "none" : "")} style={{"padding":"0", "height":"25px", "margin-bottom": "2px"}}>
-					<InputLabel style={{"left":"9px"}} onDoubleClick={()=>resetSlider5()}>Refine Mask</InputLabel>
+					<InputLabel className={sld5 ? "active" : ""} style={{"left":"9px"}} onDoubleClick={()=>resetSlider5()}>Refine Mask</InputLabel>
 					<RcSlider>
 						<Input className="input" style={{"right":"4px"}} type="text" value={slider5} min="0" max="100" onChange={(event) => setSlider5(event.target.value)}/>
-						<Slider style={{"width":"100%","margin":"0px 0px 0px 0px"}}  className={classNames('white', handleSlider5 === true ? 'active': '')} onChange={sliderFunc5} startPoint={100} value={slider5}/>
+						<Slider
+						 	style={{"width":"100%","margin":"0px 0px 0px 0px"}}
+							className={classNames('white', handleSlider5 === true ? 'active': '')}
+							onChange={sliderFunc5}
+							onBeforeChange={()=>setSld5(!sld5)}
+							onAfterChange={()=>setSld5(!sld5)}
+							value={slider5}/>
 					</RcSlider>
 				</Row>
 

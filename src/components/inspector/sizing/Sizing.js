@@ -41,38 +41,23 @@ function Sizing() {
 
 	const [ scallingContent, setScallingContent ] = useState(false);
 
-	const [ slider, setSlider ] =  useState(20);
-	function sliderFunc(value) { setSlider(value); }
-
-	const [ slider2, setSlider2 ] =  useState(80);
-	function sliderFunc2(value) { setSlider2(value); }
-
-	const [ slider3, setSlider3 ] =  useState(20);
-	function sliderFunc3(value) { setSlider3(value); }
+	const [ slider3, setSlider3 ] =  useState(50);
+	const [ handleSlider3, setHandleSlider3 ] = useState(false);
+	const [sld3, setSld3 ] = useState(false);
+	function sliderFunc3(value) { setHandleSlider3(true); setSlider3(value); }
+	function resetSlider3(value) { setHandleSlider3(false); setSlider3(50); }
 
 	const [ slider4, setSlider4 ] =  useState(50);
 	const [ handleSlider4, setHandleSlider4 ] = useState(false);
-	function sliderFunc4(value) {
-		setHandleSlider4(true);
-		setSlider4(value);
-	}
-
-	function resetSlider4(value) {
-		setHandleSlider4(false);
-		setSlider4(50);
-	}
-
-	function resetSlider5(value) {
-		setHandleSlider5(false);
-		setSlider5(50);
-	}
+	const [sld4, setSld4 ] = useState(false);
+	function sliderFunc4(value) { setHandleSlider4(true); setSlider4(value); }
+	function resetSlider4(value) { setHandleSlider4(false); setSlider4(50); }
 
 	const [ slider5, setSlider5 ] =  useState(50);
 	const [ handleSlider5, setHandleSlider5 ] = useState(false);
-	function sliderFunc5(value) {
-		setHandleSlider5(true);
-		setSlider5(value);
-	}
+	const [sld5, setSld5 ] = useState(false);
+	function sliderFunc5(value) { setHandleSlider5(true); setSlider5(value); }
+	function resetSlider5(value) { setHandleSlider5(false); setSlider5(50); }
 
 	return (
 		<>
@@ -86,17 +71,6 @@ function Sizing() {
 			<img src={Transform1} width="296" alt="" style={{"margin":"-1px 0px 12px 15px"}} className={transformContent ? "none" : ""}/>
 			<img src={Transform2} width="294" alt="" style={{"margin":"0px 0px 9px 15px"}} className={transformSliders ? "none" : ""}/>
 
-			<RcSlider style={{"margin":"0px 0px 3px 0px"}} className={transformSliders ? "none" : "none"}>
-				<InputLabel>Pitch</InputLabel>
-				<Input className="input" type="text" value={slider+'.00'} min="0" max="100" onChange={(event) => setSlider(event.target.value)}/>
-				<Slider onChange={sliderFunc} startPoint={50} value={slider} />
-			</RcSlider>
-
-			<RcSlider style={{"margin":"0px 0px 9px 0px"}} className={transformSliders ? "none" : "none"}>
-				<InputLabel>Yaw</InputLabel>
-				<Input className="input" type="text" value={slider2+'.00'} min="0" max="100" onChange={(event) => setSlider2(event.target.value)}/>
-				<Slider onChange={sliderFunc2} startPoint={50} value={slider2} />
-			</RcSlider>
 
 			{/* CROPPING */}
 			<Row className="header">
@@ -110,10 +84,16 @@ function Sizing() {
 			<img src={CroppingContent2} width="294" alt="" style={{"margin":"0px 0px 0px 15px"}} className={croppingSliders ? "none" : ""}/>
 
 			<Row className={classNames("row-slider", croppingSliders ? "none" : "")} style={{"margin":"3px 0px 6px 0px"}}>
-				<InputLabel onDoubleClick={()=> setSlider3(20)}>Softness</InputLabel>
+				<InputLabel className={sld3 ? "active" : ""} onDoubleClick={()=>resetSlider3()}>Softness</InputLabel>
 				<RcSlider>
 					<Input className="input" type="text" value={slider3} min="0" max="100" onChange={(event) => setSlider3(event.target.value)}/>
-					<Slider onChange={sliderFunc3} startPoint={50} value={slider3} />
+					<Slider
+						className={classNames('default', handleSlider3 === true ? 'active': '')}
+						onChange={sliderFunc3}
+						onBeforeChange={()=>setSld3(!sld3)}
+						onAfterChange={()=>setSld3(!sld3)}
+						startPoint={50}
+						value={slider3}/>
 				</RcSlider>
 			</Row>
 
@@ -142,18 +122,30 @@ function Sizing() {
 				</Tabs>
 
 				<Row className={classNames("row-slider")} style={{"margin":"3px 0px 3px 0px"}}>
-					<InputLabel onDoubleClick={()=> resetSlider4()}>Sharpness</InputLabel>
+					<InputLabel className={sld4 ? "active" : ""} onDoubleClick={()=> resetSlider4()}>Sharpness</InputLabel>
 					<RcSlider className={classNames("", activeTab2 === 0 ? "opacity" : "", scallingContent ? "none" : "")}>
 						<Input className="input" type="text" value={slider4} min="0" max="100" onChange={(event) => setSlider4(event.target.value)}/>
-						<Slider className={classNames('white', handleSlider4 === true ? 'active': '')} onChange={sliderFunc4} startPoint={50} value={slider4} />
+						<Slider
+						className={classNames('white', handleSlider4 === true ? 'active': '')}
+						onChange={sliderFunc4}
+						onBeforeChange={()=>setSld4(!sld4)}
+						onAfterChange={()=>setSld4(!sld4)}
+						startPoint={50}
+						value={slider4}/>
 					</RcSlider>
 				</Row>
 
 				<Row className={classNames("row-slider")} style={{"margin":"3px 0px 18px 0px"}}>
-					<InputLabel onDoubleClick={()=> resetSlider5()}>Noise Reduction</InputLabel>
+					<InputLabel className={sld5 ? "active" : ""} onDoubleClick={()=> resetSlider5()}>Noise Reduction</InputLabel>
 					<RcSlider className={classNames("", activeTab2 === 0 ? "opacity" : "", scallingContent ? "none" : "")}>
 						<Input className="input" type="text" value={slider5} min="0" max="100" onChange={(event) => setSlider5(event.target.value)}/>
-						<Slider className={classNames('white', handleSlider5 === true ? 'active': '')} onChange={sliderFunc5} startPoint={50} value={slider5} />
+						<Slider
+						className={classNames('white', handleSlider5 === true ? 'active': '')}
+						onChange={sliderFunc5}
+						onBeforeChange={()=>setSld4(!sld5)}
+						onAfterChange={()=>setSld4(!sld5)}
+						startPoint={50}
+						value={slider5}/>
 					</RcSlider>
 				</Row>
 			</div>
