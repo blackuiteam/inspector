@@ -32,8 +32,8 @@ function Video() {
 
 	const [ attr, setAttr] = useState(false);
 
-	const [ slider, setSlider ] =  useState(100);
-	const [ handleSlider, setHandleSlider ] = useState(false);
+	const [ slider, setSlider ] =  useState(50);
+	const [ handleSlider, setHandleSlider ] = useState(true);
 	const [sld, setSld ] = useState(false);
 	function sliderFunc(value) 	{ setHandleSlider(true); setSlider(value); }
 	function resetSlider(value) { setHandleSlider(false); setSlider(100); }
@@ -44,14 +44,14 @@ function Video() {
 	function sliderFunc1(value) { setHandleSlider1(true); setSlider1(value); }
 	function resetSlider1(value) { setHandleSlider1(false); setSlider1(50); }
 
-	const [ slider2, setSlider2 ] =  useState(30);
+	const [ slider2, setSlider2 ] =  useState(80);
 	const [ handleSlider2, setHandleSlider2 ] = useState(false);
 	const [sld2, setSld2 ] = useState(false);
 	function sliderFunc2(value) { setHandleSlider2(true); setSlider2(value); }
-	function resetSlider2(value) { setHandleSlider2(false); setSlider2(30); }
+	function resetSlider2(value) { setHandleSlider2(false); setSlider2(80); }
 
-	const [ slider3, setSlider3 ] =  useState(100);
-	const [ handleSlider3, setHandleSlider3 ] = useState(false);
+	const [ slider3, setSlider3 ] =  useState(80);
+	const [ handleSlider3, setHandleSlider3 ] = useState(true);
 	const [sld3, setSld3 ] = useState(false);
 	function sliderFunc3(value) { setHandleSlider3(true); setSlider3(value); }
 	function resetSlider3(value) { setHandleSlider3(false); setSlider3(100); }
@@ -84,7 +84,13 @@ function Video() {
 				<InputLabel className={sld ? "active" : ""} onDoubleClick={()=>resetSlider()}>Opacity</InputLabel>
 				<RcSlider>
 					<Input className={classNames("input")} type="text" value={slider} min="0" max="100" onChange={(event) => setSlider(event.target.value)}/>
-					<Slider className={classNames('white', handleSlider === true ? 'active': '')} onChange={sliderFunc} onBeforeChange={()=>setSld(!sld)} onAfterChange={()=>setSld(!sld)} startPoint={100} value={slider}/>
+					<Slider
+						className={classNames('default', handleSlider === true ? 'active': '')}
+						onChange={sliderFunc}
+						onBeforeChange={()=>setSld(!sld)}
+						onAfterChange={()=>setSld(!sld)}
+						startPoint={100}
+						value={slider}/>
 				</RcSlider>
 			</Row>
 
@@ -112,7 +118,12 @@ function Video() {
 					<InputLabel className={sld1 ? "active" : ""} onDoubleClick={()=>resetSlider1()}>Cropping Ratio</InputLabel>
 					<RcSlider>
 						<Input className="input" type="text" value={slider1} min="0" max="100" onChange={(event) => setSlider1(event.target.value)}/>
-						<Slider className={classNames('default', handleSlider1 === true ? 'active': '')} onChange={sliderFunc1} onBeforeChange={()=>setSld1(!sld1)} onAfterChange={()=>setSld1(!sld1)} startPoint={50} value={slider1} />
+						<Slider
+							className={classNames('white', handleSlider1 === true ? 'active': '')}
+							onChange={sliderFunc1}
+							onBeforeChange={()=>setSld1(!sld1)}
+							onAfterChange={()=>setSld1(!sld1)}
+							startPoint={50} value={slider1} />
 					</RcSlider>
 				</Row>
 
@@ -120,7 +131,13 @@ function Video() {
 					<InputLabel className={sld2 ? "active" : ""} onDoubleClick={()=>resetSlider2()}>Smooth</InputLabel>
 					<RcSlider>
 						<Input className="input" type="text" value={slider2} min="0" max="100" onChange={(event) => setSlider2(event.target.value)}/>
-						<Slider className={classNames('default', handleSlider2 === true ? 'active': '')} onChange={sliderFunc2} onBeforeChange={()=>setSld2(!sld2)} onAfterChange={()=>setSld2(!sld2)} startPoint={30} value={slider2} />
+						<Slider
+							className={classNames('white', handleSlider2 === true ? 'active': '')}
+							onChange={sliderFunc2}
+							onBeforeChange={()=>setSld2(!sld2)}
+							onAfterChange={()=>setSld2(!sld2)}
+							startPoint={30}
+							value={slider2} />
 					</RcSlider>
 				</Row>
 
@@ -128,7 +145,13 @@ function Video() {
 					<InputLabel className={sld3 ? "active" : ""} onDoubleClick={()=> resetSlider3()}>Strengh</InputLabel>
 					<RcSlider>
 						<Input className="input" type="text" value={slider3} min="0" max="100" onChange={(event) => setSlider3(event.target.value)}/>
-						<Slider className={classNames('default', handleSlider3 === true ? 'active': '')} onChange={sliderFunc3} onBeforeChange={()=>setSld3(!sld3)} onAfterChange={()=>setSld3(!sld3)} startPoint={100} value={slider3} />
+						<Slider
+							className={classNames('default', handleSlider3 === true ? 'active': '')}
+							onChange={sliderFunc3}
+							onBeforeChange={()=>setSld3(!sld3)}
+							onAfterChange={()=>setSld3(!sld3)}
+							startPoint={100}
+							value={slider3} />
 					</RcSlider>
 				</Row>
 
