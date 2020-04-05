@@ -1,5 +1,5 @@
 import styled, { createGlobalStyle } from 'styled-components';
-import { size, position, bgimage } from '../../app/mixins';
+import { size, position, bgimage } from '../../app/_mixins';
 
 import ClipImg from '../../../img/clips/clip.png';
 import ClipActiveImg from '../../../img/clips/clip_active.png';

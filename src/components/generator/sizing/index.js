@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import classNames from 'classnames';
 import Slider from 'rc-slider';
-import { Tabs, InputLabel, Input, RcSlider, Row, MiniContainer, Toggle, MiniToggle, LabelToggle, ToggleTools } from '../../app/styles';
+import { Tabs, InputLabel, Input, RcSlider, Row, MiniContainer, Toggle, MiniToggle, LabelToggle, ToggleTools } from '../../app/_inspector-styles';
 import Transform1 from '../../../img/generator/sizing/transform-01.png';
 import Transform2 from '../../../img/generator/sizing/transform-02.png';
 import Cropping1 from '../../../img/generator/sizing/cropping-01.png';

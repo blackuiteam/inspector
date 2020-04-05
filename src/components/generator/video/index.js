@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import classNames from 'classnames';
 import Slider from 'rc-slider';
-import { InputLabel, Input, RcSlider, Row, MiniContainer, Toggle, MiniToggle, LabelToggle, ToggleTools } from '../../app/styles';
+import { InputLabel, Input, RcSlider, Row, MiniContainer, Toggle, MiniToggle, LabelToggle, ToggleTools } from '../../app/_inspector-styles';
 import DropdownNormal from '../../../img/dropdown/dropdown-normal.png';
 import Attributes from '../../../img/generator/video/video-solid-color.png';
 

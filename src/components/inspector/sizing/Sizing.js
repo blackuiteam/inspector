@@ -1,13 +1,15 @@
 import React, { useState } from 'react';
 import classNames from 'classnames';
 import Slider from 'rc-slider';
-import { Tabs, InputLabel, Input, RcSlider, Row, MiniContainer, Toggle, MiniToggle, LabelToggle, ToggleTools } from '../../app/styles';
-import Transform1 from '../../../img/sizing/transform-01.png';
-import Transform2 from '../../../img/sizing/transform-02.png';
-import CroppingContent from '../../../img/sizing/cropping-content.png';
+import { Tabs, InputLabel, Input, RcSlider, Row, MiniContainer, Toggle, MiniToggle, LabelToggle, ToggleTools } from '../../app/_inspector-styles';
+import Transform1 		from '../../../img/sizing/transform-01.png';
+import Transform2 		from '../../../img/sizing/transform-02.png';
+import CroppingContent 	from '../../../img/sizing/cropping-content.png';
 import CroppingContent2 from '../../../img/sizing/cropping-content-02.png';
 import CroppingContent3 from '../../../img/sizing/cropping-content-03.png';
-import Scalling from '../../../img/sizing/scalling.png';
+import Scalling 		from '../../../img/sizing/scalling.png';
+import kf1img from '../../../img/sizing/kf-01.png';
+import kf2img from '../../../img/sizing/kf-02.png';
 
 function Sizing() {
 
@@ -41,6 +43,9 @@ function Sizing() {
 
 	const [ scallingContent, setScallingContent ] = useState(false);
 
+	const [ toggleKf1, setToggleKf1 ] = useState(false);
+	const [ toggleKf2, setToggleKf2 ] = useState(false);
+
 	const [ slider3, setSlider3 ] =  useState(50);
 	const [ handleSlider3, setHandleSlider3 ] = useState(false);
 	const [sld3, setSld3 ] = useState(false);
@@ -67,8 +72,10 @@ function Sizing() {
 				<LabelToggle>Transform</LabelToggle>
 				<ToggleTools className={classNames('ic-controls', transformSliders ? "active" : "")} onClick={()=> setTransformSlider(!transformSliders)}/>
 				<ToggleTools className={classNames('ic-transform', transformContent ? "active" : "")} onClick={()=> setTransformContent(!transformContent)}/>
+				<ToggleTools className={classNames('ic-kf', toggleKf1 ? "active" : "")} onClick={()=> setToggleKf1(!toggleKf1)}/>
 			</Row>
-			<img src={Transform1} width="296" alt="" style={{"margin":"-1px 0px 12px 15px"}} className={transformContent ? "none" : ""}/>
+			<img src={kf1img} width="296" style={{"margin":"-1px 0px 9px 15px"}} className={toggleKf1 ? "" : "none"}/>
+			<img src={Transform1} width="296" alt="" style={{"margin":"-1px 0px 11px 15px"}} className={transformContent ? "none" : ""}/>
 			<img src={Transform2} width="294" alt="" style={{"margin":"0px 0px 9px 15px"}} className={transformSliders ? "none" : ""}/>
 
 
@@ -78,8 +85,10 @@ function Sizing() {
 				<LabelToggle>Cropping</LabelToggle>
 				<ToggleTools className={classNames('ic-controls', croppingSliders ? "active" : "")} onClick={()=> setCroppingSliders(!croppingSliders)}/>
 				<ToggleTools className={classNames('ic-crop', croppingContent ? "active" : "")} onClick={()=> setCroppingContent(!croppingContent)}/>
+				<ToggleTools className={classNames('ic-kf', toggleKf2 ? "active" : "")} onClick={()=> setToggleKf2(!toggleKf2)}/>
 			</Row>
-			<img src={CroppingContent} width="296" alt="" style={{"margin":"0px 0px 14px 15px"}} className={croppingContent ? "none" : ""}/>
+			<img src={kf2img} width="296" style={{"margin":"0px 0px 9px 14px"}} className={toggleKf2 ? "" : "none"}/>
+			<img src={CroppingContent} width="296" alt="" style={{"margin":"-1px 0px 14px 14px"}} className={croppingContent ? "none" : ""}/>
 
 			<img src={CroppingContent2} width="294" alt="" style={{"margin":"0px 0px 0px 15px"}} className={croppingSliders ? "none" : ""}/>
 

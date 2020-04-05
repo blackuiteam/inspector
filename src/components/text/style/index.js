@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import classNames from 'classnames';
-import { MiniContainer, MiniToggle, Row, LabelToggle, ToggleTools, Toggle } from '../../app/styles';
+import { MiniContainer, MiniToggle, Row, LabelToggle, ToggleTools, Toggle } from '../../app/_inspector-styles';
 
 import ShadingImg from '../../../img/text/style/shading-element.png';
 import PropertiesImg from '../../../img/text/style/properties.png';

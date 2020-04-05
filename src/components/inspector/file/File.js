@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import classNames from 'classnames';
-import { Row, MiniContainer, MiniToggle, LabelToggle, ToggleTools } from '../../app/styles';
+import { Row, MiniContainer, MiniToggle, LabelToggle, ToggleTools } from '../../app/_inspector-styles';
 
 import InfoImg 				from '../../../img/file/info.png';
 import BmdCameraRawImg 		from '../../../img/file/bmd-camera-raw.png';
@@ -36,9 +36,7 @@ function File() {
 				<ToggleTools className={classNames('ic-col-science', camColor ? "active" : "")} onClick={()=> setCamColor(!camColor)}/>
 			</Row>
 			<img src={CamRaw1} width="294" style={{'margin': '6px 0 11px 15px'}} className={cameraRaw ? "none" : ''}/>
-
 			<img src={CamRaw2} width="294" style={cameraRaw ? {"margin":"0px 0px 19px 15px"} : {'margin': '0px 0 8px 15px'}} className={camColor ? "none" : ''}/>
-
 			<img src={CamRaw3} width="294" style={{'margin': '0px 0 13px 15px'}} className={cameraRaw ? "none" : ''}/>
 
 			<MiniContainer className={classNames('first', cameraRaw ? "none" : '')}>

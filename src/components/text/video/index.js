@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import classNames from 'classnames';
-import { Row, LabelToggle, ToggleTools, Toggle } from '../../app/styles';
+import { Row, LabelToggle, ToggleTools, Toggle } from '../../app/_inspector-styles';
 
 import CompositeImg 	from '../../../img/text/video/composite.png';
 import Transform1Img 	from '../../../img/text/video/transform-01.png';

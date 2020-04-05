@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import classNames from 'classnames';
-import { Row, LabelToggle, ToggleTools, Toggle } from '../../app/styles';
+import { Row, LabelToggle, ToggleTools, Toggle } from '../../app/_inspector-styles';
 
 import ImageImg from '../../../img/text/settings/image.png';
 import SourceColorSpaceImg from '../../../img/text/settings/source-color-space.png';

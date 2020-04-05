@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import classNames from 'classnames';
 import Slider from 'rc-slider';
-import { Tabs, InputLabel, Input, RcSlider, Row, MiniContainer, Toggle, LabelToggle, ToggleTools } from '../../app/styles';
+import { Tabs, InputLabel, Input, RcSlider, Row, MiniContainer, Toggle, LabelToggle, ToggleTools } from '../../app/_inspector-styles';
 import EmbeddedImg from '../../../img/audio/embedded-content.png';
 import Eq1Img from '../../../img/audio/eq-content-01.png';
 import Eq2Img from '../../../img/audio/eq-content-02.png';
@@ -47,6 +47,9 @@ function Audio() {
 
 	const [ activeTab1, setTab1 ] = useState(0);
 	const [ activeTab2, setTab2 ] = useState(0);
+
+	const [ toggleKf1, setToggleKf1 ] = useState(false);
+	const [ toggleKf2, setToggleKf2 ] = useState(false);
 
 	const [ contentAudioDuck, setContentAudioDuck ] = useState(false);
 
@@ -98,6 +101,7 @@ function Audio() {
 				<LabelToggle>Embedded Audio - Stereo</LabelToggle>
 				<ToggleTools className={classNames('ic-controls', slidersAudio ? "active" : "")} onClick={()=> setSlidersAudio(!slidersAudio)}/>
 				<ToggleTools className={classNames('ic-audio', contentAudio ? "active" : "")} onClick={()=> setContentAudio(!contentAudio)}/>
+				<ToggleTools className={classNames('ic-kf', toggleKf1 ? "active" : "")} onClick={()=> setToggleKf1(!toggleKf1)}/>
 			</Row>
 
 			<Row className={classNames("row-slider", slidersAudio ? "none" : "")} style={{"marginBottom": "3px"}}>
@@ -182,6 +186,7 @@ function Audio() {
 				<Toggle onClick={()=> setTogglePitch(!togglePitch)} className={classNames('', togglePitch ? "active" : "")}/>
 				<LabelToggle>Pitch</LabelToggle>
 				<ToggleTools className={classNames('ic-controls', contentPitch ? "active" : "")} onClick={()=> setContentPitch(!contentPitch)}/>
+				<ToggleTools className={classNames('ic-kf', toggleKf2 ? "active" : "")} onClick={()=> setToggleKf2(!toggleKf2)}/>
 			</Row>
 
 			<div className={contentPitch ? "none" : ""}>

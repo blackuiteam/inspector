@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import classNames from 'classnames';
-import { Row, LabelToggle, ToggleTools, Toggle } from '../../app/styles';
+import { Row, LabelToggle, ToggleTools, Toggle } from '../../app/_inspector-styles';
 
 import LayoutImg 	from '../../../img/text/frame/layout.png';
 import RotationImg 	from '../../../img/text/frame/rotation.png';

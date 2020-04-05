@@ -1,7 +1,9 @@
 import React, { useState } from 'react';
 import Slider from 'rc-slider';
 import classNames from 'classnames';
-import { mSlider, RoundedButton, InputLabel, Input, RcSlider, Row, MiniContainer, Toggle, MiniToggle, LabelToggle, ToggleTools } from '../../app/styles';
+import { mSlider, RoundedButton, InputLabel, Input, RcSlider, Row, MiniContainer, Toggle, MiniToggle, LabelToggle, ToggleTools } from '../../app/_inspector-styles';
+import kf1img from '../../../img/video/kf1.png';
+import kf2img from '../../../img/video/kf2.png';
 import DropdownNormal from '../../../img/dropdown/dropdown-normal.png';
 import DropdownPerspective from '../../../img/dropdown/dropdown-perspective-group.png';
 import SpeedChange1 from '../../../img/video/speed-change-01.png';
@@ -16,6 +18,8 @@ function Video() {
 	const [ toggleComposite, setToggleComposite ] = useState(false);
 	const [ composite, setComposite ] = useState(false);
 
+	const [ toggleKf1, setToggleKf1 ] = useState(false);
+
 	const [ toggleDynamic, setToggleDynamic ] = useState(false);
 	const [ dynamic1, setDynamic1 ] = useState(false);
 	const [ dynamic2, setDynamic2 ] = useState(false);
@@ -28,6 +32,7 @@ function Video() {
 	const [ speedChange2, setSpeedChange2] = useState(false);
 
 	const [ toggleLens, setToggleLens ] = useState(false);
+	const [ toggleKf2, setToggleKf2 ] = useState(false);
 	const [ lens, setLens] = useState(false);
 
 	const [ attr, setAttr] = useState(false);
@@ -77,7 +82,9 @@ function Video() {
 				<Toggle onClick={()=> setToggleComposite(!toggleComposite)} className={classNames('', toggleComposite ? "active" : "")}/>
 				<LabelToggle>Composite</LabelToggle>
 				<ToggleTools className={classNames('ic-controls', composite ? "active" : "")} onClick={()=> setComposite(!composite)}/>
+				<ToggleTools className={classNames('ic-kf', toggleKf1 ? "active" : "")} onClick={()=> setToggleKf1(!toggleKf1)}/>
 			</Row>
+			<img src={kf1img} width="296" style={{"margin":"-2px 0px 9px 14px"}} className={toggleKf1 ? "" : "none"}/>
 			<img src={DropdownNormal} width="294" style={{"margin":"0px 0px 3px 15px"}} className={composite ? "none" : ""}/>
 
 			<Row className={classNames("row-slider", composite ? "none" : "")} style={{"marginBottom": "9px"}}>
@@ -89,7 +96,7 @@ function Video() {
 						onChange={sliderFunc}
 						onBeforeChange={()=>setSld(!sld)}
 						onAfterChange={()=>setSld(!sld)}
-						startPoint={100}
+						startPoint={0}
 						value={slider}/>
 				</RcSlider>
 			</Row>
@@ -101,7 +108,7 @@ function Video() {
 				<ToggleTools className={classNames('ic-controls', dynamic2 ? "active" : "")} onClick={()=> setDynamic2(!dynamic2)}/>
 				<ToggleTools className={classNames('ic-dynamic', dynamic1 ? "active" : "")} onClick={()=> setDynamic1(!dynamic1)}/>
 			</Row>
-			<img src={Dynamic1} width="296" style={{"margin":"0px 0px 9px 15px"}} className={dynamic1 ? "none" : ""}/>
+			<img src={Dynamic1} width="296" style={{"margin":"0px 0px 9px 19px"}} className={dynamic1 ? "none" : ""}/>
 			<img src={Dynamic2} width="294" style={{"margin":"0px 0px 9px 15px"}} className={dynamic2 ? "none" : ""}/>
 
 			{/* STABLIZATION */}
@@ -150,7 +157,7 @@ function Video() {
 							onChange={sliderFunc3}
 							onBeforeChange={()=>setSld3(!sld3)}
 							onAfterChange={()=>setSld3(!sld3)}
-							startPoint={100}
+							startPoint={0}
 							value={slider3} />
 					</RcSlider>
 				</Row>
@@ -175,7 +182,10 @@ function Video() {
 				<Toggle onClick={()=> setToggleLens(!toggleLens)} className={classNames('', toggleLens ? "active" : "")}/>
 				<LabelToggle>Lens Correction</LabelToggle>
 				<ToggleTools className={classNames('ic-controls', lens ? "active" : "")} onClick={()=> setLens(!lens)}/>
+				<ToggleTools className={classNames('ic-kf', toggleKf2 ? "active" : "")} onClick={()=> setToggleKf2(!toggleKf2)}/>
 			</Row>
+
+			<img src={kf2img} width="296" style={{"margin":"0px 0px 14px 14px"}} className={toggleKf2 ? "" : "none"}/>
 			<div className={lens ? "none" : ""}>
 				<img src={LensCorrection} width="294" style={{"margin":"6px 0px 6px 15px"}}/>
 

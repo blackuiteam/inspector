@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import classNames from 'classnames';
-import { Row, MiniContainer, MiniToggle, LabelToggle, ToggleTools } from '../../app/styles';
+import { Row, MiniContainer, MiniToggle, LabelToggle, ToggleTools } from '../../app/_inspector-styles';
 
 import TextTextImg 			from '../../../img/text/text/text-text.png';
 import TextTabSpacingImg 	from '../../../img/text/text/text-tab-spacing.png';
