@@ -1,23 +1,23 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "b6eff2ed4ca64abb3eecf6ebf8026cd4",
+    "revision": "e33b73f9eaf466e4cab71032f1546a46",
     "url": "/inspector/index.html"
   },
   {
-    "revision": "21ba1cbc3a41f57ee84c",
+    "revision": "5d5ce7e71adb9fb7f4bb",
     "url": "/inspector/static/css/main.02e811e5.chunk.css"
   },
   {
-    "revision": "820ea23925591caffb38",
-    "url": "/inspector/static/js/2.1998c477.chunk.js"
+    "revision": "1a4ec236f94acdc8530b",
+    "url": "/inspector/static/js/2.4db1bb9c.chunk.js"
   },
   {
     "revision": "eff3b4d7e4bb0087ce53139cd90bc880",
-    "url": "/inspector/static/js/2.1998c477.chunk.js.LICENSE.txt"
+    "url": "/inspector/static/js/2.4db1bb9c.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "21ba1cbc3a41f57ee84c",
-    "url": "/inspector/static/js/main.deb2bf08.chunk.js"
+    "revision": "5d5ce7e71adb9fb7f4bb",
+    "url": "/inspector/static/js/main.2d6b1b76.chunk.js"
   },
   {
     "revision": "b9f6901be7915b3b6020",
@@ -180,8 +180,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/inspector/static/media/text-tab-spacing.5686183d.png"
   },
   {
-    "revision": "3f9ebc1f2a2208e07faafe5eae2c7282",
-    "url": "/inspector/static/media/text-text.3f9ebc1f.png"
+    "revision": "c2a1efbcd100eafab08d79de74209d9a",
+    "url": "/inspector/static/media/text-text.c2a1efbc.png"
   },
   {
     "revision": "db2e470431fc619685a522dfb049c8f1",

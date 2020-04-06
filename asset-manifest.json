@@ -1,17 +1,17 @@
 {
   "files": {
     "main.css": "/inspector/static/css/main.02e811e5.chunk.css",
-    "main.js": "/inspector/static/js/main.deb2bf08.chunk.js",
-    "main.js.map": "/inspector/static/js/main.deb2bf08.chunk.js.map",
+    "main.js": "/inspector/static/js/main.2d6b1b76.chunk.js",
+    "main.js.map": "/inspector/static/js/main.2d6b1b76.chunk.js.map",
     "runtime-main.js": "/inspector/static/js/runtime-main.0b365ecf.js",
     "runtime-main.js.map": "/inspector/static/js/runtime-main.0b365ecf.js.map",
-    "static/js/2.1998c477.chunk.js": "/inspector/static/js/2.1998c477.chunk.js",
-    "static/js/2.1998c477.chunk.js.map": "/inspector/static/js/2.1998c477.chunk.js.map",
+    "static/js/2.4db1bb9c.chunk.js": "/inspector/static/js/2.4db1bb9c.chunk.js",
+    "static/js/2.4db1bb9c.chunk.js.map": "/inspector/static/js/2.4db1bb9c.chunk.js.map",
     "index.html": "/inspector/index.html",
-    "precache-manifest.9cdd495c9e2534bb03038b09d5f66a9c.js": "/inspector/precache-manifest.9cdd495c9e2534bb03038b09d5f66a9c.js",
+    "precache-manifest.a3bed6a16ba7c71bda0d2ead15075d25.js": "/inspector/precache-manifest.a3bed6a16ba7c71bda0d2ead15075d25.js",
     "service-worker.js": "/inspector/service-worker.js",
     "static/css/main.02e811e5.chunk.css.map": "/inspector/static/css/main.02e811e5.chunk.css.map",
-    "static/js/2.1998c477.chunk.js.LICENSE.txt": "/inspector/static/js/2.1998c477.chunk.js.LICENSE.txt",
+    "static/js/2.4db1bb9c.chunk.js.LICENSE.txt": "/inspector/static/js/2.4db1bb9c.chunk.js.LICENSE.txt",
     "static/media/attributes.png": "/inspector/static/media/attributes.f089da84.png",
     "static/media/audio-tab.png": "/inspector/static/media/audio-tab.fbcc1576.png",
     "static/media/audio-transition.png": "/inspector/static/media/audio-transition.da573640.png",
@@ -47,7 +47,7 @@
     "static/media/stablization.png": "/inspector/static/media/stablization.69b1da4c.png",
     "static/media/text-advanced.png": "/inspector/static/media/text-advanced.992a5ead.png",
     "static/media/text-tab-spacing.png": "/inspector/static/media/text-tab-spacing.5686183d.png",
-    "static/media/text-text.png": "/inspector/static/media/text-text.3f9ebc1f.png",
+    "static/media/text-text.png": "/inspector/static/media/text-text.c2a1efbc.png",
     "static/media/texture.png": "/inspector/static/media/texture.db2e4704.png",
     "static/media/transform-01.png": "/inspector/static/media/transform-01.071fb884.png",
     "static/media/transform-02.png": "/inspector/static/media/transform-02.9d6fe70a.png",
@@ -58,8 +58,8 @@
   },
   "entrypoints": [
     "static/js/runtime-main.0b365ecf.js",
-    "static/js/2.1998c477.chunk.js",
+    "static/js/2.4db1bb9c.chunk.js",
     "static/css/main.02e811e5.chunk.css",
-    "static/js/main.deb2bf08.chunk.js"
+    "static/js/main.2d6b1b76.chunk.js"
   ]
 }
