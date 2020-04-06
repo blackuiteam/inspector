@@ -108,7 +108,7 @@ function Video() {
 				<ToggleTools className={classNames('ic-controls', dynamic2 ? "active" : "")} onClick={()=> setDynamic2(!dynamic2)}/>
 				<ToggleTools className={classNames('ic-dynamic', dynamic1 ? "active" : "")} onClick={()=> setDynamic1(!dynamic1)}/>
 			</Row>
-			<img src={Dynamic1} width="296" style={{"margin":"0px 0px 9px 19px"}} className={dynamic1 ? "none" : ""}/>
+			<img src={Dynamic1} width="296" style={{"margin":"0px 0px 9px 14px"}} className={dynamic1 ? "none" : ""}/>
 			<img src={Dynamic2} width="294" style={{"margin":"0px 0px 9px 15px"}} className={dynamic2 ? "none" : ""}/>
 
 			{/* STABLIZATION */}
@@ -148,7 +148,7 @@ function Video() {
 					</RcSlider>
 				</Row>
 
-				<Row className={classNames("row-slider")} style={{"marginBottom": "8px"}}>
+				<Row className={classNames("row-slider")} style={{"marginBottom": "12px"}}>
 					<InputLabel className={sld3 ? "active" : ""} onDoubleClick={()=> resetSlider3()}>Strengh</InputLabel>
 					<RcSlider>
 						<Input className="input" type="text" value={slider3} min="0" max="100" onChange={(event) => setSlider3(event.target.value)}/>
@@ -189,7 +189,7 @@ function Video() {
 			<div className={lens ? "none" : ""}>
 				<img src={LensCorrection} width="294" style={{"margin":"6px 0px 6px 15px"}}/>
 
-				<Row className={classNames("row-slider")} style={{"marginBottom": "8px"}}>
+				<Row className={classNames("row-slider")} style={{"marginBottom": "12px"}}>
 					<InputLabel className={sld4 ? "active" : ""} onDoubleClick={()=>resetSlider4()}>Distortion</InputLabel>
 					<RcSlider>
 						<Input className="input" type="text" value={slider4} min="0" max="100" onChange={(event) => setSlider4(event.target.value)}/>

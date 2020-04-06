@@ -75,7 +75,7 @@ function Sizing() {
 				<ToggleTools className={classNames('ic-kf', toggleKf1 ? "active" : "")} onClick={()=> setToggleKf1(!toggleKf1)}/>
 			</Row>
 			<img src={kf1img} width="296" style={{"margin":"-1px 0px 9px 15px"}} className={toggleKf1 ? "" : "none"}/>
-			<img src={Transform1} width="296" alt="" style={{"margin":"-1px 0px 11px 15px"}} className={transformContent ? "none" : ""}/>
+			<img src={Transform1} width="296" alt="" style={{"margin":"-1px 0px 11px 14px"}} className={transformContent ? "none" : ""}/>
 			<img src={Transform2} width="294" alt="" style={{"margin":"0px 0px 9px 15px"}} className={transformSliders ? "none" : ""}/>
 
 

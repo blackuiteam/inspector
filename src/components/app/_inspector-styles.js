@@ -127,7 +127,7 @@ function createNavItems() {
 		{ id: 2, image: SizingImg, 	pos: '13px 8px', size: '21px 13px', active: SizingActiveImg, 	posA: '11px 7px', sizeA: '25px 16px' },
 		{ id: 3, image: AudioImg, 	pos: '11px 5px', size: '25px 19px', active: AudioActiveImg, 	posA: '11px 5px', sizeA: '25px 19px' },
 		{ id: 4, image: ColorImg, 	pos: '11px 4px', size: '25px 21px', active: ColorActiveImg, 	posA: '12px 4px', sizeA: '23px 21px' },
-		{ id: 5, image: EffectsImg, pos: '11px 4px', size: '25px 21px', active: EffectsActiveImg, 	posA: '10px 4px', sizeA: '25px 21px' },
+		{ id: 5, image: EffectsImg, pos: '14px 4px', size: '21px 20px', active: EffectsActiveImg, 	posA: '13px 2px', sizeA: '23px 24px' },
 		{ id: 6, image: FileImg, 	pos: '11px 4px', size: '25px 21px', active: FileActiveImg, 		posA: '11px 4px', sizeA: '25px 21px' },
 	]
 
@@ -270,7 +270,7 @@ export const NavTextItem = styled.div `
 	float: left;
 
 	> span {
-		${position('', '', '6px', '0px')};
+		${position('', '', '7px', '0px')};
 		display: block;
 		width: 100%;
 		font-size: 10px;
@@ -299,7 +299,7 @@ export const NavTextItem = styled.div `
 		};
 
 		:nth-child(4) {
-			${bgimage(SettingsActiveImg,'no-repeat', '8px 0', '30px 32px')}
+			${bgimage(SettingsActiveImg,'no-repeat', '11px 8px', '25px 20px')}
 		};
 
 		:nth-child(5) {
@@ -324,7 +324,7 @@ export const NavTextItem = styled.div `
 	};
 
 	:nth-child(4) {
-		${bgimage(SettingsImg,'no-repeat', '8px 0', '30px 32px')}
+		${bgimage(SettingsImg,'no-repeat', '12px 9px', '22px 16px')}
 	};
 
 	:nth-child(5) {
@@ -339,15 +339,23 @@ export const NavGenItem = styled.div `
 	float: left;
 
 	:nth-child(1) {
-		${bgimage(VideoImg,'no-repeat', '13px 9px', '21px 14px')}
+		${bgimage(VideoImg,'no-repeat', '13px 8px', '21px 13px')}
 	};
 
 	:nth-child(2) {
-		${bgimage(SizingImg,'no-repeat', '13px 9px', '21px 14px')}
+		${bgimage(SizingImg,'no-repeat', '13px 8px', '21px 13px')}
 	};
 
 	&.active {
 		box-shadow: inset 0px -2px 0px 0px rgba(230,75,61,1);
+
+		:nth-child(1) {
+			${bgimage(VideoActiveImg,'no-repeat', '11px 6px', '24px 18px')}
+		};
+
+		:nth-child(2) {
+			${bgimage(SizingActiveImg,'no-repeat', '11px 7px', '25px 16px')}
+		};
 
 		span {
 			color: #fff;
@@ -355,7 +363,7 @@ export const NavGenItem = styled.div `
 	}
 
 	> span {
-		${position('', '', '5px', '0px')};
+		${position('', '', '7px', '0px')};
 		display: block;
 		width: 100%;
 		font-size: 10px;
@@ -369,6 +377,15 @@ export const NavTransItem = styled.div `
 	position: relative;
 	display: block;
 	float: left;
+
+	> span {
+		${position('', '', '7px', '0px')};
+		display: block;
+		width: 100%;
+		font-size: 10px;
+		text-align: center;
+		color: #828282;
+	}
 
 	:nth-child(1) {
 		${bgimage(VideoImg,'no-repeat', '13px 8px', '21px 13px')}
@@ -392,15 +409,6 @@ export const NavTransItem = styled.div `
 		span {
 			color: #fff;
 		}
-	}
-
-	> span {
-		${position('', '', '5px', '0px')};
-		display: block;
-		width: 100%;
-		font-size: 10px;
-		text-align: center;
-		color: #828282;
 	}
 `
 

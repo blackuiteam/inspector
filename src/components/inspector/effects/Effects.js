@@ -129,7 +129,7 @@ function Effects() {
 					</RcSlider>
 				</Row>
 
-				<Row style={{"margin":"5px 20px 3px 0px"}} className={classNames("mini-row", faceRefineContent ? "none" : "")}/>
+				<Row style={{"margin":"5px 20px 7px 0px"}} className={classNames("mini-row", faceRefineContent ? "none" : "")}/>
 
 				<Row style={{"margin":"0px 0px 2px 0px"}} className={faceRefineContent ? "none" : ""}>
 					<RoundedButton style={{"margin":"1px 20px 0px 0px"}}>Analyze</RoundedButton>
