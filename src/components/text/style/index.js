@@ -34,8 +34,9 @@ function TextStyle() {
 				<Toggle onClick={()=> setToggleShading(!toggleShading)} className={classNames('', toggleShading ? "active" : "")}/>
 				<LabelToggle>Shading Element</LabelToggle>
 				<ToggleTools onClick={()=> setShading(!shadingContent)} className={classNames('ic-controls', shadingContent ? "active" : "")}/>
+				<ToggleTools className={classNames('ic-kf')}/>
 			</Row>
-			<img  src={ShadingImg} width="294" style={{'margin': '3px auto 11px 15px'}} className={classNames('', shadingContent ? "none" : "")}/>
+			<img  src={ShadingImg} width="294" style={{'margin': '5px auto 9px 15px'}} className={classNames('', shadingContent ? "none" : "")}/>
 
 			<MiniContainer className={classNames("first", shadingContent ? "none" : "")} style={{"borderBottom":"none"}}>
 				<MiniToggle className={classNames('', propertiesContent ? "active" : "")} onClick={()=> setProperties(!propertiesContent)}>Properties</MiniToggle>
@@ -46,20 +47,23 @@ function TextStyle() {
 				<Toggle onClick={()=> setToggleSoftness(!toggleSoftness)} className={classNames('', toggleSoftness ? "active" : "")}/>
 				<LabelToggle>Softness</LabelToggle>
 				<ToggleTools onClick={()=> setSoftness(!softnessContent)} className={classNames('ic-controls', softnessContent ? "active" : "")}/>
+				<ToggleTools className={classNames('ic-kf')}/>
 			</Row>
-			<img  src={SoftnessImg} width="294" style={{'margin': '5px auto 14px 15px'}} className={classNames('', softnessContent ? "none" : "")}/>
+			<img  src={SoftnessImg} width="294" style={{'margin': '6px auto 13px 15px'}} className={classNames('', softnessContent ? "none" : "")}/>
 
 			<Row className="header">
 				<Toggle onClick={()=> setTogglePosition(!togglePosition)} className={classNames('', togglePosition ? "active" : "")}/>
 				<LabelToggle>Position</LabelToggle>
 				<ToggleTools onClick={()=> setPosition(!positionContent)} className={classNames('ic-controls', positionContent ? "active" : "")}/>
+				<ToggleTools className={classNames('ic-kf')}/>
 			</Row>
-			<img  src={PositionImg} width="294" style={{'margin': '9px auto 9px 15px'}} className={classNames('', positionContent ? "none" : "")}/>
+			<img  src={PositionImg} width="294" style={{'margin': '6px auto 9px 15px'}} className={classNames('', positionContent ? "none" : "")}/>
 
 			<Row className="header">
 				<Toggle onClick={()=> setToggleRotation(!toggleRotation)} className={classNames('', toggleRotation ? "active" : "")}/>
 				<LabelToggle>Rotation</LabelToggle>
 				<ToggleTools onClick={()=> setRotation(!rotationContent)} className={classNames('ic-controls', rotationContent ? "active" : "")}/>
+				<ToggleTools className={classNames('ic-kf')}/>
 			</Row>
 			<img  src={RotationImg} width="294" style={{'margin': '6px auto 9px 15px'}} className={classNames('', rotationContent ? "none" : "")}/>
 
@@ -67,6 +71,7 @@ function TextStyle() {
 				<Toggle onClick={()=> setToggleShear(!toggleShear)} className={classNames('', toggleShear ? "active" : "")}/>
 				<LabelToggle>Shear</LabelToggle>
 				<ToggleTools onClick={()=> setShear(!shearContent)} className={classNames('ic-controls', shearContent ? "active" : "")}/>
+				<ToggleTools className={classNames('ic-kf')}/>
 			</Row>
 			<img  src={ShearImg} width="294" style={{'margin': '6px auto 9px 15px'}} className={classNames('', shearContent ? "none" : "")}/>
 
@@ -74,6 +79,7 @@ function TextStyle() {
 				<Toggle onClick={()=> setToggleSize(!toggleSize)} className={classNames('', toggleSize ? "active" : "")}/>
 				<LabelToggle>Size</LabelToggle>
 				<ToggleTools onClick={()=> setSize(!sizeContent)} className={classNames('ic-controls', sizeContent ? "active" : "")}/>
+				<ToggleTools className={classNames('ic-kf')}/>
 			</Row>
 			<img  src={SizeImg} width="294" style={{'margin': '6px auto 19px 15px'}} className={classNames('', sizeContent ? "none" : "")}/>
 		</>

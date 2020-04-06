@@ -41,6 +41,7 @@ function TextVideo() {
 				<Toggle onClick={()=> setToggleComposite(!toggleComposite)} className={classNames('', toggleComposite ? "active" : "")}/>
 				<LabelToggle>Composite</LabelToggle>
 				<ToggleTools onClick={()=> setComposite(!compositeContent)} className={classNames('ic-controls', compositeContent ? "active" : "")}/>
+				<ToggleTools className={classNames('ic-kf')}/>
 			</Row>
 			<img  src={CompositeImg} width="294" style={{'margin': '0px auto 9px 15px'}} className={classNames('', compositeContent ? "none" : "")}/>
 
@@ -49,8 +50,9 @@ function TextVideo() {
 				<LabelToggle>Transform</LabelToggle>
 				<ToggleTools onClick={()=> setTransform1(!transform1Content)} className={classNames('ic-controls', transform1Content ? "active" : "")}/>
 				<ToggleTools onClick={()=> setTransform2(!transform2Content)} className={classNames('ic-transform', transform2Content ? "active" : "")}/>
+				<ToggleTools className={classNames('ic-kf')}/>
 			</Row>
-			<img  src={Transform1Img} width="296" style={{'margin': '0px auto 12px 15px'}} className={classNames('', transform2Content ? "none" : "")}/>
+			<img  src={Transform1Img} width="296" style={{'margin': '0px auto 11px 15px'}} className={classNames('', transform2Content ? "none" : "")}/>
 			<img  src={Transform2Img} width="294" style={{'margin': '0px auto 9px 15px'}} className={classNames('', transform1Content ? "none" : "")}/>
 
 			<Row className="header">
@@ -58,6 +60,7 @@ function TextVideo() {
 				<LabelToggle>Cropping</LabelToggle>
 				<ToggleTools onClick={()=> setCropping2(!cropping2Content)} className={classNames('ic-controls', cropping2Content ? "active" : "")}/>
 				<ToggleTools onClick={()=> setCropping1(!cropping1Content)} className={classNames('ic-crop', cropping1Content ? "active" : "")}/>
+				<ToggleTools className={classNames('ic-kf')}/>
 			</Row>
 			<img  src={Cropping1Img} width="296" style={{'margin': '0px auto 14px 14px'}} className={classNames('', cropping1Content ? "none" : "")}/>
 			<img  src={Cropping2Img} width="294" style={{'margin': '0px auto 9px 15px'}} className={classNames('', cropping2Content ? "none" : "")}/>

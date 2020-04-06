@@ -40,6 +40,7 @@ function TextSettings() {
 				{/* <Toggle onClick={()=> setToggleImage(!toggleImage)} className={classNames('', toggleImage ? "active" : "")}/> */}
 				<LabelToggle style={{"margin":"8px 0 0 0px"}}>Image</LabelToggle>
 				<ToggleTools onClick={()=> setImage(!imageContent)} className={classNames('ic-controls', imageContent ? "active" : "")}/>
+				<ToggleTools className={classNames('ic-kf')}/>
 			</Row>
 			<img  src={ImageImg} width="294" style={{'margin': '3px auto 11px 15px'}} className={classNames('', imageContent ? "none" : "")}/>
 
@@ -47,6 +48,7 @@ function TextSettings() {
 				<Toggle onClick={()=> setToggleSrcColorSpace(!toggleSrcColorSpace)} className={classNames('', toggleSrcColorSpace ? "active" : "")}/>
 				<LabelToggle>Source Color Space</LabelToggle>
 				<ToggleTools onClick={()=> setSrcColorSpace(!srcColorSpaceContent)} className={classNames('ic-controls', srcColorSpaceContent ? "active" : "")}/>
+				<ToggleTools className={classNames('ic-kf')}/>
 			</Row>
 			<img  src={SourceColorSpaceImg} width="294" style={{'margin': '5px auto 10px 15px'}} className={classNames('', srcColorSpaceContent ? "none" : "")}/>
 
@@ -54,6 +56,7 @@ function TextSettings() {
 				<Toggle onClick={()=> setToggleSrcGammaSpace(!toggleSrcGammaSpace)} className={classNames('', toggleSrcGammaSpace ? "active" : "")}/>
 				<LabelToggle>Source Gamma Space</LabelToggle>
 				<ToggleTools onClick={()=> setSrcGammaSpace(!srcGammaSpaceContent)} className={classNames('ic-controls', srcGammaSpaceContent ? "active" : "")}/>
+				<ToggleTools className={classNames('ic-kf')}/>
 			</Row>
 			<img  src={SourceGammaSpaceImg} width="294" style={{'margin': '7px auto 12px 15px'}} className={classNames('', srcGammaSpaceContent ? "none" : "")}/>
 
@@ -61,8 +64,9 @@ function TextSettings() {
 				<Toggle onClick={()=> setToggleSettings(!toggleSettings)} className={classNames('', toggleSettings ? "active" : "")}/>
 				<LabelToggle>Settings</LabelToggle>
 				<ToggleTools onClick={()=> setSettings(!settingsContent)} className={classNames('ic-controls', settingsContent ? "active" : "")}/>
+				<ToggleTools className={classNames('ic-kf')}/>
 			</Row>
-			<img  src={SettingsImg} width="294" style={{'margin': '7px auto 12px 15px'}} className={classNames('', settingsContent ? "none" : "")}/>
+			<img  src={SettingsImg} width="310" style={{'margin': '5px auto 12px 15px'}} className={classNames('', settingsContent ? "none" : "")}/>
 
 			<Row className="header">
 				<Toggle onClick={()=> setToggleComments(!toggleComments)} className={classNames('', toggleComments ? "active" : "")}/>

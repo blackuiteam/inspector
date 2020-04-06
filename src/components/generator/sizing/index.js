@@ -12,7 +12,7 @@ function GeneratorSizing() {
 
 	const [ toggleTransform, setToggleTransform ] = useState(false);
 	const [ toggleCropping, setToggleCropping ] = useState(false);
-	const [ toggleScalling, setToggleScalling ] = useState(false);
+	const [ toggleDyn, setToggleDyn ] = useState(true);
 
 	const [ transformContent, setTransformContent ] = useState(false);
 	const [ transformSliders, setTransformSlider ] = useState(false);
@@ -37,8 +37,9 @@ function GeneratorSizing() {
 				<LabelToggle>Transform</LabelToggle>
 				<ToggleTools className={classNames('ic-controls', transformSliders ? "active" : "")} onClick={()=> setTransformSlider(!transformSliders)}/>
 				<ToggleTools className={classNames('ic-transform', transformContent ? "active" : "")} onClick={()=> setTransformContent(!transformContent)}/>
+				<ToggleTools className={classNames('ic-kf')}/>
 			</Row>
-			<img src={Transform1} width="296" alt="" style={{"margin":"-1px 0px 12px 15px"}} className={transformContent ? "none" : ""}/>
+			<img src={Transform1} width="296" alt="" style={{"margin":"-1px 0px 11px 15px"}} className={transformContent ? "none" : ""}/>
 			<img src={Transform2} width="294" alt="" style={{"margin":"0px 0px 9px 15px"}} className={transformSliders ? "none" : ""}/>
 
 			{/* CROPPING */}
@@ -47,9 +48,18 @@ function GeneratorSizing() {
 				<LabelToggle>Cropping</LabelToggle>
 				<ToggleTools className={classNames('ic-controls', croppingSliders ? "active" : "")} onClick={()=> setCroppingSliders(!croppingSliders)}/>
 				<ToggleTools className={classNames('ic-crop', croppingContent ? "active" : "")} onClick={()=> setCroppingContent(!croppingContent)}/>
+				<ToggleTools className={classNames('ic-kf')}/>
 			</Row>
 			<img src={Cropping1} width="296" alt="" style={{"margin":"0px 0px 14px 14px"}} className={croppingContent ? "none" : ""}/>
-			<img src={Cropping2} width="294" alt="" style={{"margin":"1px 0px 19px 15px"}} className={croppingSliders ? "none" : ""}/>
+			<img src={Cropping2} width="294" alt="" style={{"margin":"1px 0px 8px 15px"}} className={croppingSliders ? "none" : ""}/>
+
+			{/* DYNAMIC ZOOM */}
+			<Row className="header">
+				<Toggle onClick={()=> setToggleDyn(!toggleDyn)} className={classNames('', toggleDyn ? "active" : "")}/>
+				<LabelToggle>Dynamic Zoom</LabelToggle>
+				<ToggleTools className={classNames('ic-controls', croppingSliders ? "active" : "")} onClick={()=> setCroppingSliders(!croppingSliders)}/>
+				<ToggleTools className={classNames('ic-dynamic', croppingContent ? "active" : "")} onClick={()=> setCroppingContent(!croppingContent)}/>
+			</Row>
 		</>
 	)
 }

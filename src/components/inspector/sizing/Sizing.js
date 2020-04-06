@@ -88,7 +88,7 @@ function Sizing() {
 				<ToggleTools className={classNames('ic-kf', toggleKf2 ? "active" : "")} onClick={()=> setToggleKf2(!toggleKf2)}/>
 			</Row>
 			<img src={kf2img} width="296" style={{"margin":"0px 0px 9px 14px"}} className={toggleKf2 ? "" : "none"}/>
-			<img src={CroppingContent} width="296" alt="" style={{"margin":"-1px 0px 14px 14px"}} className={croppingContent ? "none" : ""}/>
+			<img src={CroppingContent} width="296" alt="" style={{"margin":"0px 0px 14px 14px"}} className={croppingContent ? "none" : ""}/>
 
 			<img src={CroppingContent2} width="294" alt="" style={{"margin":"0px 0px 0px 15px"}} className={croppingSliders ? "none" : ""}/>
 
@@ -111,7 +111,7 @@ function Sizing() {
 			{/* SCALING */}
 			<Row className="header">
 				<Toggle onClick={()=> setToggleScalling(!toggleScalling)} className={classNames('', toggleScalling ? "active" : "")}/>
-				<LabelToggle>Scalling</LabelToggle>
+				<LabelToggle>Scaling</LabelToggle>
 				<ToggleTools className={classNames('ic-controls', scallingContent ? "active" : "")} onClick={()=> setScallingContent(!scallingContent)}/>
 			</Row>
 

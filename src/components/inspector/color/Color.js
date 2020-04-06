@@ -142,7 +142,7 @@ function Color() {
 				<Toggle onClick={()=> setLuts(!toggleLuts)} className={classNames('', toggleLuts ? "active" : "")}/>
 				<LabelToggle>LUTs</LabelToggle>
 				<ToggleTools className={classNames('ic-controls', lutsSlider ? "active" : "")} onClick={()=> setLutsSlider(!lutsSlider)}/>
-				<ToggleTools className={classNames('ic-kf', toggleKf1 ? "active" : "")} onClick={()=> setToggleKf1(!toggleKf1)}/>
+				{/* <ToggleTools className={classNames('ic-kf', toggleKf1 ? "active" : "")} onClick={()=> setToggleKf1(!toggleKf1)}/> */}
 			</Row>
 
 			<div className={lutsSlider ? "none" : ""}>
@@ -169,7 +169,7 @@ function Color() {
 				<ToggleTools className={classNames('ic-controls', wheelsSliders ? "active" : "")} onClick={()=> serWheelsSliders(!wheelsSliders)}/>
 				<ToggleTools className={classNames('ic-colorwheel', wheelsImg ? "active" : "")} onClick={()=> setWheelsImg(!wheelsImg)}/>
 				<ToggleTools className={classNames('ic-auto')}/>
-				<ToggleTools className={classNames('ic-kf', toggleKf2 ? "active" : "")} onClick={()=> setToggleKf2(!toggleKf2)}/>
+				{/* <ToggleTools className={classNames('ic-kf', toggleKf2 ? "active" : "")} onClick={()=> setToggleKf2(!toggleKf2)}/> */}
 			</Row>
 
 			<img src={ColorWheelsImg} width="289" style={{"margin":"4px 0px 3px 17px"}} className={wheelsImg ? "none" : ""}/>
@@ -257,7 +257,7 @@ function Color() {
 				<LabelToggle>Color Adjustments</LabelToggle>
 				<ToggleTools className={classNames('ic-controls', adjSliders ? "active" : "")} onClick={()=> setAdjSliders(!adjSliders)}/>
 				<ToggleTools className={classNames('ic-curves', adjCurves ? "active" : "")} onClick={()=> setAdjCurves(!adjCurves)}/>
-				<ToggleTools className={classNames('ic-kf', toggleKf3 ? "active" : "")} onClick={()=> setToggleKf3(!toggleKf3)}/>
+				{/* <ToggleTools className={classNames('ic-kf', toggleKf3 ? "active" : "")} onClick={()=> setToggleKf3(!toggleKf3)}/> */}
 			</Row>
 
 			<img src={ColorAdjImg} width="294" style={{"margin":"11px 0px 15px 15px"}} className={adjCurves ? "none" : ""}/>

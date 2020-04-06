@@ -17,12 +17,13 @@ function TextText() {
 			<Row>
 				<LabelToggle style={{"margin":"6px 0 0 0px"}}>Text</LabelToggle>
 				<ToggleTools className={classNames('ic-controls', textContent ? "active" : "")} onClick={()=> setTextContent(!textContent)}/>
+				<ToggleTools className={classNames('ic-kf')}/>
 			</Row>
-			<img  src={TextTextImg} width="294" style={{'margin': '0px auto 10px 15px'}} className={classNames('', textContent ? "none" : "")}/>
+			<img  src={TextTextImg} width="294" style={{'margin': '0px auto 9px 15px'}} className={classNames('', textContent ? "none" : "")}/>
 
 			<MiniContainer className={classNames('first', textContent ? "none" : "")}>
 				<MiniToggle className={classNames('', textTabSpacing ? "active" : "")} onClick={()=> setTabSpacing(!textTabSpacing)}>Tab Spacing</MiniToggle>
-				<img  src={TextTabSpacingImg} width="294" style={{'margin': '5px 0px 9px -1px'}} className={classNames('', textTabSpacing ? "none" : "")}/>
+				<img  src={TextTabSpacingImg} width="294" style={{'margin': '6px 0px 9px -1px'}} className={classNames('', textTabSpacing ? "none" : "")}/>
 			</MiniContainer>
 
 			<MiniContainer className={classNames('no-border', textContent ? "none" : "")}>
