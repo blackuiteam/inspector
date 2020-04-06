@@ -1,10 +1,10 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "267a6cc414491afc3f6fe16347a66afa",
+    "revision": "b6eff2ed4ca64abb3eecf6ebf8026cd4",
     "url": "/inspector/index.html"
   },
   {
-    "revision": "2a73ac028eedf0ac49fc",
+    "revision": "21ba1cbc3a41f57ee84c",
     "url": "/inspector/static/css/main.02e811e5.chunk.css"
   },
   {
@@ -16,8 +16,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/inspector/static/js/2.1998c477.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "2a73ac028eedf0ac49fc",
-    "url": "/inspector/static/js/main.cedfac45.chunk.js"
+    "revision": "21ba1cbc3a41f57ee84c",
+    "url": "/inspector/static/js/main.deb2bf08.chunk.js"
   },
   {
     "revision": "b9f6901be7915b3b6020",
@@ -52,8 +52,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/inspector/static/media/bmd-camera-raw.37652355.png"
   },
   {
-    "revision": "1b40aa2713e94e479e4090c23a504f8a",
-    "url": "/inspector/static/media/clip.1b40aa27.png"
+    "revision": "4e2cf2b1656a6b38ba4b0b0cf6ac1dfd",
+    "url": "/inspector/static/media/clip.4e2cf2b1.png"
   },
   {
     "revision": "67218925d80f90917582a8881b21c67a",
@@ -72,8 +72,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/inspector/static/media/color-wheels.fb3fcca2.png"
   },
   {
-    "revision": "547e7c82c4682f027950249efb8ed228",
-    "url": "/inspector/static/media/cropping-02.547e7c82.png"
+    "revision": "783bc8063448f5553517968d3175f595",
+    "url": "/inspector/static/media/cropping-02.783bc806.png"
   },
   {
     "revision": "1f7a5927b6272598fb938afa96e5ae0b",
@@ -100,8 +100,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/inspector/static/media/image.2da21238.png"
   },
   {
-    "revision": "034d5a288a28c265351d56c426bd6f53",
-    "url": "/inspector/static/media/info.034d5a28.png"
+    "revision": "eff65ab9ce10e43bb553a29bd69bd3f6",
+    "url": "/inspector/static/media/info.eff65ab9.png"
   },
   {
     "revision": "7997fb4c1ccda70a40ca4ce96c2b9f57",
@@ -132,8 +132,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/inspector/static/media/opensans-600.50145685.ttf"
   },
   {
-    "revision": "3e4dfd7afe9145df5e3ad02c1a92ab74",
-    "url": "/inspector/static/media/position.3e4dfd7a.png"
+    "revision": "a3f6043c3b154af8d395316da975d6fc",
+    "url": "/inspector/static/media/position.a3f6043c.png"
   },
   {
     "revision": "05a8540202ba0656a5310f1d92401135",
@@ -192,16 +192,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/inspector/static/media/transform-01.071fb884.png"
   },
   {
-    "revision": "24772d530956f4d39c1edf40b5c21153",
-    "url": "/inspector/static/media/transform-01.24772d53.png"
-  },
-  {
     "revision": "9d6fe70aca3f723c589d8af452e91d60",
     "url": "/inspector/static/media/transform-02.9d6fe70a.png"
-  },
-  {
-    "revision": "9d776f4932896870384c14941a377eea",
-    "url": "/inspector/static/media/transform-02.9d776f49.png"
   },
   {
     "revision": "9f8ff2fe7f5b58f1a77cb6d1bdf99de2",
