@@ -1,14 +1,19 @@
+
 import React, { useState } from 'react';
 import classNames from 'classnames';
-import { MiniContainer, MiniToggle, Row, LabelToggle, ToggleTools, Toggle } from '../../app/_inspector-styles';
 
-import ShadingImg from '../../../img/text/style/shading-element.png';
-import PropertiesImg from '../../../img/text/style/properties.png';
-import SoftnessImg from '../../../img/text/style/softness.png';
-import PositionImg from '../../../img/text/style/position.png';
-import RotationImg from '../../../img/text/style/rotation.png';
-import ShearImg from '../../../img/text/style/shear.png';
-import SizeImg from '../../../img/text/style/size.png';
+// STYLES
+import { MiniContainer, MiniToggle, Row, LabelToggle, Toggle } from '../../app/_inspector-styles';
+import { ToggleTools } from '../../app/_toggle-tools';
+
+// IMAGES
+import ShadingImg 		from '../../../img/text/style/shading-element.png';
+import PropertiesImg 	from '../../../img/text/style/properties.png';
+import SoftnessImg 		from '../../../img/text/style/softness.png';
+import PositionImg 		from '../../../img/text/style/position.png';
+import RotationImg 		from '../../../img/text/style/rotation.png';
+import ShearImg 		from '../../../img/text/style/shear.png';
+import SizeImg 			from '../../../img/text/style/size.png';
 
 function TextStyle() {
 
@@ -87,4 +92,3 @@ function TextStyle() {
 }
 
 export default TextStyle;
-

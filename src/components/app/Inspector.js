@@ -1,26 +1,32 @@
-import React, { useState } from 'react';
-import classNames from 'classnames';
-import Video  	from '../inspector/video/Video';
-import Sizing 	from '../inspector/sizing/Sizing';
-import Audio 	from '../inspector/audio/Audio';
-import Color 	from '../inspector/color/Color';
-import Effects 	from '../inspector/effects/Effects';
-import File 	from '../inspector/file/File';
+import React, { useState } 	from 'react';
+import classNames 			from 'classnames';
 
-import TextText 	from '../text/text';
-import TextFrame 	from '../text/frame';
-import TextStyle 	from '../text/style';
-import TextSettings from '../text/settings';
-import TextVideo 	from '../text/video';
+// CLIP COMPONENTS
+import Video  			from '../clip/video/Video';
+import Sizing 			from '../clip/sizing/Sizing';
+import Audio 			from '../clip/audio/Audio';
+import Color 			from '../clip/color/Color';
+import Effects 			from '../clip/effects/Effects';
+import File 			from '../clip/file/File';
 
-import GeneratorSizing from '../generator/sizing';
-import GeneratorVideo from '../generator/video';
+// TEXT COMPONENTS
+import TextText 		from '../text/text';
+import TextFrame 		from '../text/frame';
+import TextStyle 		from '../text/style';
+import TextSettings 	from '../text/settings';
+import TextVideo 		from '../text/video';
 
-import TransitionVideo from '../transition/video';
-import TransitionAudio from '../transition/audio';
+// GENERATOR COMPONENTS
+import GeneratorSizing 	from '../generator/sizing';
+import GeneratorVideo 	from '../generator/video';
 
+// TRANSITION COMPONENTS
+import TransitionVideo 	from '../transition/video';
+import TransitionAudio 	from '../transition/audio';
+
+// STYLE
 import { AppContainer, Wrapper, ClipsWrapper, GlobalStyle, Header, Navigation, NavItem, NavTextItem, NavGenItem, NavTransItem } from './_inspector-styles';
-import { ClipsNavigation } from '../inspector/clips/styles';
+import { ClipsNavigation } from '../clip/clips/styles';
 
 function Inspector() {
 

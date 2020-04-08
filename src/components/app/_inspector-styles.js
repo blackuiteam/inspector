@@ -2,33 +2,6 @@
 import styled, { createGlobalStyle } from 'styled-components';
 import { size, position, bgimage } from './_mixins';
 
-// SLIDERS
-import SlideBlueImg 		from '../../img/common/slider-blue.png';
-import SliderBoostImg 		from '../../img/common/slider-boost.png';
-import SliderBwImg 			from '../../img/common/slider-bw.png';
-import SliderCyanImg 		from '../../img/common/slider-cyan.png';
-import SliderDefaultImg 	from '../../img/common/slider-default.png';
-import SliderDetailImg 		from '../../img/common/slider-detail.png';
-import SliderGreenImg 		from '../../img/common/slider-green.png';
-import SliderHighlightImg 	from '../../img/common/slider-highlight.png';
-import SliderHueBlueImg 	from '../../img/common/slider-hue-blue.png';
-import SliderHueCyanImg 	from '../../img/common/slider-hue-cyan.png';
-import SliderHueGlobalImg 	from '../../img/common/slider-hue-global.png';
-import SliderHueGreenImg 	from '../../img/common/slider-hue-green.png';
-import SliderHueMagentaImg 	from '../../img/common/slider-hue-magenta.png';
-import SliderHueRedImg 		from '../../img/common/slider-hue-red.png';
-import SliderHueYellowImg 	from '../../img/common/slider-hue-yellow.png';
-import SliderLumImg 		from '../../img/common/slider-lum.png';
-import SliderMagentaImg 	from '../../img/common/slider-magenta.png';
-import SliderMixImg 		from '../../img/common/slider-mix.png';
-import SliderPivotImg 		from '../../img/common/slider-pivot.png';
-import SliderRedImg 		from '../../img/common/slider-red.png';
-import SliderSatImg 		from '../../img/common/slider-sat.png';
-import SliderShadowImg 		from '../../img/common/slider-shadow.png';
-import SliderTemperatureImg from '../../img/common/slider-temperature.png';
-import SliderTintImg 		from '../../img/common/slider-tint.png';
-import SliderYellowImg 		from '../../img/common/slider-yellow.png';
-
 // NAVIGATION INSPECTOR
 import VideoImg 		from '../../img/nav/video.png';
 import VideoActiveImg 	from '../../img/nav/video-active.png';
@@ -60,69 +33,43 @@ import SettingsActiveImg	from '../../img/nav/text/settings-active.png';
 import TextVideoImg 		from '../../img/nav/text/video.png';
 import TextVideoActiveImg	from '../../img/nav/text/video-active.png';
 
-import Arrow 		from '../../img/icons/arrow.png';
-import CursorImg 	from '../../img/common/cursor.png';
-import Tick 		from '../../img/common/tick.png';
+import Arrow 				from '../../img/icons/arrow.png';
+import Tick 				from '../../img/common/tick.png';
 
-import iconAudio 		from '../../img/icons/audio.png';
-import iconAudioActive 	from '../../img/icons/audio_active.png';
-import iconAudioHover 	from '../../img/icons/audio_active_hover.png';
+function DefaultNav() {
+	return `
+		${size('46px', '100%')};
+		position: relative;
+		display: block;
+		float: left;
 
-import iconAuto 		from '../../img/icons/auto.png';
-import iconAutoActive 	from '../../img/icons/auto_active.png';
-import iconAutoHover 	from '../../img/icons/auto_active_hover.png';
+		> span {
+			${position('', '', '7px', '0px')};
+			display: block;
+			width: 100%;
+			font-size: 10px;
+			text-align: center;
+			color: #828282;
+		}
 
-import iconColScience 			from '../../img/icons/col_science.png';
-import iconColScienceActive 	from '../../img/icons/col_science_active.png';
-import iconColScienceHover 		from '../../img/icons/col_science_active_hover.png';
+		&.active {
+			&:before {
+				content: "";
+				${size('40px', '2px')};
+				${position('', '', '1px', '3px')};
+				background-color: #E64B3D;
+			}
 
-import iconColorWheels 			from '../../img/icons/color_wheels.png';
-import iconColorWheelsActive 	from '../../img/icons/color_wheels_active.png';
-import iconColorWheelsHover 	from '../../img/icons/color_wheels_active_hover.png';
-
-import iconControls 		from '../../img/icons/controls.png';
-import iconControlsActive 	from '../../img/icons/controls_active.png';
-import iconControlsHover 	from '../../img/icons/controls_active_hover.png';
-
-import iconCrop 			from '../../img/icons/crop.png';
-import iconCropActive 		from '../../img/icons/crop_active.png';
-import iconCropHover 		from '../../img/icons/crop_active_hover.png';
-
-import iconCurves 			from '../../img/icons/curves.png';
-import iconCurvesActive 	from '../../img/icons/curves_active.png';
-import iconCurvesHover 		from '../../img/icons/curves_active_hover.png';
-
-import iconDelete			from '../../img/icons/delete.png';
-import iconDeleteActive 	from '../../img/icons/delete_push.png';
-import iconDeleteHover 		from '../../img/icons/delete_hover.png';
-
-import iconDynamic			from '../../img/icons/dyn-zoom.png';
-import iconDynamicActive 	from '../../img/icons/dyn-zoom_active.png';
-import iconDynamicHover 	from '../../img/icons/dyn-zoom_active.png';
-
-import iconEq				from '../../img/icons/eq.png';
-import iconEqActive 		from '../../img/icons/eq_active.png';
-import iconEqHover 			from '../../img/icons/eq_active_hover.png';
-
-import iconKf				from '../../img/icons/kf.png';
-import iconKfActive 		from '../../img/icons/kf_active.png';
-
-import iconSpeed			from '../../img/icons/speed.png';
-import iconSpeedActive 		from '../../img/icons/speed_active.png';
-import iconSpeedHover 		from '../../img/icons/speed_active.png';
-
-import iconPreview			from '../../img/icons/preview.png';
-import iconPreviewActive 	from '../../img/icons/preview_active.png';
-import iconPreviewHover 	from '../../img/icons/preview_active_hover.png';
-
-import iconTransform		from '../../img/icons/transform.png';
-import iconTransformActive 	from '../../img/icons/transform_active.png';
-import iconTransformHover 	from '../../img/icons/transform_active_hover.png';
+			span {
+				color: #fff;
+			}
+		}
+	`
+}
 
 // LOOPS
-
 function createNavItems() {
-	const NavItems = [
+	const NavClip = [
 		{ id: 1, image: VideoImg, 	pos: '13px 8px', size: '21px 13px', active: VideoActiveImg, 	posA: '11px 6px', sizeA: '24px 18px' },
 		{ id: 2, image: SizingImg, 	pos: '13px 8px', size: '21px 13px', active: SizingActiveImg, 	posA: '11px 7px', sizeA: '25px 16px' },
 		{ id: 3, image: AudioImg, 	pos: '11px 5px', size: '25px 19px', active: AudioActiveImg, 	posA: '11px 5px', sizeA: '25px 19px' },
@@ -131,21 +78,73 @@ function createNavItems() {
 		{ id: 6, image: FileImg, 	pos: '11px 4px', size: '25px 21px', active: FileActiveImg, 		posA: '11px 4px', sizeA: '25px 21px' },
 	]
 
-	let newItems = '';
+	let navClipItems = '';
 
-	NavItems.forEach(nav => {
-		newItems += `
-			&:nth-child(${nav.id}) {
-				${bgimage(nav.image, 'no-repeat', nav.pos, nav.size)};
-			};
-
-			&:nth-child(${nav.id}).active {
-				${bgimage(nav.active, 'no-repeat', nav.posA, nav.sizeA)};
-			};
+	NavClip.forEach(nav => {
+		navClipItems += `
+			&:nth-child(${nav.id}) 			{ ${bgimage(nav.image, 'no-repeat', nav.pos, nav.size)}; };
+			&:nth-child(${nav.id}).active 	{ ${bgimage(nav.active, 'no-repeat', nav.posA, nav.sizeA)}; };
 		`
-	})
+	});
 
-	return `${newItems}`;
+	return `${navClipItems}`;
+}
+
+function createNavTextItems() {
+	const NavText = [
+		{ id: 1, image: TextImg, 		pos: '8px 0px',  size: '32px 32px', active: TextActiveImg, 		posA: '15px 7px', 	sizeA: '16px 18px' },
+		{ id: 2, image: FrameImg, 		pos: '8px 0', 	 size: '30px 32px', active: FrameActiveImg, 	posA: '8px 0', 		sizeA: '30px 32px' },
+		{ id: 3, image: StyleImg, 		pos: '9px 0', 	 size: '30px 32px', active: StyleActiveImg, 	posA: '9px 0', 		sizeA: '30px 32px' },
+		{ id: 4, image: SettingsImg, 	pos: '12px 9px', size: '22px 16px', active: SettingsActiveImg, 	posA: '11px 8px', 	sizeA: '25px 20px' },
+		{ id: 5, image: TextVideoImg, 	pos: '13px 9px', size: '21px 13px', active: TextVideoActiveImg, posA: '11px 7px', 	sizeA: '24px 18px' }
+	]
+
+	let navTextItems = '';
+
+	NavText.forEach(nav => {
+		navTextItems += `
+			&:nth-child(${nav.id}) 			{ ${bgimage(nav.image, 'no-repeat', nav.pos, nav.size)}; };
+			&:nth-child(${nav.id}).active 	{ ${bgimage(nav.active, 'no-repeat', nav.posA, nav.sizeA)}; };
+		`
+	});
+
+	return `${navTextItems}`;
+}
+
+function createNavGenItems() {
+	const NavGen = [
+		{ id: 1, image: VideoImg, 	pos: '13px 8px', size: '21px 13px', active: VideoActiveImg, 	posA: '11px 6px', sizeA: '24px 18px' },
+		{ id: 2, image: SizingImg, 	pos: '13px 8px', size: '21px 13px', active: SizingActiveImg, 	posA: '11px 7px', sizeA: '25px 16px' },
+	]
+
+	let navGenItems = '';
+
+	NavGen.forEach(nav => {
+		navGenItems += `
+			&:nth-child(${nav.id}) 			{ ${bgimage(nav.image, 'no-repeat', nav.pos, nav.size)}; };
+			&:nth-child(${nav.id}).active 	{ ${bgimage(nav.active, 'no-repeat', nav.posA, nav.sizeA)}; };
+		`
+	});
+
+	return `${navGenItems}`;
+}
+
+function createNavTransItems() {
+	const NavTrans = [
+		{ id: 1, image: VideoImg, 	pos: '13px 8px', size: '21px 13px', active: VideoActiveImg, 	posA: '11px 6px', sizeA: '24px 18px' },
+		{ id: 2, image: AudioImg, 	pos: '11px 5px', size: '25px 19px', active: AudioActiveImg, 	posA: '11px 5px', sizeA: '25px 19px' },
+	]
+
+	let navTransItems = '';
+
+	NavTrans.forEach(nav => {
+		navTransItems += `
+			&:nth-child(${nav.id}) 			{ ${bgimage(nav.image, 'no-repeat', nav.pos, nav.size)}; };
+			&:nth-child(${nav.id}).active 	{ ${bgimage(nav.active, 'no-repeat', nav.posA, nav.sizeA)}; };
+		`
+	});
+
+	return `${navTransItems}`;
 }
 
 export const GlobalStyle = createGlobalStyle `
@@ -233,183 +232,23 @@ export const Navigation = styled.div `
 `
 
 export const NavItem = styled.div `
-	${size('46px', '100%')};
-	position: relative;
-	display: block;
-	float: left;
-
-	> span {
-		${position('', '', '7px', '0px')};
-		display: block;
-		width: 100%;
-		font-size: 10px;
-		text-align: center;
-		color: #828282;
-	}
-
+	${DefaultNav()};
 	${createNavItems()};
-
-	&.active {
-		&:before {
-			content: "";
-			${size('40px', '2px')};
-			${position('', '', '1px', '3px')};
-			background-color: #E64B3D;
-		}
-
-		span {
-			color: #fff;
-		}
-	}
 `
 
 export const NavTextItem = styled.div `
-	${size('46px', '100%')};
-	position: relative;
-	display: block;
-	float: left;
-
-	> span {
-		${position('', '', '7px', '0px')};
-		display: block;
-		width: 100%;
-		font-size: 10px;
-		text-align: center;
-		color: #828282;
-	}
-
-	&.active {
-		&:before {
-			content: "";
-			${size('40px', '2px')};
-			${position('', '', '1px', '3px')};
-			background-color: #E64B3D;
-		}
-
-		:nth-child(1) {
-			${bgimage(TextActiveImg,'no-repeat', '15px 7px', '16px 18px')}
-		};
-
-		:nth-child(2) {
-			${bgimage(FrameActiveImg,'no-repeat', '8px 0', '30px 32px')}
-		};
-
-		:nth-child(3) {
-			${bgimage(StyleActiveImg,'no-repeat', '9px 0', '30px 32px')}
-		};
-
-		:nth-child(4) {
-			${bgimage(SettingsActiveImg,'no-repeat', '11px 8px', '25px 20px')}
-		};
-
-		:nth-child(5) {
-			${bgimage(TextVideoActiveImg,'no-repeat', '11px 7px', '24px 18px')}
-		};
-
-		span {
-			color: #fff;
-		}
-	}
-
-	:nth-child(1) {
-		${bgimage(TextImg,'no-repeat', '8px 0px', '32px 32px')}
-	};
-
-	:nth-child(2) {
-		${bgimage(FrameImg,'no-repeat', '8px 0', '30px 32px')}
-	};
-
-	:nth-child(3) {
-		${bgimage(StyleImg,'no-repeat', '9px 0', '30px 32px')}
-	};
-
-	:nth-child(4) {
-		${bgimage(SettingsImg,'no-repeat', '12px 9px', '22px 16px')}
-	};
-
-	:nth-child(5) {
-		${bgimage(TextVideoImg,'no-repeat', '13px 9px', '21px 13px')}
-	};
+	${DefaultNav()};
+	${createNavTextItems()};
 `
 
 export const NavGenItem = styled.div `
-	${size('46px', '100%')};
-	position: relative;
-	display: block;
-	float: left;
-
-	:nth-child(1) {
-		${bgimage(VideoImg,'no-repeat', '13px 8px', '21px 13px')}
-	};
-
-	:nth-child(2) {
-		${bgimage(SizingImg,'no-repeat', '13px 8px', '21px 13px')}
-	};
-
-	&.active {
-		box-shadow: inset 0px -2px 0px 0px rgba(230,75,61,1);
-
-		:nth-child(1) {
-			${bgimage(VideoActiveImg,'no-repeat', '11px 6px', '24px 18px')}
-		};
-
-		:nth-child(2) {
-			${bgimage(SizingActiveImg,'no-repeat', '11px 7px', '25px 16px')}
-		};
-
-		span {
-			color: #fff;
-		}
-	}
-
-	> span {
-		${position('', '', '7px', '0px')};
-		display: block;
-		width: 100%;
-		font-size: 10px;
-		text-align: center;
-		color: #828282;
-	}
+	${DefaultNav()};
+	${createNavGenItems()};
 `
 
 export const NavTransItem = styled.div `
-	${size('46px', '100%')};
-	position: relative;
-	display: block;
-	float: left;
-
-	> span {
-		${position('', '', '7px', '0px')};
-		display: block;
-		width: 100%;
-		font-size: 10px;
-		text-align: center;
-		color: #828282;
-	}
-
-	:nth-child(1) {
-		${bgimage(VideoImg,'no-repeat', '13px 8px', '21px 13px')}
-	};
-
-	:nth-child(2) {
-		${bgimage(AudioImg,'no-repeat', '11px 5px', '25px 19px')}
-	};
-
-	&.active {
-		box-shadow: inset 0px -2px 0px 0px rgba(230,75,61,1);
-
-		:nth-child(1) {
-			${bgimage(VideoActiveImg,'no-repeat', '11px 6px', '24px 18px')}
-		};
-
-		:nth-child(2) {
-			${bgimage(AudioActiveImg,'no-repeat', '11px 5px', '25px 19px')}
-		};
-
-		span {
-			color: #fff;
-		}
-	}
+	${DefaultNav()};
+	${createNavTransItems()};
 `
 
 export const Toggle = styled.div `
@@ -446,182 +285,6 @@ export const LabelToggle = styled.div `
 	margin: 6px 0 0 8px;
 	font-size: 11px;
 	color: #fff;
-`
-
-export const ToggleTools = styled.div `
-	${size('23px', '20px')};
-	display: block;
-	float: right;
-	margin: 5px 0 0 0;
-
-	&.ic-audio {
-		${ bgimage(iconAudioActive,'no-repeat', '1px -1px', '23px 23px') }
-
-		&.active {
-			${ bgimage(iconAudio,'no-repeat', '1px -1px', '23px 23px') }
-		}
-
-		&:hover {
-			${ bgimage(iconAudioHover,'no-repeat', '1px -1px', '23px 23px') }
-		}
-	}
-
-	&.ic-auto {
-		${ bgimage(iconAuto,'no-repeat', '1px -1px', '23px 23px') }
-
-		&.active {
-			${ bgimage(iconAutoActive,'no-repeat', '1px -1px', '23px 23px') }
-		}
-
-		&:hover {
-			${ bgimage(iconAutoHover,'no-repeat', '1px -1px', '23px 23px') }
-		}
-	}
-
-	&.ic-col-science {
-		${ bgimage(iconColScienceActive,'no-repeat', '1px -1px', '23px 23px') }
-
-		&.active {
-			${ bgimage(iconColScience,'no-repeat', '1px -1px', '23px 23px') }
-		}
-
-		&:hover {
-			${ bgimage(iconColScienceHover,'no-repeat', '1px -1px', '23px 23px') }
-		}
-	}
-
-	&.ic-colorwheel {
-		${ bgimage(iconColorWheelsActive,'no-repeat', '1px -1px', '23px 23px') }
-
-		&.active {
-			${ bgimage(iconColorWheels,'no-repeat', '1px -1px', '23px 23px') }
-		}
-
-		&:hover {
-			${ bgimage(iconColorWheelsHover,'no-repeat', '1px -1px', '23px 23px') }
-		}
-	}
-
-	&.ic-controls {
-		${ bgimage(iconControlsActive,'no-repeat', '1px -1px', '23px 23px') }
-
-		&.active {
-			${ bgimage(iconControls,'no-repeat', '1px -1px', '23px 23px') }
-		}
-
-		&:hover {
-			${ bgimage(iconControlsHover,'no-repeat', '1px -1px', '23px 23px') }
-		}
-	}
-
-	&.ic-crop {
-		${ bgimage(iconCropActive,'no-repeat', '1px -1px', '23px 23px') }
-
-		&.active {
-			${ bgimage(iconCrop,'no-repeat', '1px -1px', '23px 23px') }
-		}
-
-		&:hover {
-			${ bgimage(iconCropHover,'no-repeat', '1px -1px', '23px 23px') }
-		}
-	}
-
-	&.ic-curves {
-		${ bgimage(iconCurvesActive,'no-repeat', '1px -1px', '23px 23px') }
-
-		&.active {
-			${ bgimage(iconCurves,'no-repeat', '1px -1px', '23px 23px') }
-		}
-
-		&:hover {
-			${ bgimage(iconCurvesHover,'no-repeat', '1px -1px', '23px 23px') }
-		}
-	}
-
-	&.ic-delete {
-		${ bgimage(iconDelete,'no-repeat', '1px -1px', '23px 23px') }
-
-		&.active {
-			${ bgimage(iconDeleteActive,'no-repeat', '1px -1px', '23px 23px') }
-		}
-
-		&:hover {
-			${ bgimage(iconDeleteHover,'no-repeat', '1px -1px', '23px 23px') }
-		}
-	}
-
-	&.ic-dynamic {
-		${ bgimage(iconDynamicActive,'no-repeat', '1px -1px', '23px 23px') }
-
-		&.active {
-			${ bgimage(iconDynamic,'no-repeat', '1px -1px', '23px 23px') }
-		}
-
-		&:hover {
-			${ bgimage(iconDynamicHover,'no-repeat', '1px -1px', '23px 23px') }
-		}
-	}
-
-	&.ic-eq {
-		${ bgimage(iconEqActive,'no-repeat', '1px -1px', '23px 23px') }
-
-		&.active {
-			${ bgimage(iconEq,'no-repeat', '1px -1px', '23px 23px') }
-		}
-
-		&:hover {
-			${ bgimage(iconEqHover,'no-repeat', '1px -1px', '23px 23px') }
-		}
-	}
-
-	&.ic-kf {
-		${ bgimage(iconKf,'no-repeat', '5px 3px', '15px 15px') }
-
-		&.active {
-			${ bgimage(iconKfActive,'no-repeat', '4px 2px', '18px 18px') }
-		}
-
-		&:hover {
-			opacity: 0.8;
-			${ bgimage(iconKfActive,'no-repeat', '4px 2px', '18px 18px') }
-		}
-	}
-
-	&.ic-speed {
-		${ bgimage(iconSpeedActive,'no-repeat', '1px -1px', '23px 23px') }
-
-		&.active {
-			${ bgimage(iconSpeed,'no-repeat', '1px -1px', '23px 23px') }
-		}
-
-		&:hover {
-			${ bgimage(iconSpeedHover,'no-repeat', '1px -1px', '23px 23px') }
-		}
-	}
-
-	&.ic-preview {
-		${ bgimage(iconPreviewActive,'no-repeat', '1px -1px', '23px 23px') }
-
-		&.active {
-			${ bgimage(iconPreview,'no-repeat', '1px -1px', '23px 23px') }
-		}
-
-		&:hover {
-			${ bgimage(iconPreviewHover,'no-repeat', '1px -1px', '23px 23px') }
-		}
-	}
-
-	&.ic-transform {
-		${ bgimage(iconTransformActive,'no-repeat', '1px -1px', '23px 23px') }
-
-		&.active {
-			${ bgimage(iconTransform,'no-repeat', '1px -1px', '23px 23px') }
-		}
-
-		&:hover {
-			${ bgimage(iconTransformHover,'no-repeat', '1px -1px', '23px 23px') }
-		}
-	}
 `
 
 export const MiniContainer = styled.div `
@@ -696,24 +359,6 @@ export const InputLabel = styled.label `
 	z-index: 3;
 
 	&.active { color: #fff; }
-`
-
-export const Input = styled.input `
-	${size('50px', '17px', 'block')};
-	${position('1px', '29px', '', '')};
-	border: 1px solid transparent;
-	background-color: #28282E;
-	text-align: right;
-	color: #979797;
-	padding: 0 3px;
-	outline: none;
-	user-select: none;
-
-	&:hover, &:focus, &.active {
-		color: #fff;
-		border: 1px solid #E64B3D;
-		border-radius: 3px;
-	}
 `
 
 export const Tabs = styled.div `
@@ -825,315 +470,6 @@ export const Row = styled.div `
 			${size('calc(100% - 39px)', '1px', 'block')};
 			${position('0','','','15px')};
 			background-color: #1B1B1E;
-		}
-	}
-`
-
-export const RcSlider = styled.div `
-	${size('100%', '23px', 'block')};
-	position: relative;
-	z-index: 1;
-
-	&.opacity {
-		pointer-events: none;
-		opacity: .5;
-	}
-
-	&:active {
-		${Input} {
-			color: white
-		};
-	}
-
-	.rc-slider {
-		${size('calc(100% - 40px)', '4px', 'block')};
-		${position('', '', '0px', '0px')};
-		margin: 0 25px 0 15px;
-		border: 1px solid #000;
-		border-bottom-left-radius: 2px;
-		border-bottom-right-radius: 2px;
-		-ms-touch-action: none;
-			touch-action: none;
-		box-sizing: border-box;
-		-webkit-tap-highlight-color: rgba(0, 0, 0, 0);
-		cursor: ew-resize;
-
-		&.default {
-			.rc-slider-track {
-				/* background-color: transparent; */
-			}
-
-			.rc-slider-handle {
-				background-color: #fff;
-
-				&:hover {
-					background-color: #E64B3D;
-				}
-			}
-
-			&.active {
-				.rc-slider-handle {
-					background-color: #E64B3D;
-				}
-			}
-		}
-
-		&.blue,
-		&.boost,
-		&.bw,
-		&.cyan,
-		&.detail,
-		&.green,
-		&.highlight,
-		&.hue-blue,
-		&.hue-cyan,
-		&.hue-global,
-		&.hue-green,
-		&.hue-magenta,
-		&.hue-red,
-		&.hue-yellow,
-		&.lum,
-		&.magenta,
-		&.mix,
-		&.pivot,
-		&.red,
-		&.saturation,
-		&.shadow,
-		&.temperature,
-		&.tint,
-		&.yellow {
-			.rc-slider-track {
-				background-color: transparent;
-			}
-
-			.rc-slider-handle {
-				background-color: #fff;
-
-				&:hover {
-					background-color: #E64B3D;
-				}
-			}
-
-			&.active {
-				.rc-slider-handle {
-					background-color: #E64B3D;
-				}
-			}
-		}
-
-		&.white {
-			.rc-slider-track {
-				background-color: transparent;
-			}
-
-			.rc-slider-handle {
-				background-color: #fff;
-
-				&:hover {
-					background-color: #E64B3D;
-				}
-			}
-
-			&.active {
-				.rc-slider-handle {
-					background-color: #E64B3D;
-				}
-			}
-		}
-
-		&.blue {
-			.rc-slider-rail {
-				${bgimage(SlideBlueImg,'no-repeat', '0 0', '100%')};
-			}
-		}
-
-		&.boost {
-			.rc-slider-rail {
-				${bgimage(SliderBoostImg,'no-repeat', '0 0', '100%')};
-			}
-		}
-
-		&.bw {
-			.rc-slider-rail {
-				${bgimage(SliderBwImg,'no-repeat', '0 0', '100%')};
-			}
-		}
-
-		&.cyan {
-			.rc-slider-rail {
-				${bgimage(SliderCyanImg,'no-repeat', '0 0', '100%')};
-			}
-		}
-
-		&.default {
-			.rc-slider-rail {
-				${bgimage(SliderDefaultImg,'no-repeat', '0 0', '100%')};
-			}
-		}
-
-		&.detail {
-			.rc-slider-rail {
-				${bgimage(SliderDetailImg,'no-repeat', '0 0', '100%')};
-			}
-		}
-
-		&.green {
-			.rc-slider-rail {
-				${bgimage(SliderGreenImg,'no-repeat', '0 0', '100%')};
-			}
-		}
-
-		&.highlight {
-			.rc-slider-rail {
-				${bgimage(SliderHighlightImg,'no-repeat', '0 0', '100%')};
-			}
-		}
-
-		&.hue-blue {
-			.rc-slider-rail {
-				${bgimage(SliderHueBlueImg,'no-repeat', '0 0', '100%')};
-			}
-		}
-
-		&.hue-cyan {
-			.rc-slider-rail {
-				${bgimage(SliderHueCyanImg,'no-repeat', '0 0', '100%')};
-			}
-		}
-
-		&.hue-global {
-			.rc-slider-rail {
-				${bgimage(SliderHueGlobalImg,'no-repeat', '0 0', '100%')};
-			}
-		}
-
-		&.hue-green {
-			.rc-slider-rail {
-				${bgimage(SliderHueGreenImg,'no-repeat', '0 0', '100%')};
-			}
-		}
-
-		&.hue-magenta {
-			.rc-slider-rail {
-				${bgimage(SliderHueMagentaImg,'no-repeat', '0 0', '100%')};
-			}
-		}
-
-		&.hue-red {
-			.rc-slider-rail {
-				${bgimage(SliderHueRedImg,'no-repeat', '0 0', '100%')};
-			}
-		}
-
-		&.hue-yellow {
-			.rc-slider-rail {
-				${bgimage(SliderHueYellowImg,'no-repeat', '0 0', '100%')};
-			}
-		}
-
-		&.lum {
-			.rc-slider-rail {
-				${bgimage(SliderLumImg,'no-repeat', '0 0', '100%')};
-			}
-		}
-
-		&.magenta {
-			.rc-slider-rail {
-				${bgimage(SliderMagentaImg,'no-repeat', '0 0', '100%')};
-			}
-		}
-
-		&.mix {
-			.rc-slider-rail {
-				${bgimage(SliderMixImg,'no-repeat', '0 0', '100%')};
-			}
-		}
-
-		&.pivot {
-			.rc-slider-rail {
-				${bgimage(SliderPivotImg,'no-repeat', '0 0', '100%')};
-			}
-		}
-
-		&.red {
-			.rc-slider-rail {
-				${bgimage(SliderRedImg,'no-repeat', '0 0', '100%')};
-			}
-		}
-
-		&.saturation {
-			.rc-slider-rail {
-				${bgimage(SliderSatImg,'no-repeat', '0 0', '100%')};
-			}
-		}
-
-		&.shadow {
-			.rc-slider-rail {
-				${bgimage(SliderShadowImg,'no-repeat', '0 0', '100%')};
-			}
-		}
-
-		&.temperature {
-			.rc-slider-rail {
-				${bgimage(SliderTemperatureImg,'no-repeat', '0 0', '100%')};
-			}
-		}
-
-		&.tint {
-			.rc-slider-rail {
-				${bgimage(SliderTintImg,'no-repeat', '0 0', '100%')};
-			}
-		}
-
-		&.yellow {
-			.rc-slider-rail {
-				${bgimage(SliderYellowImg,'no-repeat', '0 0', '100%')};
-			}
-		}
-	}
-
-	.rc-slider-rail {
-		${size('100%', '2px')};
-		position: absolute;
-		background-color: #28282E;
-		cursor: ew-resize;
-	}
-
-	.rc-slider-track {
-		${position('', '', '', '0')};
-		height: 2px;
-		border-radius: 6px;
-		background-color: #E64B3D;
-		opacity: .4;
-	}
-
-	.rc-slider-handle {
-		${size('5px', '4px')};
-		position: absolute;
-		margin-top: -1px;
-		border-radius: 2px;
-		border: solid 1px #000;
-		/* background-color: #E64B3D; */
-		background-color: #fff;
-		-ms-touch-action: pan-x;
-			touch-action: pan-x;
-		/* cursor: ew-resize; */
-
-		&:focus {
-			outline: none;
-			cursor: ew-resize;
-		}
-
-		&:hover {
-			${size('5px', '9px')};
-			margin-top: -6px;
-			cursor: ew-resize;
-		}
-
-		&:active {
-			${size('5px', '9px')};
-			margin-top: -6px;
-			cursor: ew-resize;
 		}
 	}
 `

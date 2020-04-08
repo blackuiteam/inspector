@@ -1,9 +1,16 @@
+
 import React, { useState } from 'react';
-import classNames from 'classnames';
 import Slider from 'rc-slider';
-import { InputLabel, Input, RcSlider, Row, MiniContainer, Toggle, MiniToggle, LabelToggle, ToggleTools } from '../../app/_inspector-styles';
-import DropdownNormal from '../../../img/dropdown/dropdown-normal.png';
-import Attributes from '../../../img/generator/video/video-solid-color.png';
+
+// STYLES
+import classNames from 'classnames';
+import { InputLabel, Row, Toggle, LabelToggle } from '../../app/_inspector-styles';
+import { ToggleTools } 	from '../../app/_toggle-tools';
+import { RcSlider, Input } 	from '../../app/_slider';
+
+// IMAGES
+import DropdownNormal 	from '../../../img/dropdown/dropdown-normal.png';
+import Attributes 		from '../../../img/generator/video/video-solid-color.png';
 
 function GeneratorVideo() {
 

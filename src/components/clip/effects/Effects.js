@@ -1,10 +1,15 @@
+
 import React, { useState } from 'react';
-import classNames from 'classnames';
 import Slider from 'rc-slider';
-import { CheckBox, Tabs, RoundedButton, InputLabel, Input, RcSlider, Row, MiniToggle, MiniContainer, Toggle, LabelToggle, ToggleTools } from '../../app/_inspector-styles';
+
+// STYLES
+import classNames from 'classnames';
+import { Row, Toggle, LabelToggle, InputLabel, CheckBox, RoundedButton, Tabs, MiniContainer, MiniToggle } from '../../app/_inspector-styles';
+import { ToggleTools } 	from '../../app/_toggle-tools';
+import { RcSlider, Input } 	from '../../app/_slider';
+
+// IMAGES
 import ColorGenerator 	from '../../../img/effects/color-generator.png';
-import FaceRefineImg 	from '../../../img/effects/face-refinement.png';
-import SkinMaskImg 		from '../../../img/effects/skin-mask.png';
 import TextureImg 		from '../../../img/effects/texture.png';
 import ChorusImg 		from '../../../img/effects/audio-tab.png';
 
@@ -80,7 +85,6 @@ function Effects() {
 	const [ cheek, setCheek ] = useState(true);
 	const [ toggleColorG, setToggleColorG ] = useState(false);
 	const [ colorGenerator, setColorGenerator ] = useState(false);
-
 
 	return (
 		<>

@@ -1,17 +1,24 @@
+
 import React, { useState } from 'react';
 import Slider from 'rc-slider';
+
+// STYLES
 import classNames from 'classnames';
-import { mSlider, RoundedButton, InputLabel, Input, RcSlider, Row, MiniContainer, Toggle, MiniToggle, LabelToggle, ToggleTools } from '../../app/_inspector-styles';
-import kf1img from '../../../img/video/kf1.png';
-import kf2img from '../../../img/video/kf2.png';
-import DropdownNormal from '../../../img/dropdown/dropdown-normal.png';
-import DropdownPerspective from '../../../img/dropdown/dropdown-perspective-group.png';
-import SpeedChange1 from '../../../img/video/speed-change-01.png';
-import SpeedChange2 from '../../../img/video/speed-change-02.png';
-import LensCorrection from '../../../img/video/lens-correction.png';
-import Attributes from '../../../img/video/attributes.png';
-import Dynamic1 from '../../../img/video/dynamic-zoom-01.png';
-import Dynamic2 from '../../../img/video/dynamic-zoom-02.png';
+import { Row, Toggle, LabelToggle, InputLabel, RoundedButton,} from '../../app/_inspector-styles';
+import { ToggleTools } 	from '../../app/_toggle-tools';
+import { RcSlider, Input } 	from '../../app/_slider';
+
+// IMAGES
+import kf1img 				from '../../../img/video/kf1.png';
+import kf2img 				from '../../../img/video/kf2.png';
+import DropdownNormal 		from '../../../img/dropdown/dropdown-normal.png';
+import DropdownPerspective 	from '../../../img/dropdown/dropdown-perspective-group.png';
+import SpeedChange1 		from '../../../img/video/speed-change-01.png';
+import SpeedChange2 		from '../../../img/video/speed-change-02.png';
+import LensCorrection 		from '../../../img/video/lens-correction.png';
+import Attributes 			from '../../../img/video/attributes.png';
+import Dynamic1 			from '../../../img/video/dynamic-zoom-01.png';
+import Dynamic2 			from '../../../img/video/dynamic-zoom-02.png';
 
 function Video() {
 
@@ -68,12 +75,6 @@ function Video() {
 	function resetSlider4(value) { setHandleSlider4(false); setSlider4(40); }
 
 	const [ test, setTest ] = useState(false);
-
-	function testing(value) {
-		setTest(!test);
-		console.log(test);
-	}
-
 
 	return (
 		<>

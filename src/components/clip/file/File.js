@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import classNames from 'classnames';
-import { Row, MiniContainer, MiniToggle, LabelToggle, ToggleTools } from '../../app/_inspector-styles';
+import { Row, MiniContainer, MiniToggle, LabelToggle } from '../../app/_inspector-styles';
+import { ToggleTools } from '../../app/_toggle-tools';
 
 import InfoImg 				from '../../../img/file/info.png';
 import BmdCameraRawImg 		from '../../../img/file/bmd-camera-raw.png';

@@ -1,7 +1,12 @@
+
 import React, { useState } from 'react';
 import classNames from 'classnames';
-import { Row, LabelToggle, ToggleTools, Toggle } from '../../app/_inspector-styles';
 
+// STYLES
+import { Row, LabelToggle, Toggle } from '../../app/_inspector-styles';
+import { ToggleTools } from '../../app/_toggle-tools';
+
+// IMAGES
 import CompositeImg 	from '../../../img/text/video/composite.png';
 import Transform1Img 	from '../../../img/text/video/transform-01.png';
 import Transform2Img 	from '../../../img/text/video/transform-02.png';

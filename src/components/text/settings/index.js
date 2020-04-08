@@ -1,12 +1,17 @@
+
 import React, { useState } from 'react';
 import classNames from 'classnames';
-import { Row, LabelToggle, ToggleTools, Toggle } from '../../app/_inspector-styles';
 
-import ImageImg from '../../../img/text/settings/image.png';
-import SourceColorSpaceImg from '../../../img/text/settings/source-color-space.png';
-import SourceGammaSpaceImg from '../../../img/text/settings/source-gamma-space.png';
-import SettingsImg from '../../../img/text/settings/settings.png';
-import TextFieldImg from '../../../img/text/settings/text-field.png';
+// STYLES
+import { Row, LabelToggle, Toggle } from '../../app/_inspector-styles';
+import { ToggleTools } from '../../app/_toggle-tools';
+
+// IMAGES
+import ImageImg 			from '../../../img/text/settings/image.png';
+import SourceColorSpaceImg 	from '../../../img/text/settings/source-color-space.png';
+import SourceGammaSpaceImg 	from '../../../img/text/settings/source-gamma-space.png';
+import SettingsImg 			from '../../../img/text/settings/settings.png';
+import TextFieldImg 		from '../../../img/text/settings/text-field.png';
 
 function TextSettings() {
 

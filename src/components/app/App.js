@@ -1,9 +1,8 @@
-import React, { useState } from 'react';
-import classNames from 'classnames';
-import Inspector from './Inspector';
-import { GlobalStyle } from './_app-styles';
-function App() {
+import React 			from 'react';
+import Inspector 		from './Inspector';
+import { GlobalStyle } 	from './_app-styles';
 
+function App() {
 	return (
 		<>
 			<GlobalStyle/>

@@ -1,10 +1,17 @@
+
 import React, { useState } from 'react';
-import classNames from 'classnames';
 import Slider from 'rc-slider';
-import { Tabs, InputLabel, Input, RcSlider, Row, MiniContainer, Toggle, LabelToggle, ToggleTools } from '../../app/_inspector-styles';
-import EmbeddedImg from '../../../img/audio/embedded-content.png';
-import Eq1Img from '../../../img/audio/eq-content-01.png';
-import Eq2Img from '../../../img/audio/eq-content-02.png';
+
+// STYLES
+import classNames from 'classnames';
+import { Row, Toggle, LabelToggle, InputLabel, Tabs } from '../../app/_inspector-styles';
+import { ToggleTools } 	from '../../app/_toggle-tools';
+import { RcSlider, Input } 	from '../../app/_slider';
+
+// IMAGES
+import EmbeddedImg 	from '../../../img/audio/embedded-content.png';
+import Eq1Img 		from '../../../img/audio/eq-content-01.png';
+import Eq2Img 		from '../../../img/audio/eq-content-02.png';
 
 function Audio() {
 

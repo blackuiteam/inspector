@@ -1,15 +1,22 @@
+
 import React, { useState } from 'react';
-import classNames from 'classnames';
 import Slider from 'rc-slider';
-import { Tabs, InputLabel, Input, RcSlider, Row, MiniContainer, Toggle, MiniToggle, LabelToggle, ToggleTools } from '../../app/_inspector-styles';
+
+// STYLES
+import classNames from 'classnames';
+import { Row, Toggle, LabelToggle, InputLabel, Tabs } from '../../app/_inspector-styles';
+import { ToggleTools } 	from '../../app/_toggle-tools';
+import { RcSlider, Input } 	from '../../app/_slider';
+
+// IMAGES
 import Transform1 		from '../../../img/sizing/transform-01.png';
 import Transform2 		from '../../../img/sizing/transform-02.png';
 import CroppingContent 	from '../../../img/sizing/cropping-content.png';
 import CroppingContent2 from '../../../img/sizing/cropping-content-02.png';
 import CroppingContent3 from '../../../img/sizing/cropping-content-03.png';
 import Scalling 		from '../../../img/sizing/scalling.png';
-import kf1img from '../../../img/sizing/kf-01.png';
-import kf2img from '../../../img/sizing/kf-02.png';
+import kf1img 			from '../../../img/sizing/kf-01.png';
+import kf2img 			from '../../../img/sizing/kf-02.png';
 
 function Sizing() {
 

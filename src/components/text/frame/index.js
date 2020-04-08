@@ -1,13 +1,18 @@
+
 import React, { useState } from 'react';
 import classNames from 'classnames';
-import { Row, LabelToggle, ToggleTools, Toggle } from '../../app/_inspector-styles';
 
-import LayoutImg 	from '../../../img/text/frame/layout.png';
-import RotationImg 	from '../../../img/text/frame/rotation.png';
-import BackgroundImg from '../../../img/text/frame/background.png';
-import TransformImg from '../../../img/text/frame/transform.png';
-import ShearImg 	from '../../../img/text/frame/shear.png';
-import SizeImg 		from '../../../img/text/frame/size.png';
+// STYLES
+import { Row, LabelToggle, Toggle } from '../../app/_inspector-styles';
+import { ToggleTools } from '../../app/_toggle-tools';
+
+// IMAGES
+import LayoutImg 		from '../../../img/text/frame/layout.png';
+import RotationImg 		from '../../../img/text/frame/rotation.png';
+import BackgroundImg 	from '../../../img/text/frame/background.png';
+import TransformImg 	from '../../../img/text/frame/transform.png';
+import ShearImg 		from '../../../img/text/frame/shear.png';
+import SizeImg 			from '../../../img/text/frame/size.png';
 
 function TextFrame() {
 

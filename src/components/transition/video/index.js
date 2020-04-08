@@ -1,7 +1,12 @@
+
 import React, { useState } from 'react';
+
+// STYLES
 import classNames from 'classnames';
-import Slider from 'rc-slider';
-import { InputLabel, Input, RcSlider, Row, MiniContainer, Toggle, MiniToggle, LabelToggle, ToggleTools } from '../../app/_inspector-styles';
+import { Row, Toggle, LabelToggle } from '../../app/_inspector-styles';
+import { ToggleTools } from '../../app/_toggle-tools';
+
+// IMAGES
 import VideoTransition from '../../../img/transition/video-transition.png';
 import VideoComposite from '../../../img/transition/video-composite.png';
 

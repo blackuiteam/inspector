@@ -1,10 +1,17 @@
+
 import React, { useState } from 'react';
-import classNames from 'classnames';
 import Slider from 'rc-slider';
-import { Tabs, RoundedButton, InputLabel, Input, RcSlider, Row, MiniContainer, Toggle, LabelToggle, ToggleTools } from '../../app/_inspector-styles';
-import LutsDropdown from '../../../img/color/luts-dropdown.png';
-import ColorWheelsImg from '../../../img/color/color-wheels.png';
-import ColorAdjImg from '../../../img/color/color-curves.png'
+
+// STYLES
+import classNames from 'classnames';
+import { Row, Toggle, LabelToggle, Tabs, InputLabel, RoundedButton,} from '../../app/_inspector-styles';
+import { ToggleTools } 	from '../../app/_toggle-tools';
+import { RcSlider, Input } 	from '../../app/_slider';
+
+// IMAGES
+import LutsDropdown 	from '../../../img/color/luts-dropdown.png';
+import ColorWheelsImg 	from '../../../img/color/color-wheels.png';
+import ColorAdjImg 		from '../../../img/color/color-curves.png'
 
 function Color() {
 	// LUTS
@@ -185,7 +192,7 @@ function Color() {
 					))}
 				</Tabs>
 
-				<Row className={classNames("row-slider", toggleWheels ? "none" : "")} style={{"marginBottom": "3px"}}>
+				<Row className={classNames("row-slider")} style={{"marginBottom": "3px"}}>
 					<InputLabel className={sld2 ? "active" : ""} onDoubleClick={()=>resetSlider2()}>Luminance</InputLabel>
 					<RcSlider>
 						<Input className="input" type="text" value={slider2} min="0" max="100" onChange={(event) => setSlider2(event.target.value)}/>
@@ -198,7 +205,7 @@ function Color() {
 					</RcSlider>
 				</Row>
 
-				<Row className={classNames("row-slider", toggleWheels ? "none" : "")} style={{"marginBottom": "3px"}}>
+				<Row className={classNames("row-slider")} style={{"marginBottom": "3px"}}>
 					<InputLabel className={sld3 ? "active" : ""} onDoubleClick={()=>resetSlider3()}>Red</InputLabel>
 					<RcSlider >
 						<Input className="input" type="text" value={slider3} min="0" max="100" onChange={(event) => setSlider3(event.target.value)}/>
@@ -211,7 +218,7 @@ function Color() {
 					</RcSlider>
 				</Row>
 
-				<Row className={classNames("row-slider", toggleWheels ? "none" : "")} style={{"marginBottom": "3px"}}>
+				<Row className={classNames("row-slider")} style={{"marginBottom": "3px"}}>
 					<InputLabel className={sld4 ? "active" : ""} onDoubleClick={()=>resetSlider4()}>Green</InputLabel>
 					<RcSlider>
 						<Input className="input" type="text" value={slider4} min="0" max="100" onChange={(event) => setSlider4(event.target.value)}/>
@@ -224,7 +231,7 @@ function Color() {
 					</RcSlider>
 				</Row>
 
-				<Row className={classNames("row-slider", toggleWheels ? "none" : "")} style={{"marginBottom": "3px"}}>
+				<Row className={classNames("row-slider")} style={{"marginBottom": "3px"}}>
 					<InputLabel className={sld5 ? "active" : ""} onDoubleClick={()=>resetSlider5()}>Blue</InputLabel>
 					<RcSlider>
 						<Input className="input" type="text" value={slider5} min="0" max="100" onChange={(event) => setSlider5(event.target.value)}/>
@@ -237,7 +244,7 @@ function Color() {
 					</RcSlider>
 				</Row>
 
-				<Row className={classNames("row-slider", toggleWheels ? "none" : "")} style={{"marginBottom": "9px"}}>
+				<Row className={classNames("row-slider")} style={{"marginBottom": "9px"}}>
 					<InputLabel className={sld6 ? "active" : ""} onDoubleClick={()=>resetSlider6()}>All</InputLabel>
 					<RcSlider>
 						<Input className="input" type="text" value={slider6} min="0" max="100" onChange={(event) => setSlider6(event.target.value)}/>
