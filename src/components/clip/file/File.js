@@ -27,12 +27,14 @@ function File() {
 
 			<Row className="header">
 				<LabelToggle style={{"margin":"6px 0 0 0px"}}>Clip</LabelToggle>
+				<ToggleTools className="ic-reset"/>
 				<ToggleTools className={classNames('ic-controls', clip ? "active" : "")} onClick={()=> setClip(!clip)}/>
 			</Row>
 			<img src={ClipImg} width="294" style={{'margin': '6px 0 9px 15px'}} className={classNames('', clip ? "none" : "")}/>
 
 			<Row className="header">
 				<LabelToggle style={{"margin":"6px 0 0 0px"}}>Blackmagic Camera Raw</LabelToggle>
+				<ToggleTools className="ic-reset"/>
 				<ToggleTools className={classNames('ic-controls', cameraRaw ? "active" : "")} onClick={()=> setCameraRaw(!cameraRaw)}/>
 				<ToggleTools className={classNames('ic-col-science', camColor ? "active" : "")} onClick={()=> setCamColor(!camColor)}/>
 			</Row>

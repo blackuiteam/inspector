@@ -33,6 +33,7 @@ import SettingsActiveImg	from '../../img/nav/text/settings-active.png';
 import TextVideoImg 		from '../../img/nav/text/video.png';
 import TextVideoActiveImg	from '../../img/nav/text/video-active.png';
 
+import ResetCursor 			from '../../img/common/reset_hover_cursor.png';
 import Arrow 				from '../../img/icons/arrow.png';
 import Tick 				from '../../img/common/tick.png';
 
@@ -350,13 +351,18 @@ export const RoundedButton = styled.div `
 `
 
 export const InputLabel = styled.label `
-	${size('150px', '17px', 'block')};
+	${size('auto', '17px', 'block')};
 	${position('2px', '', '', '24px')};
-	color: #979797;
+	/* color: #979797; */
+	color: #D0D0D0;
 	font-family: 'OpenSans light';
 	font-size: 11px;
 	letter-spacing: 0.1px;
 	z-index: 3;
+
+	&:hover {
+		cursor: url(${ResetCursor}), auto;
+	}
 
 	&.active { color: #fff; }
 `
@@ -374,7 +380,7 @@ export const Tabs = styled.div `
 		text-align: center;
 		font-family: 'OpenSans light';
 		font-size: 11px;
-		color: #979797;
+		color: #929292;
 		padding: 3px 0 0 0;
 
 		&.active {

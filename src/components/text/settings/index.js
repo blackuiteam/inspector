@@ -44,6 +44,7 @@ function TextSettings() {
 			<Row>
 				{/* <Toggle onClick={()=> setToggleImage(!toggleImage)} className={classNames('', toggleImage ? "active" : "")}/> */}
 				<LabelToggle style={{"margin":"8px 0 0 0px"}}>Image</LabelToggle>
+				<ToggleTools className="ic-reset"/>
 				<ToggleTools onClick={()=> setImage(!imageContent)} className={classNames('ic-controls', imageContent ? "active" : "")}/>
 				<ToggleTools className={classNames('ic-kf')}/>
 			</Row>
@@ -52,6 +53,7 @@ function TextSettings() {
 			<Row className="header">
 				<Toggle onClick={()=> setToggleSrcColorSpace(!toggleSrcColorSpace)} className={classNames('', toggleSrcColorSpace ? "active" : "")}/>
 				<LabelToggle>Source Color Space</LabelToggle>
+				<ToggleTools className="ic-reset"/>
 				<ToggleTools onClick={()=> setSrcColorSpace(!srcColorSpaceContent)} className={classNames('ic-controls', srcColorSpaceContent ? "active" : "")}/>
 				<ToggleTools className={classNames('ic-kf')}/>
 			</Row>
@@ -60,6 +62,7 @@ function TextSettings() {
 			<Row className="header">
 				<Toggle onClick={()=> setToggleSrcGammaSpace(!toggleSrcGammaSpace)} className={classNames('', toggleSrcGammaSpace ? "active" : "")}/>
 				<LabelToggle>Source Gamma Space</LabelToggle>
+				<ToggleTools className="ic-reset"/>
 				<ToggleTools onClick={()=> setSrcGammaSpace(!srcGammaSpaceContent)} className={classNames('ic-controls', srcGammaSpaceContent ? "active" : "")}/>
 				<ToggleTools className={classNames('ic-kf')}/>
 			</Row>
@@ -68,6 +71,7 @@ function TextSettings() {
 			<Row className="header">
 				<Toggle onClick={()=> setToggleSettings(!toggleSettings)} className={classNames('', toggleSettings ? "active" : "")}/>
 				<LabelToggle>Settings</LabelToggle>
+				<ToggleTools className="ic-reset"/>
 				<ToggleTools onClick={()=> setSettings(!settingsContent)} className={classNames('ic-controls', settingsContent ? "active" : "")}/>
 				<ToggleTools className={classNames('ic-kf')}/>
 			</Row>
@@ -76,6 +80,7 @@ function TextSettings() {
 			<Row className="header">
 				<Toggle onClick={()=> setToggleComments(!toggleComments)} className={classNames('', toggleComments ? "active" : "")}/>
 				<LabelToggle>Comments</LabelToggle>
+				<ToggleTools className="ic-reset"/>
 				<ToggleTools onClick={()=> setComments(!commentsContent)} className={classNames('ic-controls', commentsContent ? "active" : "")}/>
 			</Row>
 			<img  src={TextFieldImg} width="294" style={{'margin': '2px auto 8px 15px'}} className={classNames('', commentsContent ? "none" : "")}/>
@@ -83,6 +88,7 @@ function TextSettings() {
 			<Row className="header">
 				<Toggle onClick={()=> setToggleFrame(!toggleFrame)} className={classNames('', toggleFrame ? "active" : "")}/>
 				<LabelToggle>Frame Render Script</LabelToggle>
+				<ToggleTools className="ic-reset"/>
 				<ToggleTools onClick={()=> setFrame(!frameContent)} className={classNames('ic-controls', frameContent ? "active" : "")}/>
 			</Row>
 			<img  src={TextFieldImg} width="294" style={{'margin': '2px auto 8px 15px'}} className={classNames('', frameContent ? "none" : "")}/>
@@ -90,6 +96,7 @@ function TextSettings() {
 			<Row className="header">
 				<Toggle onClick={()=> setToggleStart(!toggleStart)} className={classNames('', toggleStart ? "active" : "")}/>
 				<LabelToggle>Start Render Script</LabelToggle>
+				<ToggleTools className="ic-reset"/>
 				<ToggleTools onClick={()=> setStart(!startContent)} className={classNames('ic-controls', startContent ? "active" : "")}/>
 			</Row>
 			<img  src={TextFieldImg} width="294" style={{'margin': '2px auto 8px 15px'}} className={classNames('', startContent ? "none" : "")}/>
@@ -97,6 +104,7 @@ function TextSettings() {
 			<Row className="header">
 				<Toggle onClick={()=> setToggleEnd(!toggleEnd)} className={classNames('', toggleEnd ? "active" : "")}/>
 				<LabelToggle>End Render Script</LabelToggle>
+				<ToggleTools className="ic-reset"/>
 				<ToggleTools onClick={()=> setEnd(!endContent)} className={classNames('ic-controls', endContent ? "active" : "")}/>
 			</Row>
 			<img  src={TextFieldImg} width="294" style={{'margin': '2px auto 18px 15px'}} className={classNames('', endContent ? "none" : "")}/>

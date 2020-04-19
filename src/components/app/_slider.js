@@ -96,7 +96,8 @@ export const Input = styled.input `
 	border: 1px solid transparent;
 	background-color: #28282E;
 	text-align: right;
-	color: #979797;
+	/* color: #979797; */
+	color: #D0D0D0;
 	padding: 0 3px;
 	outline: none;
 	user-select: none;

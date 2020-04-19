@@ -24,6 +24,10 @@ function Color() {
 	function sliderFunc1(value) { setHandleSlider1(true); setSlider1(value); }
 	function resetSlider1(value) { setHandleSlider1(false); setSlider1(50); }
 
+	function resetLuts() {
+		resetSlider1();
+	}
+
 	// COLOR WHEELS
 	const [ toggleWheels, setWheels ] = useState(false);
 	const [ wheelsImg, setWheelsImg ] = useState(false);
@@ -70,6 +74,15 @@ function Color() {
 	const [sld6, setSld6 ] = useState(false);
 	function sliderFunc6(value) { setHandleSlider6(true); setSlider6(value); }
 	function resetSlider6(value) { setHandleSlider6(false); setSlider6(50); }
+
+	function resetColorWheels() {
+		setTab1(0);
+		resetSlider2();
+		resetSlider3();
+		resetSlider4();
+		resetSlider5();
+		resetSlider6();
+	}
 
 	// COLOR ADJUSTMENTS
 	const [ toggleAdj, setToggleAdj ] = useState(false);
@@ -142,12 +155,27 @@ function Color() {
 	function sliderFunc17(value) { setHandleSlider17(true); setSlider17(value); }
 	function resetSlider17(value) { setHandleSlider17(false); setSlider17(50); }
 
+	function resetColorAdjustments() {
+		resetSlider7();
+		resetSlider8();
+		resetSlider9();
+		resetSlider10();
+		resetSlider11();
+		resetSlider12();
+		resetSlider13();
+		resetSlider14();
+		resetSlider15();
+		resetSlider16();
+		resetSlider17();
+	}
+
 	return (
 		<>
 			{/* LUTS */}
 			<Row>
 				<Toggle onClick={()=> setLuts(!toggleLuts)} className={classNames('', toggleLuts ? "active" : "")}/>
 				<LabelToggle>LUTs</LabelToggle>
+				<ToggleTools className="ic-reset" onClick={()=> resetLuts()}/>
 				<ToggleTools className={classNames('ic-controls', lutsSlider ? "active" : "")} onClick={()=> setLutsSlider(!lutsSlider)}/>
 				{/* <ToggleTools className={classNames('ic-kf', toggleKf1 ? "active" : "")} onClick={()=> setToggleKf1(!toggleKf1)}/> */}
 			</Row>
@@ -173,6 +201,7 @@ function Color() {
 			<Row className="header">
 				<Toggle onClick={()=> setWheels(!toggleWheels)} className={classNames('', toggleWheels ? "active" : "")}/>
 				<LabelToggle>Color Wheels</LabelToggle>
+				<ToggleTools className="ic-reset" onClick={()=> resetColorWheels()}/>
 				<ToggleTools className={classNames('ic-controls', wheelsSliders ? "active" : "")} onClick={()=> serWheelsSliders(!wheelsSliders)}/>
 				<ToggleTools className={classNames('ic-colorwheel', wheelsImg ? "active" : "")} onClick={()=> setWheelsImg(!wheelsImg)}/>
 				<ToggleTools className={classNames('ic-auto')}/>
@@ -262,6 +291,7 @@ function Color() {
 			<Row className="header">
 				<Toggle onClick={()=> setToggleAdj(!toggleAdj)} className={classNames('', toggleAdj ? "active" : "")}/>
 				<LabelToggle>Color Adjustments</LabelToggle>
+				<ToggleTools className="ic-reset" onClick={()=> resetColorAdjustments()}/>
 				<ToggleTools className={classNames('ic-controls', adjSliders ? "active" : "")} onClick={()=> setAdjSliders(!adjSliders)}/>
 				<ToggleTools className={classNames('ic-curves', adjCurves ? "active" : "")} onClick={()=> setAdjCurves(!adjCurves)}/>
 				{/* <ToggleTools className={classNames('ic-kf', toggleKf3 ? "active" : "")} onClick={()=> setToggleKf3(!toggleKf3)}/> */}

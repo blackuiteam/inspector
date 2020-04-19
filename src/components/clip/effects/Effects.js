@@ -35,7 +35,6 @@ function Effects() {
 	function sliderFunc1(value) { setHandleSlider1(true); setSlider1(value); }
 	function resetSlider1(value) { setHandleSlider1(false); setSlider1(50); }
 
-
 	const [ slider2, setSlider2 ] =  useState(50);
 	const [ handleSlider2, setHandleSlider2 ] = useState(false);
 	const [sld2, setSld2 ] = useState(false);
@@ -59,6 +58,15 @@ function Effects() {
 	const [sld5, setSld5 ] = useState(false);
 	function sliderFunc5(value) { setHandleSlider5(true); setSlider5(value); }
 	function resetSlider5(value) { setHandleSlider5(false); setSlider5(50); }
+
+	function resetEffects() {
+		resetSlider1();
+		resetSlider2();
+		resetSlider3();
+		resetSlider4();
+		resetSlider5();
+		setActiveSkin(0);
+	}
 
 	const [ check, setCheck ] = useState(false);
 	const [ check1, setCheck1 ] = useState(false);
@@ -101,6 +109,7 @@ function Effects() {
 				<Row className="header">
 					<Toggle onClick={()=> setFaceRefine(!faceRefine)} className={faceRefine ? "active" : ""}/>
 					<LabelToggle>Chorus</LabelToggle>
+					<ToggleTools className="ic-reset"/>
 					<ToggleTools className="ic-delete"/>
 					<ToggleTools className={classNames('ic-controls', chorus ? "active" : "")} onClick={()=> setChorus(!chorus)}/>
 				</Row>
@@ -112,6 +121,7 @@ function Effects() {
 				<Row className="header">
 					<Toggle onClick={()=> setFaceRefine(!faceRefine)} className={faceRefine ? "active" : ""}/>
 					<LabelToggle>Face Refinement</LabelToggle>
+					<ToggleTools className="ic-reset" onClick={()=> resetEffects()}/>
 					<ToggleTools className="ic-delete"/>
 					<ToggleTools className={classNames('ic-controls', faceRefineContent ? "active" : "")} onClick={()=> setFaceRefineContent(!faceRefineContent)}/>
 					<ToggleTools className={classNames('ic-kf', toggleKf1 ? "active" : "")} onClick={()=> setToggleKf1(!toggleKf1)}/>
@@ -256,6 +266,7 @@ function Effects() {
 				<Row className="header">
 					<Toggle onClick={()=> setToggleColorG(!toggleColorG)} className={classNames('', toggleColorG ? "active" : "")}/>
 					<LabelToggle>Color Generator</LabelToggle>
+					<ToggleTools className="ic-reset"/>
 					<ToggleTools className="ic-delete"/>
 					<ToggleTools className={classNames('ic-controls', colorGenerator ? "active" : "")} onClick={()=> setColorGenerator(!colorGenerator)}/>
 				</Row>

@@ -40,6 +40,7 @@ function GeneratorSizing() {
 			<Row>
 				<Toggle onClick={()=> setToggleTransform(!toggleTransform)} className={classNames('', toggleTransform ? "active" : "")}/>
 				<LabelToggle>Transform</LabelToggle>
+				<ToggleTools className="ic-reset"/>
 				<ToggleTools className={classNames('ic-controls', transformSliders ? "active" : "")} onClick={()=> setTransformSlider(!transformSliders)}/>
 				<ToggleTools className={classNames('ic-transform', transformContent ? "active" : "")} onClick={()=> setTransformContent(!transformContent)}/>
 				<ToggleTools className={classNames('ic-kf')}/>
@@ -51,6 +52,7 @@ function GeneratorSizing() {
 			<Row className="header">
 				<Toggle onClick={()=> setToggleCropping(!toggleCropping)} className={classNames('', toggleCropping ? "active" : "")}/>
 				<LabelToggle>Cropping</LabelToggle>
+				<ToggleTools className="ic-reset"/>
 				<ToggleTools className={classNames('ic-controls', croppingSliders ? "active" : "")} onClick={()=> setCroppingSliders(!croppingSliders)}/>
 				<ToggleTools className={classNames('ic-crop', croppingContent ? "active" : "")} onClick={()=> setCroppingContent(!croppingContent)}/>
 				<ToggleTools className={classNames('ic-kf')}/>
@@ -62,8 +64,9 @@ function GeneratorSizing() {
 			<Row className="header">
 				<Toggle onClick={()=> setToggleDyn(!toggleDyn)} className={classNames('', toggleDyn ? "active" : "")}/>
 				<LabelToggle>Dynamic Zoom</LabelToggle>
-				<ToggleTools className={classNames('ic-controls', croppingSliders ? "active" : "")} onClick={()=> setCroppingSliders(!croppingSliders)}/>
-				<ToggleTools className={classNames('ic-dynamic', croppingContent ? "active" : "")} onClick={()=> setCroppingContent(!croppingContent)}/>
+				<ToggleTools className="ic-reset"/>
+				<ToggleTools className={classNames('ic-controls', croppingSliders ? "active" : "")}/>
+				<ToggleTools className={classNames('ic-dynamic', croppingContent ? "active" : "")}/>
 			</Row>
 		</>
 	)

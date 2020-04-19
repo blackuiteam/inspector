@@ -38,6 +38,11 @@ function Audio() {
 	function sliderFunc3(value) { setHandleSlider3(true); setSlider3(value); }
 	function resetSlider3(value) { setHandleSlider3(false); setSlider3(50); }
 
+	function resetEmbedded() {
+		resetSlider1();
+		resetSlider2();
+	}
+
 	// AUDIO DUCK
 	const [ toggleAudioDuck, setToggleAudioDuck ] = useState(false);
 	const tabsAutoDuck1 = [
@@ -72,6 +77,10 @@ function Audio() {
 	function sliderFunc5(value) { setHandleSlider5(true); setSlider5(value); }
 	function resetSlider5(value) { setHandleSlider5(false); setSlider5(50); }
 
+	function resetAudioDuck() {
+		resetSlider4();
+		resetSlider5();
+	}
 
 	// PITCH
 	const [ togglePitch, setTogglePitch ] = useState(false);
@@ -89,6 +98,11 @@ function Audio() {
 	function sliderFunc8(value) { setHandleSlider8(true); setSlider8(value); }
 	function resetSlider8(value) { setHandleSlider8(false); setSlider8(50); }
 
+	function resetPitch() {
+		resetSlider7();
+		resetSlider8();
+	}
+
 	// EQUALIZER
 	const [ toggleEq, setToggleEq ] = useState(false);
 	const [ contentEq, setContentEq ] = useState(false);
@@ -100,12 +114,17 @@ function Audio() {
 	function sliderFunc6(value) { setHandleSlider6(true); setSlider6(value); }
 	function resetSlider6(value) { setHandleSlider6(false); setSlider6(50); }
 
+	function resetEq() {
+		resetSlider6();
+	}
+
 	return (
 		<>
 			{/* EMBEDDED */}
 			<Row>
 				<Toggle onClick={()=> setToggleAudio(!toggleAudio)} className={classNames('', toggleAudio ? "active" : "")}/>
 				<LabelToggle>Embedded Audio - Stereo</LabelToggle>
+				<ToggleTools className="ic-reset" onClick={()=> resetEmbedded()}/>
 				<ToggleTools className={classNames('ic-controls', slidersAudio ? "active" : "")} onClick={()=> setSlidersAudio(!slidersAudio)}/>
 				<ToggleTools className={classNames('ic-audio', contentAudio ? "active" : "")} onClick={()=> setContentAudio(!contentAudio)}/>
 				<ToggleTools className={classNames('ic-kf', toggleKf1 ? "active" : "")} onClick={()=> setToggleKf1(!toggleKf1)}/>
@@ -143,6 +162,7 @@ function Audio() {
 			<Row className="header">
 				<Toggle onClick={()=> setToggleAudioDuck(!toggleAudioDuck)} className={classNames('', toggleAudioDuck ? "active" : "")}/>
 				<LabelToggle>Auto Duck</LabelToggle>
+				<ToggleTools className="ic-reset" onClick={()=> resetAudioDuck()}/>
 				<ToggleTools className={classNames('ic-controls', contentAudioDuck ? "active" : "")} onClick={()=> setContentAudioDuck(!contentAudioDuck)}/>
 			</Row>
 
@@ -171,7 +191,7 @@ function Audio() {
 					<RcSlider>
 						<Input className="input" type="text" value={slider5} min="0" max="100" onChange={(event) => setSlider5(event.target.value)}/>
 						<Slider
-							className={classNames('white', handleSlider4 === true ? 'active': '')}
+							className={classNames('white', handleSlider5 === true ? 'active': '')}
 							onChange={sliderFunc5}
 							onBeforeChange={()=>setSld5(!sld5)}
 							onAfterChange={()=>setSld5(!sld5)}
@@ -192,6 +212,7 @@ function Audio() {
 			<Row className="header">
 				<Toggle onClick={()=> setTogglePitch(!togglePitch)} className={classNames('', togglePitch ? "active" : "")}/>
 				<LabelToggle>Pitch</LabelToggle>
+				<ToggleTools className="ic-reset" onClick={()=> resetPitch()}/>
 				<ToggleTools className={classNames('ic-controls', contentPitch ? "active" : "")} onClick={()=> setContentPitch(!contentPitch)}/>
 				<ToggleTools className={classNames('ic-kf', toggleKf2 ? "active" : "")} onClick={()=> setToggleKf2(!toggleKf2)}/>
 			</Row>
@@ -228,6 +249,7 @@ function Audio() {
 			<Row className="header">
 				<Toggle onClick={()=> setToggleEq(!toggleEq)} className={classNames('', toggleEq ? "active" : "")}/>
 				<LabelToggle>Equalizer</LabelToggle>
+				<ToggleTools className="ic-reset" onClick={()=> resetEq()}/>
 				<ToggleTools className={classNames('ic-controls', eqSliders ? "active" : "")} onClick={()=> setEqSliders(!eqSliders)}/>
 				<ToggleTools className={classNames('ic-eq', contentEq ? "active" : "")} onClick={()=> setContentEq(!contentEq)}/>
 			</Row>

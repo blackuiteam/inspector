@@ -21,6 +21,7 @@ function TextText() {
 		<>
 			<Row>
 				<LabelToggle style={{"margin":"6px 0 0 0px"}}>Text</LabelToggle>
+				<ToggleTools className="ic-reset"/>
 				<ToggleTools className={classNames('ic-controls', textContent ? "active" : "")} onClick={()=> setTextContent(!textContent)}/>
 				<ToggleTools className={classNames('ic-kf')}/>
 			</Row>

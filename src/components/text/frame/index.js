@@ -35,6 +35,7 @@ function TextFrame() {
 			<Row>
 				<Toggle onClick={()=> setToggleLayout(!toggleLayout)} className={classNames('', toggleLayout ? "active" : "")}/>
 				<LabelToggle>Layout</LabelToggle>
+				<ToggleTools className="ic-reset"/>
 				<ToggleTools onClick={()=> setLayout(!layoutContent)} className={classNames('ic-controls', layoutContent ? "active" : "")}/>
 				<ToggleTools className={classNames('ic-kf')}/>
 			</Row>
@@ -43,6 +44,7 @@ function TextFrame() {
 			<Row className="header">
 				<Toggle onClick={()=> setToggleRotation(!toggleRotation)} className={classNames('', toggleRotation ? "active" : "")}/>
 				<LabelToggle>Rotation</LabelToggle>
+				<ToggleTools className="ic-reset"/>
 				<ToggleTools onClick={()=> setRotation(!rotationContent)} className={classNames('ic-controls', rotationContent ? "active" : "")}/>
 				<ToggleTools className={classNames('ic-kf')}/>
 			</Row>
@@ -51,6 +53,7 @@ function TextFrame() {
 			<Row className="header">
 				<Toggle onClick={()=> setToggleBackground(!toggleBackground)} className={classNames('', toggleBackground ? "active" : "")}/>
 				<LabelToggle>Background</LabelToggle>
+				<ToggleTools className="ic-reset"/>
 				<ToggleTools onClick={()=> setBackground(!backgroundContent)} className={classNames('ic-controls', backgroundContent ? "active" : "")}/>
 				<ToggleTools className={classNames('ic-kf')}/>
 			</Row>
@@ -59,6 +62,7 @@ function TextFrame() {
 			<Row className="header">
 				<Toggle onClick={()=> setToggleTransform(!toggleTransform)} className={classNames('', toggleTransform ? "active" : "")}/>
 				<LabelToggle>Transform</LabelToggle>
+				<ToggleTools className="ic-reset"/>
 				<ToggleTools onClick={()=> setTransform(!transformContent)} className={classNames('ic-controls', transformContent ? "active" : "")}/>
 				<ToggleTools className={classNames('ic-kf')}/>
 			</Row>
@@ -67,6 +71,7 @@ function TextFrame() {
 			<Row className="header">
 				<Toggle onClick={()=> setToggleShear(!toggleShear)} className={classNames('', toggleShear ? "active" : "")}/>
 				<LabelToggle>Shear</LabelToggle>
+				<ToggleTools className="ic-reset"/>
 				<ToggleTools onClick={()=> setShear(!shearContent)} className={classNames('ic-controls', shearContent ? "active" : "")}/>
 				<ToggleTools className={classNames('ic-kf')}/>
 			</Row>
@@ -75,6 +80,7 @@ function TextFrame() {
 			<Row className="header">
 				<Toggle onClick={()=> setToggleSize(!toggleSize)} className={classNames('', toggleSize ? "active" : "")}/>
 				<LabelToggle>Size</LabelToggle>
+				<ToggleTools className="ic-reset"/>
 				<ToggleTools onClick={()=> setSize(!sizeContent)} className={classNames('ic-controls', sizeContent ? "active" : "")}/>
 				<ToggleTools className={classNames('ic-kf')}/>
 			</Row>

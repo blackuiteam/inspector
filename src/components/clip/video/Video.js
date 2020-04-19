@@ -68,6 +68,12 @@ function Video() {
 	function sliderFunc3(value) { setHandleSlider3(true); setSlider3(value); }
 	function resetSlider3(value) { setHandleSlider3(false); setSlider3(100); }
 
+	function resetAllStablization() {
+		resetSlider1();
+		resetSlider2();
+		resetSlider3();
+	}
+
 	const [ slider4, setSlider4 ] =  useState(40);
 	const [ handleSlider4, setHandleSlider4 ] = useState(false);
 	const [sld4, setSld4 ] = useState(false);
@@ -82,6 +88,7 @@ function Video() {
 			<Row>
 				<Toggle onClick={()=> setToggleComposite(!toggleComposite)} className={classNames('', toggleComposite ? "active" : "")}/>
 				<LabelToggle>Composite</LabelToggle>
+				<ToggleTools className="ic-reset" onClick={()=>resetSlider()}/>
 				<ToggleTools className={classNames('ic-controls', composite ? "active" : "")} onClick={()=> setComposite(!composite)}/>
 				<ToggleTools className={classNames('ic-kf', toggleKf1 ? "active" : "")} onClick={()=> setToggleKf1(!toggleKf1)}/>
 			</Row>
@@ -106,6 +113,7 @@ function Video() {
 			<Row className="header">
 				<Toggle onClick={()=> setToggleDynamic(!toggleDynamic)} className={classNames('', toggleDynamic ? "active" : "")}/>
 				<LabelToggle>Dynamic Zoom</LabelToggle>
+				<ToggleTools className="ic-reset"/>
 				<ToggleTools className={classNames('ic-controls', dynamic2 ? "active" : "")} onClick={()=> setDynamic2(!dynamic2)}/>
 				<ToggleTools className={classNames('ic-dynamic', dynamic1 ? "active" : "")} onClick={()=> setDynamic1(!dynamic1)}/>
 			</Row>
@@ -116,6 +124,7 @@ function Video() {
 			<Row className="header">
 				<Toggle onClick={()=> setToggleStablization(!toggleStablization)} className={classNames('', toggleStablization ? "active" : "")}/>
 				<LabelToggle>Stablization</LabelToggle>
+				<ToggleTools className="ic-reset" onClick={()=>resetAllStablization()}/>
 				<ToggleTools className={classNames('ic-controls', stablization ? "active" : "")} onClick={()=> setStablization(!stablization)}/>
 			</Row>
 
@@ -172,6 +181,7 @@ function Video() {
 			<Row className="header">
 				<Toggle onClick={()=> setToggleSpeedChange(!toggleSpeedChange)} className={classNames('', toggleSpeedChange ? "active" : "")}/>
 				<LabelToggle>Speed Change</LabelToggle>
+				<ToggleTools className="ic-reset"/>
 				<ToggleTools className={classNames('ic-controls', speedChange1 ? "active" : "")} onClick={()=> setSpeedChange1(!speedChange1)}/>
 				<ToggleTools className={classNames('ic-speed', speedChange2 ? "active" : "")} onClick={()=> setSpeedChange2(!speedChange2)}/>
 			</Row>
@@ -182,6 +192,7 @@ function Video() {
 			<Row className="header">
 				<Toggle onClick={()=> setToggleLens(!toggleLens)} className={classNames('', toggleLens ? "active" : "")}/>
 				<LabelToggle>Lens Correction</LabelToggle>
+				<ToggleTools className="ic-reset" onClick={()=>resetSlider4()}/>
 				<ToggleTools className={classNames('ic-controls', lens ? "active" : "")} onClick={()=> setLens(!lens)}/>
 				<ToggleTools className={classNames('ic-kf', toggleKf2 ? "active" : "")} onClick={()=> setToggleKf2(!toggleKf2)}/>
 			</Row>

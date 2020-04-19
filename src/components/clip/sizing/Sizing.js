@@ -59,6 +59,10 @@ function Sizing() {
 	function sliderFunc3(value) { setHandleSlider3(true); setSlider3(value); }
 	function resetSlider3(value) { setHandleSlider3(false); setSlider3(50); }
 
+	function resetCropping() {
+		resetSlider3();
+	}
+
 	const [ slider4, setSlider4 ] =  useState(50);
 	const [ handleSlider4, setHandleSlider4 ] = useState(false);
 	const [sld4, setSld4 ] = useState(false);
@@ -71,12 +75,19 @@ function Sizing() {
 	function sliderFunc5(value) { setHandleSlider5(true); setSlider5(value); }
 	function resetSlider5(value) { setHandleSlider5(false); setSlider5(50); }
 
+	function resetScalling() {
+		resetSlider4();
+		resetSlider5();
+		setTab1(0);
+		setTab2(0);
+	}
 	return (
 		<>
 			{/* TRANSFORM */}
 			<Row>
 				<Toggle onClick={()=> setToggleTransform(!toggleTransform)} className={classNames('', toggleTransform ? "active" : "")}/>
 				<LabelToggle>Transform</LabelToggle>
+				<ToggleTools className="ic-reset"/>
 				<ToggleTools className={classNames('ic-controls', transformSliders ? "active" : "")} onClick={()=> setTransformSlider(!transformSliders)}/>
 				<ToggleTools className={classNames('ic-transform', transformContent ? "active" : "")} onClick={()=> setTransformContent(!transformContent)}/>
 				<ToggleTools className={classNames('ic-kf', toggleKf1 ? "active" : "")} onClick={()=> setToggleKf1(!toggleKf1)}/>
@@ -90,6 +101,7 @@ function Sizing() {
 			<Row className="header">
 				<Toggle onClick={()=> setToggleCropping(!toggleCropping)} className={classNames('', toggleCropping ? "active" : "")}/>
 				<LabelToggle>Cropping</LabelToggle>
+				<ToggleTools className="ic-reset" onClick={()=> resetCropping()}/>
 				<ToggleTools className={classNames('ic-controls', croppingSliders ? "active" : "")} onClick={()=> setCroppingSliders(!croppingSliders)}/>
 				<ToggleTools className={classNames('ic-crop', croppingContent ? "active" : "")} onClick={()=> setCroppingContent(!croppingContent)}/>
 				<ToggleTools className={classNames('ic-kf', toggleKf2 ? "active" : "")} onClick={()=> setToggleKf2(!toggleKf2)}/>
@@ -119,6 +131,7 @@ function Sizing() {
 			<Row className="header">
 				<Toggle onClick={()=> setToggleScalling(!toggleScalling)} className={classNames('', toggleScalling ? "active" : "")}/>
 				<LabelToggle>Scaling</LabelToggle>
+				<ToggleTools className="ic-reset" onClick={()=> resetScalling()}/>
 				<ToggleTools className={classNames('ic-controls', scallingContent ? "active" : "")} onClick={()=> setScallingContent(!scallingContent)}/>
 			</Row>
 

@@ -45,6 +45,7 @@ function TextVideo() {
 			<Row>
 				<Toggle onClick={()=> setToggleComposite(!toggleComposite)} className={classNames('', toggleComposite ? "active" : "")}/>
 				<LabelToggle>Composite</LabelToggle>
+				<ToggleTools className="ic-reset"/>
 				<ToggleTools onClick={()=> setComposite(!compositeContent)} className={classNames('ic-controls', compositeContent ? "active" : "")}/>
 				<ToggleTools className={classNames('ic-kf')}/>
 			</Row>
@@ -53,6 +54,7 @@ function TextVideo() {
 			<Row className="header">
 				<Toggle onClick={()=> setToggleTransform1(!toggleTransform1)} className={classNames('', toggleTransform1 ? "active" : "")}/>
 				<LabelToggle>Transform</LabelToggle>
+				<ToggleTools className="ic-reset"/>
 				<ToggleTools onClick={()=> setTransform1(!transform1Content)} className={classNames('ic-controls', transform1Content ? "active" : "")}/>
 				<ToggleTools onClick={()=> setTransform2(!transform2Content)} className={classNames('ic-transform', transform2Content ? "active" : "")}/>
 				<ToggleTools className={classNames('ic-kf')}/>
@@ -63,6 +65,7 @@ function TextVideo() {
 			<Row className="header">
 				<Toggle onClick={()=> setToggleCropping1(!toggleCropping1)} className={classNames('', toggleCropping1 ? "active" : "")}/>
 				<LabelToggle>Cropping</LabelToggle>
+				<ToggleTools className="ic-reset"/>
 				<ToggleTools onClick={()=> setCropping2(!cropping2Content)} className={classNames('ic-controls', cropping2Content ? "active" : "")}/>
 				<ToggleTools onClick={()=> setCropping1(!cropping1Content)} className={classNames('ic-crop', cropping1Content ? "active" : "")}/>
 				<ToggleTools className={classNames('ic-kf')}/>
@@ -73,6 +76,7 @@ function TextVideo() {
 			<Row className="header">
 				<Toggle onClick={()=> setToggleDynamic(!toggleDynamic)} className={classNames('', toggleDynamic ? "active" : "")}/>
 				<LabelToggle>Dynamic Zoom</LabelToggle>
+				<ToggleTools className="ic-reset"/>
 				<ToggleTools className={classNames('ic-controls', dyn ? "active" : "")} onClick={()=> setDyn(!dyn)}/>
 				<ToggleTools className={classNames('ic-dynamic', dyn2 ? "active" : "")} onClick={()=> setDyn2(!dyn2)}/>
 			</Row>
@@ -82,6 +86,7 @@ function TextVideo() {
 			<Row className="header">
 				<Toggle onClick={()=> setToggleStablization(!toggleStablization)} className={classNames('', toggleStablization ? "active" : "")}/>
 				<LabelToggle>Stablization</LabelToggle>
+				<ToggleTools className="ic-reset"/>
 				<ToggleTools className={classNames('ic-controls', stabl ? "active" : "")} onClick={()=> setStabl(!stabl)}/>
 			</Row>
 			<img src={Stablization1} width="294" style={{'margin': '1px 0px 20px 15px'}} className={stabl ? "none" : ""}/>

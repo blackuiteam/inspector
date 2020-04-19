@@ -20,6 +20,7 @@ function TransitionVideo() {
 		<>
 			<Row>
 				<LabelToggle style={{"margin":"8px 0 0 0px"}}>Video Transition</LabelToggle>
+				<ToggleTools className="ic-reset"/>
 				<ToggleTools className={classNames('ic-controls', solid ? "active" : "")} onClick={()=> setSolid(!solid)}/>
 			</Row>
 			<img src={VideoTransition} width="294" style={{"margin":"5px 0 10px 15px"}} className={solid ? "none" : ""}/>
@@ -28,6 +29,7 @@ function TransitionVideo() {
 			<Row className="header">
 				<Toggle onClick={()=> setToggleComposite(!toggleComposite)} className={classNames('', toggleComposite ? "active" : "")}/>
 				<LabelToggle>Composite</LabelToggle>
+				<ToggleTools className="ic-reset"/>
 				<ToggleTools className={classNames('ic-controls', composite ? "active" : "")} onClick={()=> setComposite(!composite)}/>
 			</Row>
 			<img src={VideoComposite} width="296" style={{"margin":"0px 0px 20px 15px"}} className={composite ? "none" : ""}/>
